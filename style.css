@@ -18,3 +18,13 @@ h1 {
 .color-main {
   background-color: #3bad29;
 }
+
+.log-in-container {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .log-in-container {
+    width: 50%;
+    /* background-color: red; */
+  }
+}
