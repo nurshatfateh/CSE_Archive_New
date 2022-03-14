@@ -23,32 +23,33 @@
         <div class="log-in-container text-center my-5 mx-auto">
           <img class="mt-5 img-fluid" src="img/MIST.png" alt="MIST LOGO" />
           <h1 class="my-4">Login</h1>
-          <form class="log-in-form">
+          <div class="log-in-form">
             <div class="form-floating mt-5 mb-2">
               <input
                 type="email"
                 class="form-control rounded-0"
-                id="floatingInput"
+                id="emailInput"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Email address</label>
+              <label for="emailInput">Email address</label>
             </div>
             <div class="form-floating my-3">
               <input
                 type="password"
                 class="form-control rounded-0"
-                id="floatingPassword"
+                id="passwordInput"
                 placeholder="Password"
               />
-              <label for="floatingPassword">Password</label>
+              <label for="passwordInput">Password</label>
             </div>
             <button
+              onclick="loginValidator()"
               class="btn btn-primary rounded-0 color-main w-100 fs-4 my-3 py-2"
               type="submit"
             >
               Login
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -59,5 +60,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
