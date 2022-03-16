@@ -1,237 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
-    />
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
 
-    <title>Thesis</title>
-  </head>
-  <body>
-    <!-- navbar starts -->
-    <nav class="navbar navbar-expand-xxl navbar-light">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler mb-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <img class="mx-5" src="img/navlogo.png" alt="logo" />
-
-        <div
-          class="collapse navbar-collapse mx-5 fw-bold"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item mx-3">
-              <a
-                class="nav-link active text-success fw-bolder"
-                aria-current="page"
-                href="#"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">Projects</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">Achievements</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">Publications</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">Thesis</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="#">Activity</a>
-            </li>
-          </ul>
-          <img class="ms-3" src="img/profile.png" alt="profile" />
-          <h6 class="mt-2 mx-3">Jack</h6>
-
-          <button type="button" class="btn btn-danger mx-3">Log Out</button>
-        </div>
-      </div>
-    </nav>
-    <!-- navbar ends -->
-
-    <!-- card section -->
-    <div class="container-flex bg-light">
-      <!-- Thesis head -->
-      <div class="container pt-5">
-        <div class="card">
-          <div class="card-body bg-primary p-4">
-            <h1 class="d-inline-block text-white ms-4">Thesis</h1>
-            <button type="button" class="btn btn-light btn-lg float-end">
-              + Add Thesis
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- Thesis head ends-->
-
-      <div class="container px-4 pt-5">
-        <div class="row gx-5">
-          <!-- LEFT BAR -->
-          <div class="col-xxl-3 col-12 mb-5">
-            <div class="p-3 border bg-white">
-              <h4 class="ps-2">Search Filter</h4>
-              <div class="p-3 mt-4 border bg-white">
-                <div class="dropdown">
-                  <button
-                    class="btn dropdown-toggle"
+        <title>Thesis</title>
+    </head>
+    <body>
+        <!-- navbar starts -->
+        <nav class="navbar navbar-expand-xxl navbar-light">
+            <div class="container-fluid">
+                <button
+                    class="navbar-toggler mb-3"
                     type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
                     aria-expanded="false"
-                  >
-                    Sort By Session
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <img class="mx-5" src="img/navlogo.png" alt="logo" />
+
+                <div class="collapse navbar-collapse mx-5 fw-bold" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link active text-success fw-bolder" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Projects</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Achievements</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Publications</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Thesis</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Activity</a>
+                        </li>
+                    </ul>
+                    <img class="ms-3" src="img/profile.png" alt="profile" />
+                    <h6 class="mt-2 mx-3">Jack</h6>
+
+                    <button type="button" class="btn btn-danger mx-3">Log Out</button>
                 </div>
-              </div>
+            </div>
+        </nav>
+        <!-- navbar ends -->
 
-              <div class="p-3 mt-4 border bg-white">
-                <div class="dropdown">
-                  <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Sort By Teacher
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
+        <!-- card section -->
+        <div class="container-flex bg-light">
+            <!-- Thesis head -->
+            <div class="container pt-5">
+                <div class="card">
+                    <div class="card-body bg-primary p-4">
+                        <h1 class="d-inline-block text-white ms-4">Thesis</h1>
+                        <button type="button" class="btn btn-light btn-lg float-end">+ Add Thesis</button>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <!-- LEFT BAR ends -->
-          <!-- Right BAR -->
-          <div class="col-xxl-9 col-12">
-            <div class="p-3 border bg-white">
-              <h4>Thesis Name</h4>
-              <h6 class="d-inline-block">Thesis Domain</h6>
-              | 2019-20220
+            <!-- Thesis head ends-->
+
+            <div class="container px-4 pt-5">
+                <div class="row gx-5">
+                    <!-- LEFT BAR -->
+                    <div class="col-xxl-3 col-12 mb-5">
+                        <div class="p-3 border bg-white">
+                            <h4 class="ps-2">Search Filter</h4>
+                            <div class="p-3 mt-4 border bg-white">
+                                <div class="dropdown">
+                                    <button
+                                        class="btn dropdown-toggle"
+                                        type="button"
+                                        id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Sort By Session
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="p-3 mt-4 border bg-white">
+                                <div class="dropdown">
+                                    <button
+                                        class="btn dropdown-toggle"
+                                        type="button"
+                                        id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Sort By Teacher
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- LEFT BAR ends -->
+                    <!-- Right BAR -->
+                    <div class="col-xxl-9 col-12">
+                        <a href="thesis_details.html" class="text-decoration-none text-black"
+                            ><div class="p-3 mb-4 border bg-white">
+                                <h4>Thesis Name</h4>
+                                <h6 class="d-inline-block">Thesis Domain</h6>
+                                | 2019-20220
+                            </div></a
+                        >
+                        <a href="thesis_details.html" class="text-decoration-none text-black">
+                            <div class="p-3 border mb-4 bg-white">
+                                <h4>Thesis Name</h4>
+                                <h6 class="d-inline-block">Thesis Domain</h6>
+                                | 2019-20220
+                            </div>
+                        </a>
+                        <a href="thesis_details.html" class="text-decoration-none text-black">
+                            <div class="p-3 border mb-4 bg-white">
+                                <h4>Thesis Name</h4>
+                                <h6 class="d-inline-block">Thesis Domain</h6>
+                                | 2019-20220
+                            </div>
+                        </a>
+                        <a href="thesis_details.html" class="text-decoration-none text-black">
+                            <div class="p-3 border mb-4 bg-white">
+                                <h4>Thesis Name</h4>
+                                <h6 class="d-inline-block">Thesis Domain</h6>
+                                | 2019-20220
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Right BAR ends -->
+                </div>
             </div>
-            <div class="p-3 border bg-white my-4">
-              <h4>Thesis Name</h4>
-              <h6 class="d-inline-block">Thesis Domain</h6>
-              | 2019-20220
+
+            <!-- card section -->
+
+            <!-- footer -->
+
+            <div class="container-fluid bg-black py-2 mt-5">
+                <div class="row">
+                    <div class="col-xxl-4 col-12 pt-3">
+                        <p class="text-white-50 text-center">© 2022 MIST. All rights reserved</p>
+                        <p></p>
+                    </div>
+
+                    <div class="col-xxl-4 col-12 pt-3">
+                        <p class="text-white-50 text-center"><i class="bi bi-telephone"></i>+880 176 902 3806</p>
+                    </div>
+                    <div class="col-xxl-4 col-12 pt-3">
+                        <p class="text-white-50 text-center"><i class="bi bi-envelope"></i> info@mist.ac.bd</p>
+                    </div>
+                </div>
             </div>
-            <div class="p-3 border bg-white my-4">
-              <h4>Thesis Name</h4>
-              <h6 class="d-inline-block">Thesis Domain</h6>
-              | 2019-20220
-            </div>
-            <div class="p-3 border bg-white my-4">
-              <h4>Thesis Name</h4>
-              <h6 class="d-inline-block">Thesis Domain</h6>
-              | 2019-20220
-            </div>
-            <div class="p-3 border bg-white my-4">
-              <h4>Thesis Name</h4>
-              <h6 class="d-inline-block">Thesis Domain</h6>
-              | 2019-20220
-            </div>
-            <div class="p-3 border bg-white my-4">
-              <h4>Thesis Name</h4>
-              <h6 class="d-inline-block">Thesis Domain</h6>
-              | 2019-20220
-            </div>
-          </div>
-          <!-- Right BAR ends -->
+
+            <!-- footer ends -->
         </div>
-      </div>
 
-      <!-- card section -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-      <!-- footer -->
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
 
-      <div class="container-fluid bg-black py-2 mt-5">
-        <div class="row">
-          <div class="col-xxl-4 col-12 pt-3">
-            <p class="text-white-50 text-center">
-              © 2022 MIST. All rights reserved
-            </p>
-            <p></p>
-          </div>
-
-          <div class="col-xxl-4 col-12 pt-3">
-            <p class="text-white-50 text-center">
-              <i class="bi bi-telephone"></i>+880 176 902 3806
-            </p>
-          </div>
-          <div class="col-xxl-4 col-12 pt-3">
-            <p class="text-white-50 text-center">
-              <i class="bi bi-envelope"></i> info@mist.ac.bd
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- footer ends -->
-    </div>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-  </body>
+    --></body>
 </html>
