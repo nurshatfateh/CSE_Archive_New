@@ -20,65 +20,343 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>Form</title>
   </head>
   <body>
-    <!-- main container  -->
-    <div class="container mt-5 bg-light">
-      <h2 class="my-5">Fill up the form :</h2>
-      <form class="row g-3 bg-white border p-3">
-        <div class="col-md-12">
-          <label for="CourseName" class="form-label"
-            ><h6>Course Name</h6></label
+    <!-- navbar starts -->
+    <nav class="navbar navbar-expand-xxl navbar-light">
+      <div class="container-fluid">
+          <button
+              class="navbar-toggler mb-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
           >
-          <input type="text" class="form-control" id="CourseName" required />
-          <!-- <select id="CourseName">
-            <option value="Course Name">Course Name</option>
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="home.html"> <img class="ms-md-5 ms-2" src="img/navlogo.png" alt="logo" /></a>
+
+          <div class="collapse navbar-collapse mx-5 fw-bold" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item mx-3">
+                      <a class="nav-link" href="home.html">Home</a>
+                  </li>
+                  <li class="nav-item mx-3">
+                      <a class="nav-link" href="projects.html">Projects</a>
+                  </li>
+                  <li class="nav-item mx-3">
+                      <a class="nav-link" href="achievements.html">Achievements</a>
+                  </li>
+                  <li class="nav-item mx-3">
+                      <a class="nav-link" href="publication.html">Publications</a>
+                  </li>
+                  <li class="nav-item mx-3">
+                      <a class="nav-link active text-success fw-bolder" aria-current="page" href="thesis.html"
+                          >Thesis</a
+                      >
+                  </li>
+                  <li class="nav-item mx-3">
+                      <a class="nav-link" href="activity.html">Activity</a>
+                  </li>
+              </ul>
+              <a href="home.html"><img class="ms-3" src="img/profile.png" alt="profile" /></a>
+              <h6 class="mt-2 mx-3">Jack</h6>
+
+              <a href="index.html"><button type="button" class="btn btn-danger mx-3">Log Out</button></a>
+          </div>
+      </div>
+  </nav>
+    <!-- navbar ends -->
+    <!-- main container  -->
+    <div class="container mt-5">
+      <h2 class="my-5">Fill up the form :</h2>
+      
+      <form class="row g-3 bg-white border p-3">
+        <div class="col-md-6">
+          <label for="CourseName" class="form-label">
+            <h6>Course Name</h6>
+          </label>
+          <br>
+          
+          
+          <select class="form-control selectpicker" required>
+            <option selected disabled>Course Name</option>
             <option value="CSE-224">CSE-224</option>
             <option value="CSE-216">CSE-216</option>
             <option value="CSE-212">CSE-212</option>
             <option value="CSE-220">CSE-220</option>
-          </select> -->
-        </div>
-
-        <div class="col-md-12">
-          <label for="AcademicYear" class="form-label"
-            ><h6>Academic year</h6></label
-          >
-          <input type="text" class="form-control" id="AcademicYear" required />
+          </select>
         </div>
 
         <div class="col-md-6">
-          <label for="NoOfStudent" class="form-label"
-            ><h6>No of Student</h6></label
-          >
-          <input type="text" class="form-control" id="NoOfStudent" required />
+          <label for="AcademicYear" class="form-label">
+            <h6>Academic year</h6>
+          </label>
+          <br>
+          
+
+          <select class="form-control selectpicker" required>
+            <option selected disabled>Academic Year</option>
+            <option value="2016-2017">2016-2017</option>
+            <option value="2017-2018">2017-2018</option>
+            <option value="2018-2019">2018-2019</option>
+            <option value="2019-2020">2019-2020</option>
+            <option value="2020-2021">2020-2021</option>
+            <option value="2021-2022">2021-2022</option>
+            <option value="2022-2023">2022-2023</option>
+            <option value="2023-2024">2023-2024</option>
+            <option value="2024-2025">2024-2025</option>
+          </select>
+
         </div>
 
         <div class="col-md-6">
-          <label for="NoOfPublication" class="form-label"
-            ><h6>No of publication</h6></label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="NoOfPublication"
-            required
-          />
+          <label for="NoOfStudent" class="form-label">
+            <h6>No of Student</h6>
+          </label>
+          <br>
+          
+          <select class="form-control selectpicker" required>
+            <option selected disabled>No Of Student</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="Student ID" class="form-label">
+            <h6>Student ID</h6>
+          </label>
+          <br>
+          <select class="form-control selectpicker" multiple data-live-search="true" required>
+            <!-- <option selected disabled>Student ID</option> -->
+            <option value="201814001">201814001</option>
+            <option value="201814002">201814002</option>
+            <option value="201814003">201814003</option>
+            <option value="201814004">201814004</option>
+            <option value="201814005">201814005</option>
+            <option value="201814006">201814006</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="Supervisor(s)" class="form-label">
+            <h6>Supervisor(s)</h6>
+          </label>
+          <br>
+          <select class="form-control selectpicker" multiple data-live-search="true" required>
+    
+            <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
+            <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
+            <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
+            <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
+            <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+            
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="Supervisor(s)" class="form-label">
+            <h6>Supervisor(s) Photos</h6>
+          </label>
+          <br>
+          <input type="File" id="files" name="files" multiple/>
+          <br><br>
+        </div>
+
+        <div class="col-md-6">
+          <label for="TeamMember1" class="form-label">
+            <h6>Team Member-1 Name</h6>
+          </label>
+          <input type="text" class="form-control" id="TeamMember1" required />
+        </div>
+
+        <div class="col-md-6">
+          <label for="TeamMember1 Photo" class="form-label">
+            <h6>Team Member-1 Photo</h6>
+          </label>
+          <br>
+          <input type="File"/>
+        </div>
+
+        <div class="col-md-6">
+          <label for="TeamMember2" class="form-label">
+            <h6>Team Member-2 Name</h6>
+          </label>
+          <input type="text" class="form-control" id="TeamMember2" required />
+        </div>
+
+        <div class="col-md-6">
+          <label for="TeamMember2 Photo" class="form-label">
+            <h6>Team Member-2 Photo</h6>
+          </label>
+          <br>
+          <input type="File"/>
+        </div>
+        
+
+        <div class="col-md-6">
+          <label for="TeamMember3" class="form-label">
+            <h6>Team Member-3 Name</h6>
+          </label>
+          <input type="text" class="form-control" id="TeamMember3" required />
+        </div>
+
+        <div class="col-md-6">
+          <label for="TeamMember3 Photo" class="form-label">
+            <h6>Team Member-3 Photo</h6>
+          </label>
+          <br>
+          <input type="File"/>
+        </div>
+
+
+        <div class="col-md-6">
+          <label for="CommenceDate" class="form-label">
+            <h6>Commence Date</h6>
+          </label>
+          <input type="text" class="form-control" id="CommenceDate" placeholder="DD/MM/YYYY" required />
+        </div>
+
+        <div class="col-md-6">
+          <label for="CompletionDate" class="form-label"
+            ><h6>Completion Date</h6>
+          </label>
+          <input type="text" class="form-control" id="CompletionDate" placeholder="DD/MM/YYYY" required />
         </div>
 
         <div class="col-md-12">
-          <label for="CourseName" class="form-label"
-            ><h6>Course Name</h6></label
-          >
-          <input type="text" class="form-control" id="CourseName" required />
+          <label for="Thesis Title" class="form-label"
+            ><h6>Thesis Title</h6>
+          </label>
+          <textarea class="form-control" id="ThesisTitle" rows="3"></textarea>
+        </div>
+        <div class="col-md-12">
+          <label for="Thesis Domain" class="form-label">
+            <h6>Thesis Domain</h6>
+          </label>
+
+          <textarea class="form-control" id="ThesisDomain" rows="5"></textarea>
         </div>
 
         <div class="col-md-12">
-          <button type="submit" class="btn btn-success">Submit</button>
+          <label for="Thesis Synopsis" class="form-label">
+            <h6>Thesis Synopsis</h6>
+          </label>
+
+          <textarea class="form-control" id="ThesisSynopsis" rows="5"></textarea>
+        </div>
+        
+        <div class="col-md-6">
+          <label for="Team Photo" class="form-label">
+            <h6>Team Photo</h6>
+          </label>
+          <br>
+          <input type="File"/>
+        </div>
+
+        <div class="col-md-6">
+          <label for="Proposal" class="form-label">
+            <h6>Proposal</h6>
+          </label>
+          <br>
+          <input type="File"  required/>
+        </div>
+
+        <div class="col-md-6">
+          <label for="Prototype" class="form-label">
+            <h6>Prototype</h6>
+          </label>
+          <br>
+          <input type="File" required/>
+        </div>
+
+        <div class="col-md-6">
+          <label for="ThesisBook" class="form-label">
+            <h6>Thesis Book</h6>
+          </label>
+          <br>
+          <input type="File" required/>
+        </div>
+
+        <div class="col-md-12">
+          <label for="URLofFrontEnd" class="form-label">
+            <h6>URL of Front end</h6>
+          </label>
+          <input type="text" class="form-control" id="URLofFrontEnd" placeholder="URL of Front end"/>
+        </div>
+
+        <div class="col-md-12">
+          <label for="GithubLink" class="form-label">
+            <h6>Github Link</h6>
+          </label>
+          <input type="text" class="form-control" id="GithubLink" placeholder="Github Link"/>
+        </div>
+
+        <div class="col-md-6">
+          <label for="ThesisFiles" class="form-label">
+            <h6>ThesisFile(s)</h6>
+          </label>
+          <br>
+          <input type="File" id="files" name="files" multiple/>
+          <br><br>
+        </div>
+
+        <div class="col-md-6">
+          <label for="NoOfPublications" class="form-label"
+            ><h6>No Of Publications</h6>
+          </label>
+          <input type="text" class="form-control" id="NoOfPublications"/>
+        </div>
+
+        
+
+
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-success" action="Submitted.html">Submit</button>
         </div>
       </form>
+      
     </div>
+    <!-- footer -->
+
+    <div class="container-fluid bg-black py-2 mt-5">
+      <div class="row">
+          <div class="col-xxl-4 col-12 pt-3">
+              <p class="text-white-50 text-center">© 2022 MIST. All rights reserved</p>
+              <p></p>
+          </div>
+
+          <div class="col-xxl-4 col-12 pt-3">
+              <p class="text-white-50 text-center"><i class="bi bi-telephone"></i>+880 176 902 3806</p>
+          </div>
+          <div class="col-xxl-4 col-12 pt-3">
+              <p class="text-white-50 text-center"><i class="bi bi-envelope"></i> info@mist.ac.bd</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- footer ends -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
   </body>
 </html>
