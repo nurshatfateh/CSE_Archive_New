@@ -81,11 +81,13 @@
   </nav>
     <!-- navbar ends -->
     <!-- main container  -->
+
+    <div class="bg-light">
     <div class="container mt-5">
-      <h2 class="my-5">Fill up the form :</h2>
+      <h2 class="my-5">Thesis Submission form :</h2>
       
-      <!-- <form class="row g-3 bg-white border p-3" action="Submitted.html"> -->
-        <form class="row g-3 bg-white border p-3" action="demo.php" method="post" enctype="multipart/form-data">
+      <form class="row g-3 bg-white border p-3" action="Submitted.html">
+        <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
         <div class="col-md-6">
           <label for="CourseName" class="form-label">
             <h6>Course Name</h6>
@@ -172,10 +174,10 @@
 
         <div class="col-md-6">
           <label for="Supervisor(s)" class="form-label">
-            <h6>Supervisor(s) Photos</h6>
+            <h6>Supervisor(s) Photos(jpg/png/jpeg)</h6>
           </label>
           <br>
-          <input type="File" id="files" name="files" multiple/>
+          <input type="File" accept="image/*" id="files" name="files" multiple/>
           <br><br>
         </div>
 
@@ -188,10 +190,10 @@
 
         <div class="col-md-6">
           <label for="TeamMember1 Photo" class="form-label">
-            <h6>Team Member-1 Photo</h6>
+            <h6>Team Member-1 Photo(jpg/png/jpeg)</h6>
           </label>
           <br>
-          <input type="File"/>
+          <input type="File" accept="image/*"/>
         </div>
 
         <div class="col-md-6">
@@ -203,10 +205,10 @@
 
         <div class="col-md-6">
           <label for="TeamMember2 Photo" class="form-label">
-            <h6>Team Member-2 Photo</h6>
+            <h6>Team Member-2 Photo(jpg/png/jpeg)</h6>
           </label>
           <br>
-          <input type="File"/>
+          <input type="File" accept="image/*"/>
         </div>
         
 
@@ -219,10 +221,10 @@
 
         <div class="col-md-6">
           <label for="TeamMember3 Photo" class="form-label">
-            <h6>Team Member-3 Photo</h6>
+            <h6>Team Member-3 Photo(jpg/png/jpeg)</h6>
           </label>
           <br>
-          <input type="File"/>
+          <input type="File" accept="image/*"/>
         </div>
 
 
@@ -264,31 +266,31 @@
         
         <div class="col-md-6">
           <label for="Team Photo" class="form-label">
-            <h6>Team Photo</h6>
+            <h6>Team Photo(jpg/png/jpeg)</h6>
           </label>
           <br>
-          <input type="File"/>
+          <input type="File" accept="image/*"/>
         </div>
 
         <div class="col-md-6">
           <label for="Proposal" class="form-label">
-            <h6>Proposal</h6>
+            <h6>Proposal(ppt/pdf)</h6>
           </label>
           <br>
-          <input type="File"  required/>
+          <input type="File" accept=".ppt, .pptx,.pdf" required/>
         </div>
 
         <div class="col-md-6">
           <label for="Prototype" class="form-label">
-            <h6>Prototype</h6>
+            <h6>Prototype(ppt/pdf)</h6>
           </label>
           <br>
-          <input type="File" required/>
+          <input type="File" accept=".ppt, .pptx,.pdf" required/>
         </div>
 
         <div class="col-md-6">
           <label for="ThesisBook" class="form-label">
-            <h6>Thesis Book</h6>
+            <h6>Thesis Book(ppt/pdf/zip)</h6>
           </label>
           <br>
           <input type="File" required/>
@@ -310,7 +312,7 @@
 
         <div class="col-md-6">
           <label for="ThesisFiles" class="form-label">
-            <h6>ThesisFile(s)</h6>
+            <h6>Thesis File(s) (ppt/pdf/zip)</h6>
           </label>
           <br>
           <input type="File" id="files" name="files" multiple/>
@@ -319,7 +321,7 @@
 
         <div class="col-md-6">
           <label for="NoOfPublications" class="form-label"
-            ><h6>No Of Publications</h6>
+            ><h6>No. of Publications</h6>
           </label>
           <input type="text" class="form-control" id="NoOfPublications"/>
         </div>
@@ -350,6 +352,7 @@
           </div>
       </div>
   </div>
+</div>
 
   <!-- footer ends -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
