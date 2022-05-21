@@ -28,7 +28,9 @@
   </head>
   <body>
     <!-- navbar starts -->
-    <nav class="navbar navbar-expand-xxl navbar-light border-bottom border-5 border-success">
+    <nav
+      class="navbar navbar-expand-xxl navbar-light border-bottom border-5 border-success"
+    >
       <div class="container-fluid">
         <button
           class="navbar-toggler mb-3"
@@ -74,8 +76,12 @@
               <a class="nav-link" href="activity.html">Activity</a>
             </li>
           </ul>
-        <a href="facultyprofile.html"> <img class="ms-3" src="img/profile.png" alt="profile" /></a> 
-      <a href="studentprofile.html" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Jack</h6></a> 
+          <a href="facultyprofile.html">
+            <img class="ms-3" src="img/profile.png" alt="profile"
+          /></a>
+          <a href="studentprofile.html" class="text-decoration-none text-black">
+            <h6 class="mt-2 mx-3">Jack</h6></a
+          >
 
           <a href="index.html"
             ><button type="button" class="btn btn-danger mx-3">
@@ -87,21 +93,338 @@
     </nav>
     <!-- navbar ends -->
 
-    <div class="bg-light">
-      <!-- card section -->
-      <div class="container pt-5">
-        <div class="mx-auto">
-          <img
-            class="d-block mx-auto w-75"
-            src="img/construction.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-
-          <h1 class="text-center">THIS PAGE IS UNDER CONSTRUCTION</h1>
+    <div class="container-flex bg-light">
+      <!-- Achievement head -->
+      <div class="container pt-5 text-center">
+        <div class="card">
+          <div
+            class="card-body bg-white border border-3 border border-info p-4"
+          >
+            <h1 class="d-inline-block text-black ms-4 text-center">
+              Achievements
+            </h1>
+          </div>
         </div>
       </div>
-      <!-- card section -->
+      <!-- Acheivement head end -->
+
+      <!-- carousel start  -->
+
+      <div class="container px-4 pt-5">
+      <div class="row bg-light border border-3">
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+ <img src="img/acvm1.jpg" class="d-block  my-3 mx-auto"  style="width: 100%; height: 600px;" alt="..."></a>
+        <div class="carousel-caption  d-md-block fw-bolder  " >
+          <h5 class=" fw-bolder">URC Champion</h5>
+          <p class=" fw-bolder">Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+    <div class="carousel-item">
+      <img src="img/acvm2.jpg" class="d-block my-3 mx-auto"  style="width: 100%; height:600px ;" alt="...">
+      <div class="carousel-caption  d-md-block fw-bolder ">
+        <h5 class=" fw-bolder">ICPC Champion</h5>
+        <p class=" fw-bolder">Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img/acvm3.jpg" class="d-block  rounded my-3 mx-auto"  style="width: 100%; height:600px ;" alt="...">
+      <div class="carousel-caption  d-md-block fw-bolder ">
+        <h5 class=" fw-bolder">Robo Contest winner</h5>
+        <p class=" fw-bolder">Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+      </div>
+      </div>
+
+      <!-- carousel end  -->
+
+      <!-- Achivements card start  -->
+      <div class="container px-4 pt-5">
+        <div class="row bg-light border border-3 border border-info gx-4">
+          <!-- 1 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info ms-3">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach1.gif"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins URC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach2.jpg"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins ICPC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info me-3">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach3.jpg"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins NCPC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info ms-3">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach1.gif"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins URC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach2.jpg"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins ICPC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info me-3">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach3.jpg"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins NCPC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info ms-3">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach1.gif"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins URC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach2.jpg"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins ICPC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info me-3">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach3.jpg"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins NCPC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info ms-3">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach1.gif"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins URC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach2.jpg"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins ICPC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 12 -->
+          <div class="col-sm-4 mb-5 mt-5">
+            <div class="card border-2 border-info me-3">
+              <div class="card-body">
+                <a href="achievments_details.html"
+                  ><img
+                    src="img/ach3.jpg"
+                    class="d-block my-3 mx-auto"
+                    style="width: 100%; height: 200px"
+                    alt="..."
+                /></a>
+                <p class="card-text fw-bold">MIST wins NCPC-2022</p>
+                <p class="card-text fw-normal">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                </p>
+                <a href="achievments_details.html" class="btn btn-primary"
+                  >View More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achivements card end -->
 
       <!-- footer -->
 
