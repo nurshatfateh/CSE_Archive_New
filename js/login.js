@@ -1,5 +1,5 @@
 const adminEmail = "admin@email.com";
-const adminPass = "admin";
+const adminPass = "adminadmin";
 
 function loginValidator() {
   const email = document.getElementById("email").value;
