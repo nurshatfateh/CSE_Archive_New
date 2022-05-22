@@ -1,9 +1,9 @@
 const adminEmail = "admin@email.com";
-const adminPass = "adminadmin";
+const adminPass = "admin";
 
 function loginValidator() {
-  const email = document.getElementById("email").value;
-  const pass = document.getElementById("password").value;
+  const email = document.getElementById("emailInput").value;
+  const pass = document.getElementById("passwordInput").value;
   if (email === adminEmail && pass === adminPass) {
     window.location.href = "home.html";
   }

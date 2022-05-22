@@ -16,125 +16,82 @@
 
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
-    <script
- src="https://code.jquery.com/jquery-3.6.0.js"
- integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
- crossorigin="anonymous"></script>
-   
-     
-  <!-- <script src="js/function.js" ></script> -->
 
-    <!-- Script -->
-	  
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-	  
-	  
-	  
-	  
-	  
-	  <!-- Font -->
-	  <link href="http://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
-	  
-	  
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
- <body class="bg-light">
-
-<div class="container-fluid my-auto">
-<div class="log-in-container text-center mx-auto">
-	<img class="mt-4 img-fluid" src="img/MIST.png" alt="MIST LOGO" />
-         <h1 class="my-3 text-black" style="font-family: 'Berlin Sans FB Demi', sans-serif;">Login</h1>
-	
-  <div class="row" id="pwd-container">
-    <div class="col-lg-3"></div>
-    
-    <div class="col-lg-6">
-      <section class="login-form">
-        <form method="post" action="home.html" role="login">
-			
-			<div class="form-floating mt-3 mb-2">	
-          <input type="email" name="email" placeholder="Email" required class="form-control input-lg" id="email" />
-				 
-			<label for="email">Email address</label>	 
-			</div>
-			
-		  <div class="form-floating mt-3 mb-2">
-          <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
-			  
-		  <label for="password">Password</label>	  
+  <body class="bg-light">
+    <section>
+      <div class="container my-auto">
+        <div class="log-in-container text-center mx-auto">
+          <img class="mt-5 img-fluid" src="img/MIST.png" alt="MIST LOGO" />
+          <h1 class="my-4 text-black">Login</h1>
+          <div class="log-in-form">
+            <div class="form-floating mt-5 mb-2">
+              <input
+                type="email"
+                class="form-control rounded-0"
+                id="emailInput"
+                placeholder="name@example.com"
+              />
+              <label for="emailInput">Email address</label>
+            </div>
+            <div class="form-floating my-3">
+              <input
+                type="password"
+                class="form-control rounded-0"
+                id="passwordInput"
+                placeholder="Password"
+              />
+              <label for="passwordInput">Password</label>
+            </div>
+            <button
+              onclick="loginValidator()"
+              class="btn btn-primary rounded-0 color-main w-100 fs-4 my-3 py-2"
+              type="submit"
+            >
+              Login
+            </button>
           </div>
-         
-          <div class="pwstrength_viewport_progress"></div>
-			
-          <br>
-		  <button
-			  onclick="loginValidator()"
-        
-		      name="go"
-              class="btn btn-success btn-lg rounded-3"
-              type="submit">Login</button>
-			  
-			 <div class="form-floating mt-3 mb-2"></div>
-			
           <div class="row">
-		<div class="col-lg-3 "></div>
-			  
-		<div class="col-lg-6 mt-3">
-			
-			<div class="row" >
-				<div class="col-lg-5">
-			  <div class="dropdown">
-  <button class="btn btn-sm dropdown-toggle btn-outline-primary text-decoration-none text-black" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Register
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item text-decoration-none text-black" href="StudentReg.html">Register as student</a></li>
-    <li><a class="dropdown-item text-decoration-none text-black" href="TeacherReg.html">Register as teacher</a></li>
-  </ul>
-                 </div>		  
-				</div>
-			 
-           <div class="col-lg-7" >
-			   
-			<a class="btn btn-sm btn-outline-primary text-decoration-none text-black" href="#" role="button" style=""  >Forgot Password?</a>
-				</div>
-			  </div>
-			  
-			  </div>
-			  
-		<div class="col-lg-3"></div> 
-			
-          </div>
-			
-			 <div style="margin: 100px;" ></div> 
-			
-			
-        </form>
-        
-		  
- 
-		
-		  
-		  
-      </section>  
+            <div class="col-lg-3 "></div>
+                
+            <div class="col-lg-6 mt-3">
+              
+              <div class="row" >
+                <div class="col-lg-5">
+                <div class="dropdown">
+          <button class="btn btn-sm dropdown-toggle btn-outline-primary text-decoration-none text-black" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Register
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item text-decoration-none text-black" href="StudentReg.html">Register as student</a></li>
+            <li><a class="dropdown-item text-decoration-none text-black" href="TeacherReg.html">Register as teacher</a></li>
+          </ul>
+                         </div>		  
+                </div>
+               
+                   <div class="col-lg-7" >
+                 
+              <a class="btn btn-sm btn-outline-primary text-decoration-none text-black" href="#" role="button" style=""  >Forgot Password?</a>
+                </div>
+                </div>
+                
+                </div>
+                
+            <div class="col-lg-3"></div> 
+              
+                  </div>
+        </div>
       </div>
-      </div>
-	
-      <div class="col-lg-2"></div>  
-       
-	  
-	  	  
-	 
-	  
-  </div>
-	 </div>
-	
-		 
-	 
- <!-- BOOTSTRAP JS -->
-   	 
- 
-  <script src="js/login.js"></script>
+    </section>
+
+    <!-- BOOTSTRAP JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/login.js"></script>
   </body>
-	
 </html>
