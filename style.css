@@ -1,8 +1,4 @@
 
-
-input:invalid {
-  color: red;
-}
 input,
 button {
     border-radius: 0;
