@@ -24,7 +24,7 @@
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
-    <title>Student Details</title>
+    <title>Student List</title>
   </head>
   <body>
     <!-- navbar starts -->
@@ -95,24 +95,35 @@
               <div class="p-2 mt-3  bg-white  ">
   
                 <a href="studentadmin.html">
-                <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black">Dashboard</button>
+                <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black col-xxl-12 col-12">Dashboard</button>
               </a>
+              
+              
+              </div>
+
+              <div class="p-2 mt-3  bg-white  ">
+  
+                <a href="pending.html">
+                <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black col-xxl-12 col-12">Pending</button>
+              </a>
+              
+              
               </div>
   
               
               <div class="p-2 mt-3  bg-white ">
                 <div class="dropdown">
                   <button
-                    class="btn dropdown-toggle border border-1 border border-info rounded btn-lg"
+                    class="btn dropdown-toggle border border-1 border border-info rounded btn-lg btn-block col-xxl-12 col-12 btn-outline-primary text-black "
                     type="button"
                     id="dropdownMenuButton1"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Pending Requests
+                    Student
                   </button>
                   <ul
-                    class="dropdown-menu"
+                    class="dropdown-menu "
                     aria-labelledby="dropdownMenuButton1"
                   >
                     <li><a class="dropdown-item" href="student_details.html">Student</a></li>
@@ -120,10 +131,10 @@
                       <a class="dropdown-item" href="faculty_details.html">Faculty</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="projects.html">Project</a>
+                      <a class="dropdown-item" href="project_list.html">Project</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="thesis.html">Thesis</a>
+                      <a class="dropdown-item" href="thesis_list.html">Thesis</a>
                     </li>
                     
                   </ul>
@@ -152,17 +163,20 @@
           <!-- RIGHT BAR STARTS -->
           
           <div class="col-xxl-9 col-12">
-            <h5 class="card-header text-white bg-info ">Student Request</h5>
+            
             <div class="card mb-5 border border-3  border-info">
-              
+              <h5 class="card-header text-white bg-info ">Student Request</h5>
               <div class="card-body bg-white ">
                 <a
-                  href="studentprofile.html"
+                  href="studentprofile_pending.html"
                   class="text-decoration-none text-black">
                   <div class="p-3  border border-2  border-info">
                     <h6 class="text-decoration-none text-black"><img class="ms-3" src="img/profile.png" alt="profile"/> &nbsp;&nbsp;Jack sdsfsd
-                    <a href="#">
-                      <button type="button" class="btn btn-info btn-small float-end">Approve</button>
+                    <a href="student_details.html">
+                      <div class="btn-group float-end" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success">Accept</button>
+                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                      </div>
                     </a>
                   </h6> 
                   </div>
@@ -170,12 +184,15 @@
               </div>
               <div class="card-body bg-white ">
                 <a
-                  href="studentprofile.html"
+                  href="studentprofile_pending.html"
                   class="text-decoration-none text-black">
                   <div class="p-3  border border-2  border-info">
                     <h6 class="text-decoration-none text-black"><img class="ms-3" src="img/profile.png" alt="profile"/> &nbsp;&nbsp;Jack sdsfsd
-                    <a href="#">
-                      <button type="button" class="btn btn-info btn-small float-end">Approve</button>
+                    <a href="student_details.html">
+                      <div class="btn-group float-end" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success">Accept</button>
+                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                      </div>
                     </a>
                   </h6> 
                   </div>
@@ -183,12 +200,15 @@
               </div>
               <div class="card-body bg-white ">
                 <a
-                  href="studentprofile.html"
+                  href="studentprofile_pending.html"
                   class="text-decoration-none text-black">
                   <div class="p-3  border border-2  border-info">
                     <h6 class="text-decoration-none text-black"><img class="ms-3" src="img/profile.png" alt="profile"/> &nbsp;&nbsp;Jack sdsfsd
-                    <a href="#">
-                      <button type="button" class="btn btn-info btn-small float-end">Approve</button>
+                    <a href="student_details.html">
+                      <div class="btn-group float-end" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success">Accept</button>
+                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                      </div>
                     </a>
                   </h6> 
                   </div>
@@ -196,12 +216,15 @@
               </div>
               <div class="card-body bg-white ">
                 <a
-                  href="studentprofile.html"
+                  href="studentprofile_pending.html"
                   class="text-decoration-none text-black">
                   <div class="p-3  border border-2  border-info">
                     <h6 class="text-decoration-none text-black"><img class="ms-3" src="img/profile.png" alt="profile"/> &nbsp;&nbsp;Jack sdsfsd
-                    <a href="#">
-                      <button type="button" class="btn btn-info btn-small float-end">Approve</button>
+                    <a href="student_details.html">
+                      <div class="btn-group float-end" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success">Accept</button>
+                        <button type="button" class="btn btn-outline-danger">Reject</button>
+                      </div>
                     </a>
                   </h6> 
                   </div>
