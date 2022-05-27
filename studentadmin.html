@@ -95,7 +95,7 @@
     <div class="container pt-5">
       <div class="card">
         <div class="card-body bg-primary p-4">
-          <h1 class="d-inline-block text-white ms-4">Student Administration</h1>
+          <h1 class="d-inline-block text-white ms-4">Administration</h1>
         </div>
       </div>
     </div>
@@ -110,24 +110,35 @@
             <div class="p-2 mt-3  bg-white  ">
 
               <a href="studentadmin.html">
-              <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black">Dashboard</button>
+              <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black col-xxl-12 col-12">Dashboard</button>
             </a>
+            
+            
+            </div>
+
+            <div class="p-2 mt-3  bg-white  ">
+
+              <a href="pending.html">
+              <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black col-xxl-12 col-12">Pending</button>
+            </a>
+            
+            
             </div>
 
             
             <div class="p-2 mt-3  bg-white ">
               <div class="dropdown">
                 <button
-                  class="btn dropdown-toggle border border-1 border border-info rounded btn-lg"
+                  class="btn dropdown-toggle border border-1 border border-info rounded btn-lg btn-block col-xxl-12 col-12 btn-outline-primary text-black "
                   type="button"
                   id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Pending Requests
+                  View
                 </button>
                 <ul
-                  class="dropdown-menu"
+                  class="dropdown-menu "
                   aria-labelledby="dropdownMenuButton1"
                 >
                   <li><a class="dropdown-item" href="student_details.html">Student</a></li>
@@ -135,10 +146,10 @@
                     <a class="dropdown-item" href="faculty_details.html">Faculty</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="projects.html">Project</a>
+                    <a class="dropdown-item" href="project_list.html">Project</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="thesis.html">Thesis</a>
+                    <a class="dropdown-item" href="thesis_list.html">Thesis</a>
                   </li>
                   
                 </ul>
@@ -177,13 +188,14 @@
                   <div class="header-body ">
                     <div class="row ">
                       <div class="col-xl-6 col-lg-9">
+                        <a href="student_details.html" class="text-decoration-none">
                         <div class="card card-stats mb-4 mb-xl-0">
                           
                           <div class="card-body border-1 border border-info  rounded">
                             <div class="row">
                               <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Students</h5>
-                                <span class="h2 font-weight-bold mb-0">350</span>
+                                <span class="h2 font-weight-bold mb-0 text-black">350</span>
                               </div>
                               <div class="col-auto">
                                 <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -198,15 +210,17 @@
                           </div>
                         
                         </div>
+                        </a>
                         <br><br>
                       </div>
                       <div class="col-xl-6 col-lg-9">
+                        <a href="faculty_details.html" class="text-decoration-none">
                         <div class="card card-stats mb-4 mb-xl-0">
                           <div class="card-body border-1 border border-info  rounded">
                             <div class="row">
                               <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Faculties</h5>
-                                <span class="h2 font-weight-bold mb-0">30</span>
+                                <span class="h2 font-weight-bold mb-0  text-black">30</span>
                               </div>
                               <div class="col-auto">
                                 <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -220,17 +234,18 @@
                             </p>
                           </div>
                         </div>
+                        </a>
                         <br><br>
                       </div>
                       
                       <div class="col-xl-6 col-lg-9">
-                        <a href="projects.html" class="text-decoration-none text-black ">
+                        <a href="project_list.html" class="text-decoration-none text-black ">
                         <div class="card card-stats mb-4 mb-xl-0">
                           <div class="card-body border-1 border border-info  rounded">
                             <div class="row">
                               <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Projects</h5>
-                                <span class="h2 font-weight-bold mb-0">924</span>
+                                <span class="h2 font-weight-bold mb-0 text-black">924</span>
                               </div>
                               <div class="col-auto">
                                 <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -247,13 +262,13 @@
                       </a>
                     </div>
                     <div class="col-xl-6 col-lg-9">
-                      <a href="thesis.html" class="text-decoration-none text-black">
+                      <a href="thesis_list.html" class="text-decoration-none text-black">
                         <div class="card card-stats mb-4 mb-xl-0">
                           <div class="card-body border-1 border border-info  rounded">
                             <div class="row">
                               <div class="col">
                                 <h5 class="card-title text-uppercase text-muted mb-0">Thesises</h5>
-                                <span class="h2 font-weight-bold mb-0">495</span>
+                                <span class="h2 font-weight-bold mb-0 text-black">495</span>
                               </div>
                               <div class="col-auto">
                                 <div class="icon icon-shape bg-info text-white rounded-circle shadow">
