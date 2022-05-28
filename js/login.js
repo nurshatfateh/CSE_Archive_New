@@ -3,10 +3,10 @@ const adminID = "admin";
 const adminPass = "admin";
 
 function loginValidator() {
-const email = document.getElementById("idInput").value;
+const ID = document.getElementById("idInput").value;
 const pass = document.getElementById("passwordInput").value;
-  if (email === adminEmail && pass === adminPass ) {
-    window.location.href = "home.html";
+  if (ID === adminID && pass === adminPass ) {
+    window.location.href = "Admin_page/home_admin.html";
   }
 }
 document.addEventListener("keypress", function (e) {
