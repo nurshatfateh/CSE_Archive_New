@@ -31,16 +31,21 @@
 		<br>
 		<img class="text" src="img/MIST_ARCHIVE.png" alt="MIST ARCHIVE" /> </div>
     <div class="acceptContainer">
-      <form action="javascript:;">
+      <form action="login.php" method="post">
         <h1>WELCOME TO MIST ARCHIVE</h1>
+        <?php if (isset($_GET['error'])) { ?>
+
+<p class="error"><?php echo $_GET['error']; ?></p>
+
+<?php } ?>
         <div class="formContainer">
           <div class="formDiv" style="transition-delay: 0.2s">
             <p>ID</p>
-            <input type="text" required="" id="idInput" />
+            <input type="text" name="uname" required="" id="idInput" />
           </div>
           <div class="formDiv" style="transition-delay: 0.4s">
-            <p>PASSWSORD</p>
-            <input type="password" required="" id="passwordInput"/>
+            <p>PASSWORD</p>
+            <input type="password" name="password" required="" id="passwordInput"/>
             <a class="forgotPas" href="#">FORGOT YOUR PASSWORD?</a> </div>
              <div class="formDiv" style="transition-delay: 0.6s">
             <button  class="acceptBtn" type="submit" onclick="loginValidator()">Login</button>

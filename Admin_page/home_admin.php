@@ -1,3 +1,10 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -78,14 +85,14 @@
               <a class="nav-link" href="activity_admin.html">Activity</a>
             </li>
           </ul>
-          <a href="facultyprofile.html">
+          <a href="facultyprofile_admin.html">
             <img class="ms-3" src="../img/profile.png" alt="profile"
           /></a>
-          <a href="studentprofile.html" class="text-decoration-none text-black">
+          <a href="studentprofile_admin.html" class="text-decoration-none text-black">
             <h6 class="mt-2 mx-3">Tanjim hossain</h6></a
           >
 
-          <a href="../index.html"
+          <a href="../logout.php"
             ><button type="button" class="btn btn-danger mx-3">
               Log Out
             </button></a
@@ -247,3 +254,14 @@
     -->
   </body>
 </html>
+<?php 
+
+}else{
+
+     header("Location: ../logout.php");
+
+     exit();
+
+}
+
+ ?>
