@@ -1,9 +1,9 @@
 /*eslint-env es6*/
-const adminEmail = "admin@email.com";
+const adminID = "admin";
 const adminPass = "admin";
 
 function loginValidator() {
-const email = document.getElementById("emailInput").value;
+const email = document.getElementById("idInput").value;
 const pass = document.getElementById("passwordInput").value;
   if (email === adminEmail && pass === adminPass ) {
     window.location.href = "home.html";
