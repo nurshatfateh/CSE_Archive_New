@@ -1,3 +1,13 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +34,7 @@
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
-    <title>Achievement</title>
+    <title>Achievement_details_Admin</title>
   </head>
   <body>
     <!-- navbar starts -->
@@ -159,15 +169,7 @@
               <p>12000$</p>
             </div>
 
-            <!-- <div class="info-card p-3 border border-success">
-                            <h4>Budget</h4>
-                            <p>4,651 BDT</p>
-                        </div> -->
-
-            <!-- <div class="info-card p-3 border border-success">
-                            <h4>DOI</h4>
-                            <p>54</p>
-                        </div> -->
+           
           </div>
           <!-- left parts ends  -->
 
@@ -327,3 +329,16 @@
     -->
   </body>
 </html>
+
+
+<?php 
+
+}else{
+
+     header("Location: ../logout.php");
+
+     exit();
+
+}
+
+ ?>

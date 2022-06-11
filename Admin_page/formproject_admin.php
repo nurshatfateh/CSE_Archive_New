@@ -1,3 +1,11 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,7 +64,7 @@ $('.input-daterange').datepicker({
 });
 	  
 	  </script>
-    <title>Project Submission Form</title>
+    <title>Project Submission Form_admin</title>
 	  
 	  
   </head>
@@ -609,3 +617,16 @@ $('.input-daterange').datepicker({
   </body>
 
 </html>
+
+
+<?php 
+
+}else{
+
+     header("Location: ../logout.php");
+
+     exit();
+
+}
+
+ ?>

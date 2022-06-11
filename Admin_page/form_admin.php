@@ -1,3 +1,12 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,7 +43,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Form</title>
+    <title>Form_admin</title>
   </head>
   <body class="bg-light">
     <!-- navbar starts -->
@@ -589,3 +598,16 @@
     ></script>
   </body>
 </html>
+
+
+<?php 
+
+}else{
+
+     header("Location: ../logout.php");
+
+     exit();
+
+}
+
+ ?>

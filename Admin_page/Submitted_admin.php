@@ -1,3 +1,13 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +34,7 @@
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
-    <title>Submitted</title>
+    <title>Submitted_Admin</title>
   </head>
   <body>
     <!-- navbar starts -->
@@ -147,3 +157,18 @@
     -->
   </body>
 </html>
+
+
+
+
+<?php 
+
+}else{
+
+     header("Location: ../logout.php");
+
+     exit();
+
+}
+
+ ?>
