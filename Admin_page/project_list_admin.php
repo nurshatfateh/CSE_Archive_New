@@ -54,24 +54,24 @@
               <a class="nav-link" href="home_admin.php">Home</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="projects_admin.html">Projects</a>
+              <a class="nav-link" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html">Achievements</a>
+              <a class="nav-link" href="achievements_admin.php">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             
             <li class="nav-item mx-3">
-              <a class="nav-link" href="thesis_admin.html">Thesis</a>
+              <a class="nav-link" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="facultyprofile_admin.html"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hossain</h6></a> 
+          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hossain</h6></a> 
 
 
           <a href="../logout.php"
@@ -94,7 +94,7 @@
               <h4 class="ps-2">Stream</h4>
               <div class="p-2 mt-3  bg-white  ">
   
-                <a href="studentadmin_admin.html">
+                <a href="studentadmin_admin.php">
                 <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black col-xxl-12 col-12">Dashboard</button>
               </a>
               
@@ -103,7 +103,7 @@
 
               <div class="p-2 mt-3  bg-white  ">
   
-                <a href="pending_admin.html">
+                <a href="pending_admin.php">
                 <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black col-xxl-12 col-12">Pending</button>
               </a>
               
@@ -126,15 +126,15 @@
                     class="dropdown-menu "
                     aria-labelledby="dropdownMenuButton1"
                   >
-                    <li><a class="dropdown-item" href="student_details_admin.html">Student</a></li>
+                    <li><a class="dropdown-item" href="student_details_admin.php">Student</a></li>
                     <li>
-                      <a class="dropdown-item" href="faculty_details_admin.html">Faculty</a>
+                      <a class="dropdown-item" href="faculty_details_admin.php">Faculty</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="project_list_admin.html">Project</a>
+                      <a class="dropdown-item" href="project_list_admin.php">Project</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="thesis_list_admin.html">Thesis</a>
+                      <a class="dropdown-item" href="thesis_list_admin.php">Thesis</a>
                     </li>
                     
                   </ul>
@@ -168,7 +168,7 @@
                 <h5 class="card-header text-white bg-info ">Pending Projects</h5>
                 <div class="card-body bg-white">
                     <a
-                     href="project_details_pending_admin.html"
+                     href="project_details_pending_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -176,7 +176,7 @@
                          <p class="m-0 p-2">
                            <h6 class="d-inline-block">Nafiz Imtiaz Khan</h6>
                            | 2019-2020
-                           <a href="project_list_admin.html" class="text-decoration-none float-end">
+                           <a href="project_list_admin.php" class="text-decoration-none float-end">
                              <div class="btn-group float-end" role="group" aria-label="Basic example">
                                <button type="button" class="btn btn-outline-success">Accept</button>
                                <button type="button" class="btn btn-outline-danger">Reject</button>
@@ -190,7 +190,7 @@
                  </div>
                 <div class="card-body bg-white">
                    <a
-                    href="project_details_pending_admin.html"
+                    href="project_details_pending_admin.php"
                     class="text-decoration-none text-black"
                     ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                       <h4 class="mb-2">My Project Name</h4>
@@ -198,7 +198,7 @@
                         <p class="m-0 p-2">
                           <h6 class="d-inline-block">Shadman Aadeeb</h6>
                           | 2019-2020
-                          <a href="project_list_admin.html" class="text-decoration-none float-end">
+                          <a href="project_list_admin.php" class="text-decoration-none float-end">
                             <div class="btn-group float-end" role="group" aria-label="Basic example">
                               <button type="button" class="btn btn-outline-success">Accept</button>
                               <button type="button" class="btn btn-outline-danger">Reject</button>
@@ -213,7 +213,7 @@
 
                 <div class="card-body bg-white">
                     <a
-                     href="project_details_pending_admin.html"
+                     href="project_details_pending_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -221,7 +221,7 @@
                          <p class="m-0 p-2">
                            <h6 class="d-inline-block">Muhaimin Bin Munir</h6>
                            | 2019-2020
-                           <a href="project_list_admin.html" class="text-decoration-none float-end">
+                           <a href="project_list_admin.php" class="text-decoration-none float-end">
                              <div class="btn-group float-end" role="group" aria-label="Basic example">
                                <button type="button" class="btn btn-outline-success">Accept</button>
                                <button type="button" class="btn btn-outline-danger">Reject</button>
@@ -238,7 +238,7 @@
 
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_pending_admin.html"
+                     href="project_details_pending_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -246,7 +246,7 @@
                          <p class="m-0 p-2">
                            <h6 class="d-inline-block">Rushadul Mannan</h6>
                            | 2019-2020
-                           <a href="project_list_admin.html" class="text-decoration-none float-end">
+                           <a href="project_list_admin.php" class="text-decoration-none float-end">
                              <div class="btn-group float-end" role="group" aria-label="Basic example">
                                <button type="button" class="btn btn-outline-success">Accept</button>
                                <button type="button" class="btn btn-outline-danger">Reject</button>
@@ -272,7 +272,7 @@
                 <h5 class="card-header text-white bg-info ">Projects</h5>
                 <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -289,7 +289,7 @@
                  </div>
                 <div class="card-body bg-white">
                    <a
-                    href="project_details_admin.html"
+                    href="project_details_admin.php"
                     class="text-decoration-none text-black"
                     ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                       <h4 class="mb-2">My Project Name</h4>
@@ -307,7 +307,7 @@
 
                 <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -324,7 +324,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -341,7 +341,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -358,7 +358,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -375,7 +375,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -392,7 +392,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -409,7 +409,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -426,7 +426,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -443,7 +443,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -462,7 +462,7 @@
 
                 <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>
@@ -480,7 +480,7 @@
 
                  <div class="card-body bg-white">
                     <a
-                     href="project_details_admin.html"
+                     href="project_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
                        <h4 class="mb-2">My Project Name</h4>

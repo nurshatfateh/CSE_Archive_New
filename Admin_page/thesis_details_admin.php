@@ -67,23 +67,23 @@
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="projects_admin.html">Projects</a>
+              <a class="nav-link" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html">Achievements</a>
+              <a class="nav-link" href="achievements_admin.php">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3 ">
-              <a class="nav-link active text-success fw-bolder" href="thesis_admin.html">Thesis</a>
+              <a class="nav-link active text-success fw-bolder" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="facultyprofile_admin.html"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hasan</h6></a> 
+          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hasan</h6></a> 
 
 
           <a href="../logout.php"

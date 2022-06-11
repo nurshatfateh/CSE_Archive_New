@@ -88,28 +88,28 @@ $('.input-daterange').datepicker({
               <a class="nav-link" href="home_admin.php">Home</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link active text-success fw-bolder" href="projects_admin.html">Projects</a>
+              <a class="nav-link active text-success fw-bolder" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html">Achievements</a>
+              <a class="nav-link" href="achievements_admin.php">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
               <a
                 class="nav-link "
                 aria-current="page"
-                href="projects_admin.html"
+                href="projects_admin.php"
                 >Thesis</a
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="facultyprofile_admin.html"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hasan</h6></a> 
+          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hasan</h6></a> 
 
           <a href="../logout.php"
             ><button type="button" class="btn btn-danger mx-3">
@@ -129,7 +129,7 @@ $('.input-daterange').datepicker({
 		
       <div class="container mt-5">
 		  
-        <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="Submitted.html">
+        <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="Submitted.php">
           <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
           <div class="col-md-6">
             <label for="ProjectName" class="form-label">

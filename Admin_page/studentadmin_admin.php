@@ -59,23 +59,23 @@
             </li>
             
             <li class="nav-item mx-3">
-              <a class="nav-link" href="projects_admin.html">Projects</a>
+              <a class="nav-link" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html">Achievements</a>
+              <a class="nav-link" href="achievements_admin.php">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="thesis_admin.html">Thesis</a>
+              <a class="nav-link" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="facultyprofile_admin.html"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hasan</h6></a> 
+          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hasan</h6></a> 
 
 
           <a href="../logout.php"
@@ -109,7 +109,7 @@
             <h4 class="ps-2">Stream</h4>
             <div class="p-2 mt-3  bg-white  ">
 
-              <a href="studentadmin_admin.html">
+              <a href="studentadmin_admin.php">
               <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black col-xxl-12 col-12">Dashboard</button>
             </a>
             
@@ -118,7 +118,7 @@
 
             <div class="p-2 mt-3  bg-white  ">
 
-              <a href="pending_admin.html">
+              <a href="pending_admin.php">
               <button type="button" class="btn btn-outline-primary btn-lg border border-1 border border-info rounded text-black col-xxl-12 col-12">Pending</button>
             </a>
             
@@ -141,15 +141,15 @@
                   class="dropdown-menu "
                   aria-labelledby="dropdownMenuButton1"
                 >
-                  <li><a class="dropdown-item" href="student_details_admin.html">Student</a></li>
+                  <li><a class="dropdown-item" href="student_details_admin.php">Student</a></li>
                   <li>
-                    <a class="dropdown-item" href="faculty_details_admin.html">Faculty</a>
+                    <a class="dropdown-item" href="faculty_details_admin.php">Faculty</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="project_list_admin.html">Project</a>
+                    <a class="dropdown-item" href="project_list_admin.php">Project</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="thesis_list_admin.html">Thesis</a>
+                    <a class="dropdown-item" href="thesis_list_admin.php">Thesis</a>
                   </li>
                   
                 </ul>
@@ -188,7 +188,7 @@
                   <div class="header-body ">
                     <div class="row ">
                       <div class="col-xl-6 col-lg-9">
-                        <a href="student_details_admin.html" class="text-decoration-none">
+                        <a href="student_details_admin.php" class="text-decoration-none">
                         <div class="card card-stats mb-4 mb-xl-0">
                           
                           <div class="card-body border-1 border border-info  rounded">
@@ -214,7 +214,7 @@
                         <br><br>
                       </div>
                       <div class="col-xl-6 col-lg-9">
-                        <a href="faculty_details_admin.html" class="text-decoration-none">
+                        <a href="faculty_details_admin.php" class="text-decoration-none">
                         <div class="card card-stats mb-4 mb-xl-0">
                           <div class="card-body border-1 border border-info  rounded">
                             <div class="row">
@@ -239,7 +239,7 @@
                       </div>
                       
                       <div class="col-xl-6 col-lg-9">
-                        <a href="project_list_admin.html" class="text-decoration-none text-black ">
+                        <a href="project_list_admin.php" class="text-decoration-none text-black ">
                         <div class="card card-stats mb-4 mb-xl-0">
                           <div class="card-body border-1 border border-info  rounded">
                             <div class="row">
@@ -262,7 +262,7 @@
                       </a>
                     </div>
                     <div class="col-xl-6 col-lg-9">
-                      <a href="thesis_list_admin.html" class="text-decoration-none text-black">
+                      <a href="thesis_list_admin.php" class="text-decoration-none text-black">
                         <div class="card card-stats mb-4 mb-xl-0">
                           <div class="card-body border-1 border border-info  rounded">
                             <div class="row">
@@ -300,7 +300,7 @@
           <div class="container">
             <div class="row pt-5">
               <div class="col-md-9 col-xl-6 my-6 ">
-                <a href="student_details_admin.html" class="text-decoration-none text-black ">
+                <a href="student_details_admin.php" class="text-decoration-none text-black ">
                   <div class="border-3 border border-info card mx-auto  rounded " style="width: 18rem">
                     <img src="../img/students.PNG" class="card-img-top" alt="..." />
                     <div class="card-body">
@@ -311,7 +311,7 @@
               </div>
         
               <div class="col-md-9 col-xl-6 my-6">
-                <a href="faculty_details_admin.html" class="text-decoration-none text-black">
+                <a href="faculty_details_admin.php" class="text-decoration-none text-black">
                   <div class="border-3 border border-info card mx-auto rounded " style="width: 18rem">
                     <img src="../img/teachers.jpg" class="card-img-top" alt="..." height="225px"/>
                     <div class="card-body">

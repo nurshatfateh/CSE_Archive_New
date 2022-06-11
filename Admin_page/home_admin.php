@@ -50,7 +50,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="home_admin.html">
+        <a href="home_admin.php">
           <img class="ms-md-5 ms-1" src="../img/navlogo.png" alt="logo"
         /></a>
 
@@ -63,32 +63,32 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <a
                 class="nav-link active text-success fw-bolder"
                 aria-current="page"
-                href="home_admin.html"
+                href="home_admin.php"
                 >Home</a
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="projects_admin.html">Projects</a>
+              <a class="nav-link" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html"
+              <a class="nav-link" href="achievements_admin.php"
                 >Achievements</a
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="thesis_admin.html">Thesis</a>
+              <a class="nav-link" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="facultyprofile_admin.html">
+          <a href="adminprofile_admin.php">
             <img class="ms-3" src="../img/profile.png" alt="profile"
           /></a>
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">
             <h6 class="mt-2 mx-3">Tanjim hossain</h6></a
           >
 
@@ -108,7 +108,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="row pt-5">
           <div class="col-md-6 col-xl-4 my-4">
             <a
-              href="projects_admin.html"
+              href="projects_admin.php"
               class="text-decoration-none text-black"
             >
               <div
@@ -124,7 +124,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
           <div class="col-md-6 col-xl-4 my-4">
             <a
-              href="achievements_admin.html"
+              href="achievements_admin.php"
               class="text-decoration-none text-black"
             >
               <div
@@ -144,7 +144,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
           <div class="col-md-6 col-xl-4 my-4">
             <a
-              href="publication_admin.html"
+              href="publication_admin.php"
               class="text-decoration-none text-black"
             >
               <div
@@ -163,7 +163,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </a>
           </div>
           <div class="col-md-6 col-xl-4 my-4">
-            <a href="thesis_admin.html" class="text-decoration-none text-black">
+            <a href="thesis_admin.php" class="text-decoration-none text-black">
               <div
                 class="border-3 border border-info card mx-auto rounded"
                 style="width: 18rem"
@@ -177,7 +177,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
           <div class="col-md-6 col-xl-4 my-4">
             <a
-              href="activity_admin.html"
+              href="activity_admin.php"
               class="text-decoration-none text-black"
             >
               <div
@@ -193,7 +193,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
           <div class="col-md-6 col-xl-4 my-4">
             <a
-              href="studentadmin_admin.html"
+              href="studentadmin_admin.php"
               class="text-decoration-none text-black"
             >
               <div

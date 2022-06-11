@@ -57,26 +57,26 @@
               <a
                 class="nav-link  "
              
-                href="projects_admin.html"
+                href="projects_admin.php"
                 >Projects</a
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html">Achievements</a>
+              <a class="nav-link" href="achievements_admin.php">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="thesis_admin.html">Thesis</a>
+              <a class="nav-link" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
 
-          <a href="facultyprofile_admin.html"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim hossain</h6></a> 
+          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim hossain</h6></a> 
 
 
           <a href="../logout.php"
@@ -90,13 +90,13 @@
     <!-- navbar ends -->
 
       
-    <!-- middle part starts -->
-    <div class="bg-light">
+<!-- middle part starts -->
+<div class="bg-light">
          <!-- project head -->
        <div class="container pt-5">
         <div class="card">
           <div class="card-body bg-primary p-4">
-            <h1 class="d-inline-block text-white ms-4">Admin Profile</h1>
+            <h1 class="d-inline-block text-white ms-4">Student Profile</h1>
            
           </div>
         </div>
@@ -109,32 +109,32 @@
                
              <div class="row">
                  <div class="col-lg-4 col-12 my-auto">
-                    <img src="../img/studentpic.jpg" class="rounded my-3 mx-auto d-block border border-3 border-info" style="width: 60%;" alt="...">
+                    <img src="img/studentpic.jpg" class="my-autorounded my-3 mx-auto d-block border border-3 border-info rounded " style="width: 60%;" alt="...">
                  </div>
                  
                
                 <div class="col-12 col-lg-8 ">
                       
                   <div class="p-3 mt-3  mx-auto border border-3 border-info rounded ">
-                    <h2 class="mb-1 ">Admin Name</h2>
+                    <h2 class="mb-1 ">Student Name</h2>
                   
-                    <h6 class="mb-0">Position: Professor</h6>
+                    <h6 class="mb-0">Student Roll : 202014040</h6>
                   
                         <ul class="mt-2">
                             <li>
-                                Admin ID: 202014040
+                                Registartion Number : 131401200040
                             </li>
                             <li>
-                                Date of joining: Spring/2020
+                                Admitted Semester: Spring/2020
                             </li>
                             <li>
                                 Department : B.Sc. in Computer Science & Engineering (CSE)
                             </li>
                             <li>
-                                Research Domain : Artificial Intelligence
+                                Student Quota : General
                             </li>
                             <li>
-                                Degree : PHD
+                                Parent Job Status : NonGovernment
                             </li>
                         </ul>
                 
@@ -154,7 +154,7 @@
         <div class="row border bg-white m-0">
           <!-- left part starts  -->
           <div class="col-12 col-lg-4 side-nav p-3 ">
-            <div class="info-card p-2 border border-3 border-info m-3  rounded ">
+            <div class="info-card p-2 border border-3 border-info m-3 rounded  ">
               <h4>Date of Birth</h4>
               <p>14/02/2001</p>
             </div>
@@ -169,34 +169,106 @@
                 <p>nurshatfateh@gmail.com</p>
               </div>
 
-           
+            <div class="info-card p-2 border border-3 border-info m-3 rounded ">
+              <h4>Present Address
+                </h4>
+              <p>Dhaka, Bangladesh</p>
+            </div>
 
-         
-
-            
-
+            <div class="info-card p-2 border border-3 border-info m-3 rounded ">
+              <h4>Permanent Address</h4>
+              <p>Dhaka, Bangladesh</p>
+            </div>
 
             <div class="info-card p-3 border border-3 border-info m-3 rounded ">
-              <h4>Is currently on service?
+              <h4>Father Name
+                </h4>
+              <p>Name</p>
+            </div>
+
+            <div class="info-card p-3 border border-3 border-info m-3 rounded ">
+              <h4>Mother Name
+                </h4>
+              <p>Name</p>
+            </div>
+            <div class="info-card p-3 border border-3 border-info m-3 rounded ">
+                <h4>Blood Group
+                  </h4>
+                <p>O+</p>
+              </div>
+
+            <div class="info-card p-3 border border-3 border-info m-3 rounded ">
+              <h4>Is currently a student?
                 </h4>
               <p>Yes</p>
             </div>
 
-            
+            <!-- <div class="info-card p-3 border border-success">
+                            <h4>Budget</h4>
+                            <p>4,651 BDT</p>
+                        </div> -->
 
-            
+            <!-- <div class="info-card p-3 border border-success">
+                            <h4>DOI</h4>
+                            <p>54</p>
+                        </div> -->
           </div>
           <!-- left parts ends  -->
 
           <!-- right parts starts  -->
           <div class="col-lg-8 col-12 p-4 pt-4 mt-2 ">
           
+            <div class="card mb-5   border border-3 border-info rounded ">
+                <h5 class="card-header bg-info m-0  text-white">Achievements</h5>
+    
+               <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active  p-3">
+ <img src="img/ach1.gif" class="d-block  my-3 mx-auto"  style="width: 100%; height: 400px;" alt="..."></a>
+        <div class="carousel-caption  d-md-block fw-bolder " >
+          <h5 class=" fw-bolder">URC Champion</h5>
+          <p class=" fw-bolder">Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+    <div class="carousel-item p-3">
+      <img src="img/ach2.jpg" class="d-block my-3 mx-auto"  style="width: 100%; height: 400px;" alt="...">
+      <div class="carousel-caption  d-md-block fw-bolder ">
+        <h5 class=" fw-bolder">ICPC Champion</h5>
+        <p class=" fw-bolder">Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item p-3">
+      <img src="img/ach3.jpg" class="d-block  rounded my-3 mx-auto"  style="width: 100%; height: 400px;" alt="...">
+      <div class="carousel-caption  d-md-block fw-bolder ">
+        <h5 class=" fw-bolder">Robo Contest winner</h5>
+        <p class=" fw-bolder">Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+                
+               
          
-            <div class="card mb-5 border border-3 border-info rounded ">
-                <h5 class="card-header text-white bg-info ">Publications</h5>
+           
+            </div>
+            <div class="card mb-5 border border-3 border-info  rounded ">
+                <h5 class="card-header text-white bg-info ">Thesis</h5>
                 <div class="card-body bg-white ">
                   <a
-                    href="thesis_details_admin.html"
+                    href="thesis_details_student.html"
                     class="text-decoration-none text-black"
                     ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
                       <h4 class="mb-2">My Thesis Name</h4>
@@ -205,7 +277,7 @@
                           <h6 class="d-inline-block">Thesis Domain</h6>
                           | 2019-2020
                         </p>
-                        <a href="form_admin.html" class="ms-auto inline-block btn btn-dark"
+                        <a href="form_student.html" class="ms-auto inline-block btn btn-dark"
                           >Edit <i class="fa fa-edit"></i
                         ></a>
                       </div></div
@@ -213,7 +285,7 @@
                 </div>
                 <div class="card-body bg-white">
                    <a
-                    href="thesis_details_admin.html"
+                    href="thesis_details_student.html"
                     class="text-decoration-none text-black"
                     ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
                       <h4 class="mb-2">My Thesis Name</h4>
@@ -222,54 +294,48 @@
                           <h6 class="d-inline-block">Thesis Domain</h6>
                           | 2019-2020
                         </p>
-                        <a href="form_admin.html" class="ms-auto inline-block btn btn-dark"
+                        <a href="form_student.html" class="ms-auto inline-block btn btn-dark"
                           >Edit <i class="fa fa-edit"></i
                         ></a>
                       </div></div
                   ></a>
                 </div>
+              </div>
+            <div class="card mb-5 border border-3 border-info rounded ">
+                <h5 class="card-header text-white bg-info ">Projects</h5>
+    
+                <div class="card-body bg-white">
+                  <a
+                    href="project_details_student.html"
+                    class="text-decoration-none text-black "
+                    ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded  ">
+                      <h4 class="mb-2 text-center">My Project Name</h4>
+                      <img src="img/projectsingle.png" class="rounded my-3 mx-auto d-block" style="width: 60%;" alt="...">
+                      <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
+                      <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero enim possimus iste cumque voluptatem. Odio veritatis accusantium nihil temporibus amet animi, aliquam blanditiis adipisci quis ea pariatur minus impedit architecto incidunt nobis repellendus perspiciatis tempore voluptate earum qui, mollitia natus fuga. Ullam sit saepe distinctio eligendi, unde nesciunt totam. A, optio reprehenderit? Totam dolores earum magni hic quisquam ullam officia modi iusto, culpa, ex velit, commodi repellat tempora exercitationem nisi.
+                      </p>
+                     
+                      </div
+                  ></a>
+                </div>
+                
                 <div class="card-body bg-white">
                     <a
-                     href="thesis_details_admin.html"
-                     class="text-decoration-none text-black"
-                     ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
-                       <h4 class="mb-2">My Thesis Name</h4>
-                       <div class="d-flex align-items-center text-black">
-                         <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
-                           | 2019-2020
-                         </p>
-                         <a href="#" class="ms-auto inline-block btn btn-dark"
-                           >Edit <i class="fa fa-edit"></i
-                         ></a>
-                       </div></div
-                   ></a>
-                 </div>
-                 <div class="card-body bg-white">
-                    <a
-                     href="thesis_details_admin.html"
-                     class="text-decoration-none text-black"
-                     ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded " >
-                       <h4 class="mb-2">My Thesis Name</h4>
-                        <div class="d-flex align-items-center text-black">
-                          <p class="m-0 p-2">
-                            <h6 class="d-inline-block">Thesis Domain</h6>
-                            | 2019-2020
-                          </p>
-                          <a href="#" class="ms-auto inline-block btn btn-dark"
-                            >Edit <i class="fa fa-edit"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </a>
-                 </div>
-  
-            </div>
-
-            
-          
-          </div>
-        
+                      href="project_details_student.html"
+                      class="text-decoration-none text-black "
+                      ><div class="p-3 mt-2 mb-2 border  border-info border-2  rounded ">
+                        <h4 class="mb-2 text-center">My Project Name</h4>
+                        <img src="img/projectsingle.png" class="rounded my-3 mx-auto d-block" style="width: 60%;" alt="...">
+                        <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
+                        <p>
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero enim possimus iste cumque voluptatem. Odio veritatis accusantium nihil temporibus amet animi, aliquam blanditiis adipisci quis ea pariatur minus impedit architecto incidunt nobis repellendus perspiciatis tempore voluptate earum qui, mollitia natus fuga. Ullam sit saepe distinctio eligendi, unde nesciunt totam. A, optio reprehenderit? Totam dolores earum magni hic quisquam ullam officia modi iusto, culpa, ex velit, commodi repellat tempora exercitationem nisi.
+                        </p>
+                       
+                        </div
+                    ></a>
+                  </div>
+              </div>
               
             
             

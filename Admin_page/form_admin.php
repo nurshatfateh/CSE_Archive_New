@@ -66,30 +66,30 @@
               <a class="nav-link" href="home_admin.php">Home</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="projects_admin.html">Projects</a>
+              <a class="nav-link" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html">Achievements</a>
+              <a class="nav-link" href="achievements_admin.php">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
               <a
                 class="nav-link active active text-success fw-bolder"
                 aria-current="page"
-                href="thesis_admin.html"
+                href="thesis_admin.php"
                 >Thesis</a
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="facultyprofile_admin.html">
+          <a href="adminprofile_admin.php">
             <img class="ms-3" src="../img/profile.png" alt="profile"
           /></a>
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">
             <h6 class="mt-2 mx-3">Tanjim hossain</h6></a
           >
 
@@ -108,7 +108,7 @@
       <div class="container mt-5">
         <h2 class="my-5">Thesis Submission form :</h2>
 
-        <form class="row g-3 bg-white border p-3" action="Submitted.html">
+        <form class="row g-3 bg-white border p-3" action="Submitted.php">
           <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
           <div class="col-md-6">
             <label for="CourseName" class="form-label">

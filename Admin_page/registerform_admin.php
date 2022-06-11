@@ -50,7 +50,7 @@
 		</div>
 			<div class="col-md-1"></div>
           <div class="col-md-4">
-            <a href="StudentReg_admin.html" class="text-decoration-none text-black ">
+            <a href="StudentReg_admin.php" class="text-decoration-none text-black ">
               <div class="border-3 border border-info card rounded mt-2">
                 <img src="../img/student.png" class="card-img-top" alt="Student" height="250px" id="student" />
                 <div class="card-body">
@@ -61,7 +61,7 @@
           </div>
 			<div class="col-md-2"></div>
           <div class="col-md-4">
-            <a href="TeacherReg_admin.html" class="text-decoration-none text-black ">
+            <a href="TeacherReg_admin.php" class="text-decoration-none text-black ">
               <div class="border-3 border border-info card mt-2">
                 <img src="../img/teacher.png" class="card-img-top" alt="Teacher" height="250px" id="teacher"/>
                 <div class="card-body">

@@ -24,7 +24,7 @@
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
-    <title>Publications</title>
+    <title>Profile</title>
   </head>
   <body>
     <!-- navbar starts -->
@@ -54,18 +54,18 @@
               <a class="nav-link" href="home_admin.php">Home</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="projects_admin.php">Projects</a>
+              <a
+                class="nav-link  "
+             
+                href="projects_admin.php"
+                >Projects</a
+              >
             </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="achievements_admin.php">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a
-                class="nav-link active text-success fw-bolder"
-                aria-current="page"
-                href="publication_admin.php"
-                >Publications</a
-              >
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="thesis_admin.php">Thesis</a>
@@ -74,8 +74,9 @@
               <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
+
           <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hasan</h6></a> 
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim hossain</h6></a> 
 
 
           <a href="../logout.php"
@@ -88,22 +89,104 @@
     </nav>
     <!-- navbar ends -->
 
+      
+    <!-- middle part starts -->
     <div class="bg-light">
-      <!-- card section -->
-      <div class="container pt-5">
-        <div class="mx-auto">
-          <img
-            class="d-block mx-auto w-75"
-            src="../img/construction.jpg"
-            class="card-img-top"
-            alt="..."
-          />
-
-          <h1 class="text-center">THIS PAGE IS UNDER CONSTRUCTION</h1>
+         <!-- project head -->
+       <div class="container pt-5">
+        <div class="card">
+          <div class="card-body bg-primary p-4">
+            <h1 class="d-inline-block text-white ms-4">Admin Profile</h1>
+           
+          </div>
         </div>
       </div>
-      <!-- card section -->
+      <!-- Project head ends-->
+        <!-- firstcontainer starts -->
+        
+        <div class="container pt-5">
+            <div class="card-body bg-white">
+               
+             <div class="row">
+                 <div class="col-lg-4 col-12 my-auto">
+                    <img src="../img/studentpic.jpg" class="rounded my-3 mx-auto d-block border border-3 border-info" style="width: 60%;" alt="...">
+                 </div>
+                 
+               
+                <div class="col-12 col-lg-8 ">
+                      
+                  <div class="p-3 mt-3  mx-auto border border-3 border-info rounded ">
+                    <h2 class="mb-1 ">Admin Name</h2>
+                  
+                    <h6 class="mb-0">Admin Responsibility: Database Manager</h6>
+                  
+                        <ul class="mt-2">
+                            <li>
+                                Admin ID: 202014040
+                            </li>
+                            <li>
+                                Date of joining: Spring/2020
+                            </li>
+                            <li>
+                                Department : ICT
+                            </li>
+                        
+                            <li>
+                                Degree : MSc in CSE
+                            </li>
+                        </ul>
+                
+                   
+                </div>
+                </div>
+             </div>
+                
+              </div>
+        </div>
+        <!-- firstcontainer ends -->
+  
+       
+      <!-- secondcontainer starts  -->
 
+      <div class="container pt-3">
+        <div class="row border bg-white m-0">
+       
+
+          <div class="info-card p-2 border border-3 border-info m-3  rounded ">
+              <h4>Date of Birth</h4>
+              <p>14/02/2001</p>
+            </div>
+            <div class="info-card p-2 border border-3 border-info m-3 rounded ">
+                <h4>Phone Number
+                  </h4>
+                <p>01933318385</p>
+              </div>
+              <div class="info-card p-2 border border-3 border-info m-3 rounded ">
+                <h4>Email
+                  </h4>
+                <p>nurshatfateh@gmail.com</p>
+              </div>
+
+           
+
+         
+
+            
+
+
+            <div class="info-card p-3 border border-3 border-info m-3 rounded ">
+              <h4>Is currently on service?
+                </h4>
+              <p>Yes</p>
+            </div>
+         
+
+         
+          
+        </div>
+      </div>
+      
+      <!-- second container ends  -->
       <!-- footer -->
 
       <div class="container-fluid bg-black py-2 mt-5">

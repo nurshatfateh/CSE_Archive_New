@@ -57,26 +57,26 @@
               <a
                 class="nav-link  "
              
-                href="projects_admin.html"
+                href="projects_admin.php"
                 >Projects</a
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html">Achievements</a>
+              <a class="nav-link" href="achievements_admin.php">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="thesis_admin.html">Thesis</a>
+              <a class="nav-link" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
 
-          <a href="facultyprofile_admin.html"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim hossain</h6></a> 
+          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim hossain</h6></a> 
 
 
           <a href="../logout.php"
@@ -193,10 +193,10 @@
           
          
             <div class="card mb-5 border border-3 border-info rounded ">
-                <h5 class="card-header text-white bg-info ">Publications</h5>
+                <h5 class="card-header text-white bg-info ">Thesis</h5>
                 <div class="card-body bg-white ">
                   <a
-                    href="thesis_details_admin.html"
+                    href="thesis_details_admin.php"
                     class="text-decoration-none text-black"
                     ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
                       <h4 class="mb-2">My Thesis Name</h4>
@@ -205,7 +205,7 @@
                           <h6 class="d-inline-block">Thesis Domain</h6>
                           | 2019-2020
                         </p>
-                        <a href="form_admin.html" class="ms-auto inline-block btn btn-dark"
+                        <a href="form_admin.php" class="ms-auto inline-block btn btn-dark"
                           >Edit <i class="fa fa-edit"></i
                         ></a>
                       </div></div
@@ -213,7 +213,7 @@
                 </div>
                 <div class="card-body bg-white">
                    <a
-                    href="thesis_details_admin.html"
+                    href="thesis_details_admin.php"
                     class="text-decoration-none text-black"
                     ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
                       <h4 class="mb-2">My Thesis Name</h4>
@@ -222,7 +222,7 @@
                           <h6 class="d-inline-block">Thesis Domain</h6>
                           | 2019-2020
                         </p>
-                        <a href="form_admin.html" class="ms-auto inline-block btn btn-dark"
+                        <a href="form_admin.php" class="ms-auto inline-block btn btn-dark"
                           >Edit <i class="fa fa-edit"></i
                         ></a>
                       </div></div
@@ -230,7 +230,7 @@
                 </div>
                 <div class="card-body bg-white">
                     <a
-                     href="thesis_details_admin.html"
+                     href="thesis_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
                        <h4 class="mb-2">My Thesis Name</h4>
@@ -247,7 +247,7 @@
                  </div>
                  <div class="card-body bg-white">
                     <a
-                     href="thesis_details_admin.html"
+                     href="thesis_details_admin.php"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded " >
                        <h4 class="mb-2">My Thesis Name</h4>

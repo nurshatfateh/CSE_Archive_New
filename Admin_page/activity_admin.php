@@ -56,30 +56,30 @@
               <a class="nav-link" href="home_admin.php">Home</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="projects_admin.html">Projects</a>
+              <a class="nav-link" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.html">Achivements</a>
+              <a class="nav-link" href="achievements_admin.php">Achivements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="thesis_admin.html">Thesis</a>
+              <a class="nav-link" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
              <a
                 class="nav-link active text-success fw-bolder"
                 aria-current="page"
-                href="activity_admin.html"
+                href="activity_admin.php"
                 >Activity</a
               >
             </li>
           </ul>
-          <a href="facultyprofile_admin.html">
+          <a href="adminprofile_admin.php">
             <img class="ms-3" src="../img/profile.png" alt="profile"
           /></a>
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">
             <h6 class="mt-2 mx-3">Tanjim hossain</h6></a
           >
 
@@ -164,7 +164,7 @@
        <div class="card w-100 mt-3 p-3 mb-3 border border-2 border-info">
   <div class="card-body">
     <h5 class="card-title fw-bolder text-center">Programming contest</h5>
-     <a href="activity_details_admin.html"
+     <a href="activity_details_admin.php"
                   ><img
                     src="../img/act5.jpg"
                     class="d-block my-3 mx-auto"
@@ -173,7 +173,7 @@
                 /></a>
     <p class="card-text fw-normal">The state of the art cyber security training facility, sponsored by ICT division of the Govt. of the Peoples’ Republic of Bangladesh was inaugurated on 10th April by Hon’ble State Minister of ICT Division, MR. Zunaid Ahmed Palak, MP.
     </p>
-  <div class="button text-center mt-4"><a href="activity_details_admin.html" class="btn btn-primary">More details</a></div>
+  <div class="button text-center mt-4"><a href="activity_details_admin.php" class="btn btn-primary">More details</a></div>
   </div>
 </div>
 
@@ -181,7 +181,7 @@
  <div class="card w-100 mt-3 p-3 mb-3 border border-2 border-info">
   <div class="card-body">
     <h5 class="card-title fw-bolder text-center">Cyberthon</h5>
-     <a href="activity_details_admin.html"
+     <a href="activity_details_admin.php"
                   ><img
                     src="../img/act4.jpg"
                     class="d-block my-3 mx-auto"
@@ -190,14 +190,14 @@
                 /></a>
     <p class="card-text fw-normal text-center">An open discussion and opinion sharing session was held in the presence of Hon’ble State Minister of ICT Division, MR. Zunaid Ahmed Palak, MP on ways to incorporate and leverage Cyber Security as well as Data Analytics, Robotics, and Artificial intelligence in the academic domain.
     </p>
-    <div class="button text-center mt-4"><a href="activity_details_admin.html" class="btn btn-primary">More details</a></div>
+    <div class="button text-center mt-4"><a href="activity_details_admin.php" class="btn btn-primary">More details</a></div>
   </div>
 </div>
 
  <div class="card w-100 mt-3 p-3 mb-3 border border-2 border-info">
   <div class="card-body">
     <h5 class="card-title fw-bolder text-center">Software exhibition</h5>
-     <a href="activity_details_admin.html"
+     <a href="activity_details_admin.php"
                   ><img
                     src="../img/act3.jpg"
                     class="d-block my-3 mx-auto"
@@ -206,7 +206,7 @@
                 /></a>
     <p class="card-text fw-normal text-center">The session was attended by the Commandant of MIST, Cyber Security Professionals, Technology Professionals from different banks and financial institutions, and the faculty members of CSE Department.
     </p>
-  <div class="button text-center mt-4"><a href="activity_details_admin.html" class="btn btn-primary">More details</a></div>
+  <div class="button text-center mt-4"><a href="activity_details_admin.php" class="btn btn-primary">More details</a></div>
   </div>
 </div>
 
@@ -214,7 +214,7 @@
  <div class="card w-100 mt-3 p-3 mb-3 border border-2 border-info">
   <div class="card-body">
     <h5 class="card-title fw-bolder text-center">NCPC-2022</h5>
-     <a href="activity_details_admin.html"
+     <a href="activity_details_admin.php"
                   ><img
                     src="../img/act2.jpg"
                     class="d-block my-3 mx-auto"
@@ -223,7 +223,7 @@
                 /></a>
     <p class="card-text fw-normal text-center">The agenda of the meeting was to discuss on the syllabus and training method for the upcoming course at MIST cyber range. The suggestions by the qualified cybersecurity professionals, many of whom will be part of the teaching staff for the course, helped to formulate a syllabus and course content that's relevant to the demands of the current industry trends in cybersecurity.
     </p>
-   <div class="button text-center mt-4"><a href="activity_details_admin.html" class="btn btn-primary">More details</a></div>
+   <div class="button text-center mt-4"><a href="activity_details_admin.php" class="btn btn-primary">More details</a></div>
   </div>
 </div>
 
@@ -231,7 +231,7 @@
  <div class="card w-100 mt-3 p-3 mb-3 border border-2 border-info">
   <div class="card-body">
     <h5 class="card-title fw-bolder text-center">Workshop on Cyber security</h5>
-     <a href="activity_details_admin.html"
+     <a href="activity_details_admin.php"
                   ><img
                     src="../img/act1.jpg"
                     class="d-block my-3 mx-auto"
@@ -240,7 +240,7 @@
                 /></a>
     <p class="card-text fw-normal text-center">The agenda of the meeting was to discuss on the syllabus and training method for the upcoming course at MIST cyber range. The suggestions by the qualified cybersecurity professionals, many of whom will be part of the teaching staff for the course, helped to formulate a syllabus and course content that's relevant to the demands of the current industry trends in cybersecurity.
     </p>
-    <div class="button text-center mt-4"><a href="activity_details_admin.html" class="btn btn-primary">More details</a></div>
+    <div class="button text-center mt-4"><a href="activity_details_admin.php" class="btn btn-primary">More details</a></div>
     
   </div>
 </div>

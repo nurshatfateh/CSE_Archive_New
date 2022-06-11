@@ -56,30 +56,30 @@
               <a class="nav-link" href="home_admin.php">Home</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="projects_admin.html">Projects</a>
+              <a class="nav-link" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
               <a
                 class="nav-link active text-success fw-bolder"
                 aria-current="page"
-                href="achievements_admin.html"
+                href="achievements_admin.php"
                 >Achievements</a
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.html">Publications</a>
+              <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="thesis_admin.html">Thesis</a>
+              <a class="nav-link" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="activity_admin.html">Activity</a>
+              <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="facultyprofile_admin.html">
+          <a href="adminprofile_admin.php">
             <img class="ms-3" src="../img/profile.png" alt="profile"
           /></a>
-          <a href="studentprofile_admin.html" class="text-decoration-none text-black">
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">
             <h6 class="mt-2 mx-3">Tanjim hossain</h6></a
           >
 
@@ -162,7 +162,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info ms-3">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="img/ach1.gif"
                     class="d-block my-3 mx-auto"
@@ -173,7 +173,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -184,7 +184,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach2.jpg"
                     class="d-block my-3 mx-auto"
@@ -195,7 +195,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -206,7 +206,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info me-3">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach3.jpg"
                     class="d-block my-3 mx-auto"
@@ -217,7 +217,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -228,7 +228,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info ms-3">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach1.gif"
                     class="d-block my-3 mx-auto"
@@ -239,7 +239,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -250,7 +250,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach2.jpg"
                     class="d-block my-3 mx-auto"
@@ -261,7 +261,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -272,7 +272,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info me-3">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach3.jpg"
                     class="d-block my-3 mx-auto"
@@ -283,7 +283,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -294,7 +294,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info ms-3">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach1.gif"
                     class="d-block my-3 mx-auto"
@@ -305,7 +305,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -316,7 +316,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach2.jpg"
                     class="d-block my-3 mx-auto"
@@ -327,7 +327,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -338,7 +338,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info me-3">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach3.jpg"
                     class="d-block my-3 mx-auto"
@@ -349,7 +349,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -360,7 +360,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info ms-3">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach1.gif"
                     class="d-block my-3 mx-auto"
@@ -371,7 +371,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -382,7 +382,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach2.jpg"
                     class="d-block my-3 mx-auto"
@@ -393,7 +393,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>
@@ -404,7 +404,7 @@
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info me-3">
               <div class="card-body">
-                <a href="achievments_details_admin.html"
+                <a href="achievments_details_admin.php"
                   ><img
                     src="../img/ach3.jpg"
                     class="d-block my-3 mx-auto"
@@ -415,7 +415,7 @@
                 <p class="card-text fw-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
                 </p>
-                <a href="achievments_details_admin.html" class="btn btn-primary"
+                <a href="achievments_details_admin.php" class="btn btn-primary"
                   >View More</a
                 >
               </div>

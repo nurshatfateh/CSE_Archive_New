@@ -75,7 +75,7 @@ $('.input-daterange').datepicker({
     <h2 style="text-align: left"><b>Student Registration Form:</b></h2>
   </div>
   <div class="container mt-5">
-    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="Submitted.html">
+    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="Submitted.php">
       
       <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
       
