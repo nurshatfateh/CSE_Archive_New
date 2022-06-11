@@ -66,7 +66,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
-              <a class="nav-link" href="home_admin.php">Home</a>
+              <a class="nav-link" href="home_admin.php" >Home</a>
             </li>
             
             <li class="nav-item mx-3">

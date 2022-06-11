@@ -105,14 +105,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
     <div class="container-flex bg-light">
       <!-- Activity head -->
-      <div class="container pt-5 text-center">
+      
+      <div class="container pt-5">
         <div class="card">
-          <div
-            class="card-body bg-white border border-3 border border-info p-4"
-          >
-            <h1 class="fw-bolder text-black ms-4 text-center">
-              ACTIVITIES
-            </h1>
+          <div class="card-body bg-primary p-4">
+            <h1 class="d-inline-block text-white ms-4">ACTIVITIES</h1>
+            <a href="activities_form_admin.php"
+              ><button type="button" class="btn btn-light btn-lg float-end">
+                + Add ACTIVITIES
+              </button></a
+            >
           </div>
         </div>
       </div>

@@ -103,14 +103,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
     <div class="container-flex bg-light">
       <!-- Achievement head -->
-      <div class="container pt-5 text-center">
+      
+      <div class="container pt-5">
         <div class="card">
-          <div
-            class="card-body bg-white border border-3 border border-info p-4"
-          >
-            <h1 class="d-inline-block text-black ms-4 text-center">
-              Achievements
-            </h1>
+          <div class="card-body bg-primary p-4">
+            <h1 class="d-inline-block text-white ms-4">Achievements</h1>
+            <a href="achievement_form_admin.php"
+              ><button type="button" class="btn btn-light btn-lg float-end">
+                + Add Achievements
+              </button></a
+            >
           </div>
         </div>
       </div>
