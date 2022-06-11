@@ -100,15 +100,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
     </nav>
     <!-- navbar ends -->
-
-    <div class="container-flex bg-light">
-      <!-- Achievement head -->
-      
-      <div class="container pt-5">
+		
+		<div class="container pt-5 ">
         <div class="card">
           <div class="card-body bg-primary p-4">
             <h1 class="d-inline-block text-white ms-4">Achievements</h1>
-            <a href="achievement_form_admin.php"
+            <a href="add_achievements_admin.php"
               ><button type="button" class="btn btn-light btn-lg float-end">
                 + Add Achievements
               </button></a
