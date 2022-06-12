@@ -181,7 +181,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         href="facultyprofile_pending_admin.php"
                         class="text-decoration-none text-black">
                         <div class="p-3  border border-2  border-info">
-                            <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd 
+                            <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Abdus Sattar   :   CSE 
                             <a href="faculty_details_admin.php" class="text-decoration-none">
                               <div class="btn-group float-end" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-outline-success">Accept</button>
@@ -197,7 +197,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         href="facultyprofile_pending_admin.php"
                         class="text-decoration-none text-black">
                         <div class="p-3  border border-2  border-info">
-                            <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd
+                            <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Swapnil Biswas   :   CSE
                             <a href="faculty_details_admin.php">
                               <div class="btn-group float-end" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-outline-success">Accept</button>
@@ -207,143 +207,61 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         </div>
                         </a>
                     </div>
-                    <div class="card-body bg-white ">
-                        <a
-                        href="facultyprofile_pending_admin.php"
-                        class="text-decoration-none text-black">
-                        <div class="p-3  border border-2  border-info">
-                            <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd
-                            <a href="faculty_details_admin.php">
-                              <div class="btn-group float-end" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-outline-success">Accept</button>
-                                <button type="button" class="btn btn-outline-danger">Reject</button>
-                              </div>
-                            </a></h6>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="card-body bg-white ">
-                        <a
-                        href="facultyprofile_pending_admin.php"
-                        class="text-decoration-none text-black">
-                        <div class="p-3  border border-2  border-info">
-                            <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd
-                            <a href="faculty_details_admin.php">
-                              <div class="btn-group float-end" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-outline-success">Accept</button>
-                                <button type="button" class="btn btn-outline-danger">Reject</button>
-                              </div>
-                            </a></h6> 
-                        </div>
-                        </a>
-                    </div>
+                   
               
               
               
             </div>
 
             <div class="card mb-2 border border-3  border-info">
-              <h5 class="card-header text-white bg-info">Faculty</h5>
+              <h5 class="card-header text-white bg-info">Current Faculties</h5>
               
-              <div class="card-body bg-white ">
+              
+              <?php
+include_once 'db_conn.php';
+$result = mysqli_query($conn,"SELECT * FROM faculty");
+?>
+<?php
+if (mysqli_num_rows($result) > 0) {
+?>
+<?php
+$i=0;
+while($row = mysqli_fetch_array($result)) {
+
+
+
+ 
+
+
+?>
+<div class="card-body bg-white ">
                 <a
-                  href="facultyprofile_admin.php"
+                  href="facultyprofile_admin.php? id= <?php echo $row["id"];?>"
                   class="text-decoration-none text-black">
                   <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
+                    
+                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="img/profile.png" alt="profile"/>&nbsp;&nbsp;<?php echo $row["name"]."      :          ".$row["dept"]; 
+                    
+                    ?> </h6> 
                   </div>
+
                 </a>
               </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="facultyprofile_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Tanjim Hasan sdsfsd</h6> 
-                  </div>
-                </a>
-              </div>
+
+
+
+
+
+<?php
+$i++;
+}
+?>
+<?php
+}
+else{
+echo "No result found";
+}
+?>
             </div>
           </div>
   

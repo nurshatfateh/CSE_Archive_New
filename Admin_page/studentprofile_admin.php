@@ -4,6 +4,16 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
+  include_once 'db_conn.php';
+ 
+
+$code=$_GET["id"]; 
+$result = mysqli_query($conn,"SELECT * FROM student where roll=$code");
+
+$row = mysqli_fetch_array($result);
+
+
+
  ?>
 
 
@@ -60,7 +70,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
-              <a class="nav-link" href="home_admin.php">Home</a>
+              <a class="nav-link" href="home_admin.php">Home 
+              </a>
             </li>
             <li class="nav-item mx-3">
               <a
@@ -105,7 +116,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
        <div class="container pt-5">
         <div class="card">
           <div class="card-body bg-primary p-4">
-            <h1 class="d-inline-block text-white ms-4">Student Profile</h1>
+            <h1 class="d-inline-block text-white ms-4">Student Profile   </h1>
            
           </div>
         </div>
@@ -125,25 +136,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 <div class="col-12 col-lg-8 ">
                       
                   <div class="p-3 mt-3  mx-auto border border-3 border-info rounded ">
-                    <h2 class="mb-1 ">Student Name</h2>
+                    <h2 class="mb-1 "><?php echo $row["name"]; ?> </h2>
                   
-                    <h6 class="mb-0">Student Roll : 202014040</h6>
+                    <h6 class="mb-0">Student Roll : <?php echo $row["roll"]; ?></h6>
                   
                         <ul class="mt-2">
                             <li>
-                                Registartion Number : 131401200040
+                                Registartion Number : <?php echo $row["regno"]; ?>
                             </li>
                             <li>
-                                Admitted Semester: Spring/2020
+                                Session: <?php echo $row["session"]; ?>
                             </li>
                             <li>
-                                Department : B.Sc. in Computer Science & Engineering (CSE)
+                                Department :<?php echo $row["dept"]; ?>
                             </li>
                             <li>
-                                Student Quota : General
+                                Student Quota : <?php echo $row["quota"]; ?>
                             </li>
                             <li>
-                                Parent Job Status : NonGovernment
+                                Parent Job Status : <?php echo $row["parentjob"]; ?>
                             </li>
                         </ul>
                 
@@ -170,46 +181,46 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <div class="info-card p-2 border border-3 border-info m-3 rounded ">
                 <h4>Phone Number
                   </h4>
-                <p>01933318385</p>
+                <p><?php echo "0".$row["phone"]; ?></p>
               </div>
               <div class="info-card p-2 border border-3 border-info m-3 rounded ">
                 <h4>Email
                   </h4>
-                <p>nurshatfateh@gmail.com</p>
+                <p><?php echo $row["email"]; ?></p>
               </div>
 
             <div class="info-card p-2 border border-3 border-info m-3 rounded ">
               <h4>Present Address
                 </h4>
-              <p>Dhaka, Bangladesh</p>
+              <p><?php echo $row["presadd"]; ?></p>
             </div>
 
             <div class="info-card p-2 border border-3 border-info m-3 rounded ">
               <h4>Permanent Address</h4>
-              <p>Dhaka, Bangladesh</p>
+              <p><?php echo $row["permadd"]; ?></p>
             </div>
 
             <div class="info-card p-3 border border-3 border-info m-3 rounded ">
               <h4>Father Name
                 </h4>
-              <p>Name</p>
+              <p><?php echo $row["father"]; ?></p>
             </div>
 
             <div class="info-card p-3 border border-3 border-info m-3 rounded ">
               <h4>Mother Name
                 </h4>
-              <p>Name</p>
+              <p><?php echo $row["mother"]; ?></p>
             </div>
             <div class="info-card p-3 border border-3 border-info m-3 rounded ">
                 <h4>Blood Group
                   </h4>
-                <p>O+</p>
+                <p><?php echo $row["blood"]; ?></p>
               </div>
 
             <div class="info-card p-3 border border-3 border-info m-3 rounded ">
               <h4>Is currently a student?
                 </h4>
-              <p>Yes</p>
+              <p><?php echo $row["current"]; ?></p>
             </div>
 
             <!-- <div class="info-card p-3 border border-success">

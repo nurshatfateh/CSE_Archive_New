@@ -4,6 +4,14 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
+  include_once 'db_conn.php';
+ 
+
+$code=$_GET["id"]; 
+$result = mysqli_query($conn,"SELECT * FROM faculty where id=$code");
+
+$row = mysqli_fetch_array($result);
+
  ?>
 
 <!DOCTYPE html>
@@ -124,25 +132,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 <div class="col-12 col-lg-8 ">
                       
                   <div class="p-3 mt-3  mx-auto border border-3 border-info rounded ">
-                    <h2 class="mb-1 ">Faculty Name</h2>
+                    <h2 class="mb-1 "><?php echo $row["name"]; ?></h2>
                   
-                    <h6 class="mb-0">Faculty Position: Professor</h6>
+                    <h6 class="mb-0">Faculty Position: <?php echo $row["position"]; ?></h6>
                   
                         <ul class="mt-2">
                             <li>
-                                Faculty ID: 202014040
+                                Faculty ID: <?php echo $row["id"]; ?>
                             </li>
                             <li>
-                                Date of joining: Spring/2020
+                                Date of joining: <?php echo $row["joindate"]; ?>
                             </li>
                             <li>
-                                Department : B.Sc. in Computer Science & Engineering (CSE)
+                                Department : <?php echo $row["dept"]; ?>
                             </li>
                             <li>
-                                Research Domain : Artificial Intelligence
+                                Research Domain : <?php echo $row["research"]; ?>
                             </li>
                             <li>
-                                Degree : PHD
+                                Degree : <?php echo $row["degree"]; ?>
                             </li>
                         </ul>
                 
@@ -164,17 +172,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="col-12 col-lg-4 side-nav p-3 ">
             <div class="info-card p-2 border border-3 border-info m-3  rounded ">
               <h4>Date of Birth</h4>
-              <p>14/02/2001</p>
+              <p><?php echo $row["dob"]; ?></p>
             </div>
             <div class="info-card p-2 border border-3 border-info m-3 rounded ">
                 <h4>Phone Number
                   </h4>
-                <p>01933318385</p>
+                <p><?php echo "0".$row["phone"]; ?></p>
               </div>
               <div class="info-card p-2 border border-3 border-info m-3 rounded ">
                 <h4>Email
                   </h4>
-                <p>nurshatfateh@gmail.com</p>
+                <p><?php echo $row["email"]; ?></p>
               </div>
 
            
@@ -187,7 +195,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <div class="info-card p-3 border border-3 border-info m-3 rounded ">
               <h4>Is currently on service?
                 </h4>
-              <p>Yes</p>
+              <p><?php echo $row["current"]; ?></p>
             </div>
 
             

@@ -40,6 +40,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
     <title>Student Admin_admin</title>
+
+  
+
   </head>
   <body>
     <!-- navbar starts -->
@@ -316,9 +319,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     <img src="../img/students.PNG" class="card-img-top" alt="..." />
                     <div class="card-body">
                       <h5 class="card-title text-center">Students</h5>
-                    </div>
+                    </div>      </a>
+                    <button type="button" onClick="location.href='index_admin.php'" class="btn btn-primary p-3 m-3">Upload CSV</button>
                   </div>
-                </a>
+                  
+          
               </div>
         
               <div class="col-md-9 col-xl-6 my-6">
@@ -327,15 +332,22 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     <img src="../img/teachers.jpg" class="card-img-top" alt="..." height="225px"/>
                     <div class="card-body">
                       <h5 class="card-title text-center">Faculties</h5>
-                    </div>
+                    </div>   </a>
+                    <button type="button" onClick="location.href='index_admin.php'" class="btn btn-primary p-3 m-3">Upload CSV</button>
                   </div>
-                </a>
+             
               </div>
               
             </div>
-          </div>
-        </div>
 
+
+
+            
+          </div>
+          
+          
+        </div>
+    
         <!-- RIGHT BAR ENDS -->
 
       </div>
