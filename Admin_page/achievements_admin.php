@@ -6,6 +6,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
  ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -166,270 +167,52 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       <div class="container px-4 pt-5">
         <div class="row bg-light border border-3 border border-info gx-4">
           <!-- 1 -->
+
+          <?php
+          include_once 'db_conn.php';
+          $result = mysqli_query($conn,"SELECT * FROM addachievement");
+          ?>
+          <?php
+          if (mysqli_num_rows($result) > 0) {
+          ?>
+          <?php
+          $i=0;
+          while($row = mysqli_fetch_array($result)) {
+          ?>
+
+
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info ms-3">
               <div class="card-body">
-                <a href="achievments_details_admin.php"
+              <a href="achievments_details_admin.php?id=<?php echo $row["id"];?>"
                   ><img
                     src="img/ach1.gif"
                     class="d-block my-3 mx-auto"
                     style="width: 100%; height: 200px"
                     alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins URC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
+                /></a> 
+                <p class="card-text fw-bold"><?php echo $row["AchievementTitle"]; ?></p>
+                <p class="card-text fw-normal text-wrap">
+                <?php echo substr ($row["Achievement_detailes"], 0, 150); ?>
                 </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
+                <a href="achievments_details_admin.php?id=<?php echo $row["id"];?>"
                   >View More</a
                 >
               </div>
             </div>
           </div>
 
-          <!-- 2 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach2.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins ICPC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 3 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info me-3">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach3.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins NCPC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 4 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info ms-3">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach1.gif"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins URC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 5 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach2.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins ICPC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 6 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info me-3">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach3.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins NCPC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 7 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info ms-3">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach1.gif"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins URC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 8 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach2.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins ICPC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 9 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info me-3">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach3.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins NCPC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 10 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info ms-3">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach1.gif"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins URC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 11 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach2.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins ICPC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- 12 -->
-          <div class="col-sm-4 mb-5 mt-5">
-            <div class="card border-2 border-info me-3">
-              <div class="card-body">
-                <a href="achievments_details_admin.php"
-                  ><img
-                    src="../img/ach3.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 100%; height: 200px"
-                    alt="..."
-                /></a>
-                <p class="card-text fw-bold">MIST wins NCPC-2022</p>
-                <p class="card-text fw-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempora!
-                </p>
-                <a href="achievments_details_admin.php" class="btn btn-primary"
-                  >View More</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          
+          <?php
+          $i++;
+          }
+          ?>
+          <?php
+          }
+          else{
+          echo "No result found";
+          }
+          ?>
 
       <!-- Achivements card end -->
 

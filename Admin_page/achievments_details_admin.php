@@ -4,8 +4,17 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
- ?>
+  include_once 'db_conn.php';
+ 
 
+$code=$_GET["id"]; 
+$result = mysqli_query($conn,"SELECT * FROM addachievement where id=$code");
+
+$row = mysqli_fetch_array($result);
+
+
+
+ ?>
 
 
 <!DOCTYPE html>
@@ -141,32 +150,32 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="col-12 col-md-4 side-nav p-3">
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Event Name</h4>
-              <p>URC-2022</p>
+              <p><?php echo $row["EventName"]; ?></p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Academic Year</h4>
-              <p>2021-2022</p>
+              <p><?php echo $row["Academic_year"]; ?></p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Team Name</h4>
-              <p>MIST MONGOL BAROTA</p>
+              <p><?php echo $row["TeamName"]; ?></p>
             </div>
 
             <div class="info-card p-3 border border-2 border-info m-3 rounded">
               <h4>Total No of participants</h4>
-              <p>36</p>
+              <p><?php echo $row["StudentNo"]; ?></p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Organizer</h4>
-              <p>NASA</p>
+              <p><?php echo $row["Organizer"]; ?></p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Prize money</h4>
-              <p>12000$</p>
+              <p><?php echo $row["PrizeMoney"]; ?></p>
             </div>
 
            
@@ -177,37 +186,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="col-md-8 col-12 p-4 pt-4 main-content">
             <div class="info-detail mt-2 border border-2 border-info p-3">
               <p class="card-text fw-normal">
-                Team Mongol Barota was born in 2013, with a vision of reaching
-                higher than ever. Since its inception, this ambitious little
-                team had only one objective: To present our institute, as well
-                as our country on a global platform with pride. Since then, the
-                team has begun designing and fabricating futuristic Mars rovers
-                in order to challenge other teams across the globe. Over the
-                years, the team has grown and evolved into something marvelous.
-                As future engineers, we prioritise collaboration, learning, and
-                collective effort all throughout any project, to turn our
-                initial vision into concrete reality. Now we go forward with the
-                motto, "Nothing is constant, other than change", constantly
-                evolving, to keep up with the challenges we face.
-              </p>
-              <p class="card-text fw-normal">
-                After a long hiatus, Team Mongol Barota has risen from its
-                ashes, with a new rover, aptly named "PHOENIX". The team, now
-                stronger than ever, participated in the University Rover
-                Challenge of 2021, and won the championship with flying colors.
-                This was a first in the history of our team, the institute, as
-                well as our country, Bangladesh. The key to this success was the
-                efficient collaboration among the CSE and ME departments, making
-                the team stronger than ever.
-              </p>
-              <p class="card-text fw-normal">
-                Team Mongol Barota's first attempt at the European Rover
-                Challenge was on 2016. The team had tried their best, with high
-                ambition and will to reach the top. However, the team had not
-                been successful in that attempt, resulting in our team entering
-                a period of hiatus for the next few years. Part of the journey
-                is the hardship and the loss, something that the team felt
-                profoundly after the challenge came to an end.
+              <?php echo $row["Achievement_detailes"]; ?>
               </p>
             </div>
 
@@ -223,8 +202,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     src="../img/student1.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Abir hossain</h5>
-                  <p class="m-0 text-center">202014001</p>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member1Name"]; ?></h5>
+                  <p class="m-0 text-center"><?php echo $row["Member1ID"]; ?></p>
                 </div>
                 <div
                   class="col-md-3 col-6 py-4 border border-info border-2 m-3 rounded"
@@ -235,8 +214,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     src="../img/studen2.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Shoeb Ahmed Tanjim</h5>
-                  <p class="m-0 text-center">202014002</p>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member2Name"]; ?></h5>
+                  <p class="m-0 text-center"><?php echo $row["Member2ID"]; ?></p>
                 </div>
                 <div
                   class="col-md-3 col-6 py-4 border border-info border-2 m-3 rounded"
@@ -247,8 +226,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     src="../img/student3.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Shovon Niverd Pereira</h5>
-                  <p class="m-0 text-center">202014002</p>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member3Name"]; ?></h5>
+                  <p class="m-0 text-center"><?php echo $row["Member3ID"]; ?></p>
                 </div>
               </div>
             </div>
@@ -265,7 +244,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     src="../img/raiyansir.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Lec Raiyan Rahman</h5>
+                  <h5 class="mt-3 text-center"><?php echo $row["Supervisor1"]; ?></h5>
                 </div>
                 <div
                   class="col-md-3 col-6 py-4 border border-info border-2 m-3 rounded"
@@ -276,7 +255,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     src="../img/nafizsir.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Lec Nafiz Imtiaz Khan</h5>
+                  <h5 class="mt-3 text-center"><?php echo $row["Supervisor2"]; ?></h5>
                 </div>
               </div>
             </div>
@@ -329,6 +308,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     -->
   </body>
 </html>
+
 
 
 <?php 

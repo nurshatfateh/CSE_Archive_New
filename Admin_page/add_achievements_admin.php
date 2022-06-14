@@ -78,15 +78,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <a class="nav-link" href="projects_admin.php">Projects</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements_admin.php">Achievements</a>
+              <a class="nav-link active active text-success fw-bolder" href="achievements_admin.php" aria-current="page">Achievements</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="publication_admin.php">Publications</a>
+              <a class="nav-link " href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
               <a
-                class="nav-link active active text-success fw-bolder"
-                aria-current="page"
+                class="nav-link "
                 href="thesis_admin.php"
                 >Thesis</a
               >
@@ -129,7 +128,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               type="text"
               class="form-control"
               id="EventName"
-			  name="EventName"   
+			        name="EventName"   
               placeholder="Event Name"
             />
           </div>
@@ -175,7 +174,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <br />
 
-            <select class="form-control selectpicker" required>
+            <select class="form-control selectpicker" required name="StudentNo" id="StudentNo">
               <option selected disabled>No of Student</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -184,135 +183,26 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <option value="5">5</option>
             </select>
           </div>
-
+          
           <div class="col-md-6">
-            <label for="Student ID" class="form-label">
-              <h6>Student ID <font color="ff0000">*</font></h6>
+            <label for="Team Name" class="form-label">
+              <h6>Team Name</h6>
             </label>
             <br />
-            <select
-              class="form-control selectpicker"
-              multiple
-              data-live-search="true"
-			  name="studentID"	
-			  id="studentID"
-              required
-            >
-              <!-- <option selected disabled>Student ID</option> -->
-              <option value="201814001">201814001</option>
-              <option value="201814002">201814002</option>
-              <option value="201814003">201814003</option>
-              <option value="201814004">201814004</option>
-              <option value="201814005">201814005</option>
-              <option value="201814006">201814006</option>
-              <option value="201814007">201814007</option>
-              <option value="201814008">201814008</option>
-              <option value="201814009">201814009</option>
-              <option value="201814010">201814010</option>
-              <option value="201814011">201814011</option>
-              <option value="201814012">201814012</option>
-              <option value="201814013">201814013</option>
-              <option value="201814014">201814014</option>
-              <option value="201814015">201814015</option>
-              <option value="201814016">201814016</option>
-              <option value="201814017">201814017</option>
-              <option value="201814018">201814018</option>
-              <option value="201814019">201814019</option>
-              <option value="201814020">201814020</option>
-              <option value="201814021">201814021</option>
-              <option value="201814022">201814022</option>
-              <option value="201814023">201814023</option>
-              <option value="201814024">201814024</option>
-              <option value="201814025">201814025</option>
-              <option value="201814026">201814026</option>
-              <option value="201814027">201814027</option>
-              <option value="201814028">201814028</option>
-              <option value="201814029">201814029</option>
-              <option value="201814030">201814030</option>
-              <option value="201814031">201814031</option>
-              <option value="201814032">201814032</option>
-              <option value="201814033">201814033</option>
-              <option value="201814034">201814034</option>
-              <option value="201814035">201814035</option>
-              <option value="201814036">201814036</option>
-              <option value="201814037">201814037</option>
-              <option value="201814038">201814038</option>
-              <option value="201814039">201814039</option>
-              <option value="201814040">201814040</option>
-              <option value="201814041">201814041</option>
-              <option value="201814042">201814042</option>
-              <option value="201814043">201814043</option>
-              <option value="201814044">201814044</option>
-              <option value="201814045">201814045</option>
-              <option value="201814046">201814046</option>
-              <option value="201814047">201814047</option>
-              <option value="201814048">201814048</option>
-              <option value="201814049">201814049</option>
-              <option value="201814050">201814050</option>
-              <option value="201814051">201814051</option>
-              <option value="201814052">201814052</option>
-              <option value="201814053">201814053</option>
-              <option value="201814054">201814054</option>
-              <option value="201814055">201814055</option>
-              <option value="201814056">201814056</option>
-              <option value="201814057">201814057</option>
-              <option value="201814058">201814058</option>
-              <option value="201814059">201814059</option>
-              <option value="201814060">201814060</option>
-              <option value="201814061">201814061</option>
-              <option value="201814062">201814062</option>
-              <option value="201814063">201814063</option>
-              <option value="201814064">201814064</option>
-              <option value="201814065">201814065</option>
-              <option value="201814066">201814066</option>
-              <option value="201814067">201814067</option>
-              <option value="201814068">201814068</option>
-              <option value="201814069">201814069</option>
-              <option value="201814070">201814070</option>
-              <option value="201814071">201814071</option>
-              <option value="201814072">201814072</option>
-              <option value="201814073">201814073</option>
-              <option value="201814074">201814074</option>
-              <option value="201814075">201814075</option>
-              <option value="201814076">201814076</option>
-              <option value="201814077">201814077</option>
-              <option value="201814078">201814078</option>
-              <option value="201814079">201814079</option>
-              <option value="201814080">201814080</option>
-              <option value="201814081">201814081</option>
-              <option value="201814082">201814082</option>
-              <option value="201814083">201814083</option>
-              <option value="201814084">201814084</option>
-              <option value="201814085">201814085</option>
-              <option value="201814086">201814086</option>
-              <option value="201814087">201814087</option>
-              <option value="201814088">201814088</option>
-              <option value="201814089">201814089</option>
-              <option value="201814090">201814090</option>
-              <option value="201814091">201814091</option>
-              <option value="201814092">201814092</option>
-              <option value="201814093">201814093</option>
-              <option value="201814094">201814094</option>
-              <option value="201814095">201814095</option>
-              <option value="201814096">201814096</option>
-              <option value="201814097">201814097</option>
-              <option value="201814098">201814098</option>
-              <option value="201814099">201814099</option>
-              <option value="201814100">201814100</option>
-            </select>
+
+            <input
+              type="text"
+              class="form-control"
+              id="TeamName"
+			        name="TeamName"   
+              placeholder="Team Name"
+            />
           </div>
-			<div class="col-md-6"></div>
+          <div class="col-md-6"></div>
           <div class="col-md-6">
-            <label for="Supervisor(s)" class="form-label">
+            <label for="Supervisor" class="form-label">
               <h6>
-                Supervisor(s)
-                <a
-                  target="_blank"
-                  title="Type the name of Supervisor,then the name of co-supervisor"
-                  ><img
-                    src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png"
-                    height="13px"
-                /></a>
+                Supervisor
                 <font color="ff0000">*</font>
               </h6>
             </label>
@@ -323,15 +213,79 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               data-live-search="true"
               data-placeholder="Supervisor,Co Supervisor"
               required
-			  name="supervisor"
-			  id="supervisor"
+			        name="supervisor1"
+			        id="supervisor1"
             >
-              <option value="Lec Muhaimin Bin Munir">
-                Lec Muhaimin Bin Munir
-              </option>
-              <option value="Lec Nafiz Imtiaz Khan">
-                Lec Nafiz Imtiaz Khan
-              </option>
+              <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
+              <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
+              <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
+              <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
+              <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="Co Supervisor" class="form-label">
+              <h6>
+                Co Supervisor<font color="ff0000">*</font>
+              </h6>
+            </label>
+            <br />
+            <select
+              class="form-control selectpicker"
+              multiple
+              data-live-search="true"
+              data-placeholder="Supervisor,Co Supervisor"
+              required
+			        name="supervisor2"
+			        id="supervisor2"
+            >
+              <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
+              <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
+              <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
+              <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
+              <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="Co Supervisor" class="form-label">
+              <h6>
+                CO Supervisor
+              </h6>
+            </label>
+            <br />
+            <select
+              class="form-control selectpicker"
+              multiple
+              data-live-search="true"
+              data-placeholder="Supervisor,Co Supervisor"
+              required
+			        name="supervisor3"
+			        id="supervisor3"
+            >
+              <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
+              <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
+              <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
+              <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
+              <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="Co Supervisor" class="form-label">
+              <h6>
+                CO Supervisor
+              </h6>
+            </label>
+            <br />
+            <select
+              class="form-control selectpicker"
+              multiple
+              data-live-search="true"
+              data-placeholder="Supervisor,Co Supervisor"
+			        name="supervisor4"
+			        id="supervisor4"
+            >
+              <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
+              <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
               <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
               <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
               <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
@@ -339,25 +293,19 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
 
           <div class="col-md-6">
-            <label for="Supervisor(s)" class="form-label">
-              <h6>
-                Supervisor(s) Photos(jpg/png/jpeg)
-                <a target="_blank" title="Format : Supervisor_Name.jpg"
-                  ><img
-                    src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png"
-                    height="13px"
-                /></a>
-              </h6>
+            <label for="StudentID1" class="form-label">
+              <h6>Team Member-1 ID<font color="ff0000">*</font></h6>
             </label>
             <br />
+
             <input
-              type="File"
-              accept="image/*"
-              id="spervisorPic"
-              name="spervisorPic"
-              multiple
+              type="text"
+              class="form-control"
+              id="StudentID1"
+			        name="StudentID1"   
+              placeholder="StudentID1"
+              required
             />
-            <br /><br />
           </div>
 
           <div class="col-md-6">
@@ -368,36 +316,46 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               type="text"
               class="form-control"
               id="TeamMember1"
-			  name="TeamMember1"
+			        name="TeamMember1"
               required
             />
           </div>
 
           <div class="col-md-6">
-            <label for="TeamMember1 Photo" class="form-label">
-              <h6>Team Member-1 Photo(jpg/png/jpeg)</h6>
+            <label for="StudentID2" class="form-label">
+              <h6>Team Member-2 ID</h6>
             </label>
             <br />
-            <input type="File" accept="image/*" id="member1Pic"
-              name="member1Pic"/>
-          </div>
 
+            <input
+              type="text"
+              class="form-control"
+              id="StudentID2"
+			        name="StudentID2"   
+              placeholder="StudentID2"
+            />
+          </div>
           <div class="col-md-6">
             <label for="TeamMember2" class="form-label">
               <h6>Team Member-2 Name</h6>
             </label>
             <input type="text"  class="form-control" id="TeamMember2" name="TeamMember2"/>
           </div>
-
+          
           <div class="col-md-6">
-            <label for="TeamMember2 Photo" class="form-label">
-              <h6>Team Member-2 Photo(jpg/png/jpeg)</h6>
+            <label for="StudentID3" class="form-label">
+              <h6>Team Member-3 ID</h6>
             </label>
             <br />
-            <input type="File" accept="image/*" id="member2Pic"
-              name="member2Pic"/>
-          </div>
 
+            <input
+              type="text"
+              class="form-control"
+              id="StudentID3"
+			        name="StudentID3"   
+              placeholder="StudentID3"
+            />
+          </div>
           <div class="col-md-6">
             <label for="TeamMember3" class="form-label">
               <h6>Team Member-3 Name</h6>
@@ -405,31 +363,42 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <input type="text"  class="form-control" id="TeamMember3" name="TeamMember3"/>
           </div>
 
+          
           <div class="col-md-6">
-            <label for="TeamMember3 Photo" class="form-label">
-              <h6>Team Member-3 Photo(jpg/png/jpeg)</h6>
+            <label for="StudentID4" class="form-label">
+              <h6>Team Member-4 ID</h6>
             </label>
             <br />
-            <input type="File" accept="image/*"  id="member3Pic"
-              name="member3Pic"/>
-          </div>
 
+            <input
+              type="text"
+              class="form-control"
+              id="StudentID4"
+			        name="StudentID4"   
+              placeholder="StudentID4"
+            />
+          </div>
           <div class="col-md-6">
             <label for="TeamMember4" class="form-label">
               <h6>Team Member-4 Name</h6>
             </label>
             <input type="text"  class="form-control" id="TeamMember4" name="TeamMember4"/>
           </div>
-
+           
           <div class="col-md-6">
-            <label for="TeamMember4 Photo" class="form-label">
-              <h6>Team Member-4 Photo(jpg/png/jpeg)</h6>
+            <label for="StudentID5" class="form-label">
+              <h6>Team Member-5 ID</h6>
             </label>
             <br />
-            <input type="File" accept="image/*" id="member4Pic"
-              name="member4Pic"/>
-          </div>
 
+            <input
+              type="text"
+              class="form-control"
+              id="StudentID5"
+			        name="StudentID5"   
+              placeholder="StudentID5"
+            />
+          </div>
           <div class="col-md-6">
             <label for="TeamMember5" class="form-label">
               <h6>Team Member-5 Name</h6>
@@ -437,17 +406,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <input type="text"  class="form-control" id="TeamMember5" name="TeamMember5"/>
           </div>
 
-          <div class="col-md-6">
-            <label for="TeamMember5 Photo" class="form-label">
-              <h6>Team Member-5 Photo(jpg/png/jpeg)</h6>
-            </label>
-            <br />
-            <input type="File" accept="image/*" id="member5Pic"
-              name="member5Pic" />
-          </div>
-
           <div class="col-md-12">
-            <label for="Thesis Title" class="form-label"
+            <label for="Achievement Title" class="form-label"
               ><h6>Achievement Title <font color="ff0000">*</font></h6>
             </label>
             <textarea
@@ -466,7 +426,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <textarea
               class="form-control"
               id="AchievementDetailes"
-			 name="AchievementDetailes"
+			        name="AchievementDetailes"
               rows="5"
               required
             ></textarea>
@@ -482,7 +442,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               type="text"
               class="form-control"
               id="PrizeMoney"
-			  name="PrizeMoney"   
+			        name="PrizeMoney"   
               placeholder="Prize Money"
             />
           </div>	
