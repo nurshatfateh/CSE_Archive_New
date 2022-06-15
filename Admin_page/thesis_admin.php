@@ -1,10 +1,4 @@
-<?php 
 
-session_start();
-
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-
- ?>
 
 
 
@@ -248,73 +242,39 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           
 
             <div class="card mb-2 border border-3  border-info">
-              <h5 class="card-header text-white bg-info">Others' Thesis</h5>
-              <div class="card-body bg-white">
-                <a
-                  href="thesis_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div class="p-3 mt-2 mb-2 border border border-2  border-info">
-                    <h4 class="mb-3">Thesis Name</h4>
-                    <p class="m-0 p-2">
-                        <h6 class="d-inline-block">Thesis Domain</h6>
-                        | 2019-2020
-                      </p>
-                  </div></a
-                >
-              </div>
-              <div class="card-body bg-white">
-               <a
-                  href="thesis_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div class="p-3 mt-2 mb-2 border bg-white border border-2  border-info">
-                    <h4 class="mb-3">Thesis Name</h4>
-                    <p class="m-0 p-2">
-                        <h6 class="d-inline-block">Thesis Domain</h6>
-                        | 2019-2020
-                      </p>
-                  </div></a
-                >
-              </div>
-              <div class="card-body bg-white">
-               <a
-                  href="thesis_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div class="p-3 mt-2 mb-2 border bg-white border border-2  border-info">
-                    <h4 class="mb-3">Thesis Name</h4>
-                    <p class="m-0 p-2">
-                        <h6 class="d-inline-block">Thesis Domain</h6>
-                        | 2019-2020
-                      </p>
-                  </div></a
-                >
-              </div>
-              <div class="card-body bg-white">
-               <a
-                  href="thesis_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div class="p-3 mt-2 mb-2 border bg-white border border-2  border-info">
-                    <h4 class="mb-3">Thesis Name</h4>
-                    <p class="m-0 p-2">
-                        <h6 class="d-inline-block">Thesis Domain</h6>
-                        | 2019-2020
-                      </p>
-                  </div></a
-                >
-              </div>
-              <div class="card-body bg-white">
-               <a
-                  href="thesis_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div class="p-3 mt-2 mb-2 border border border-2  border-info">
-                    <h4 class="mb-3">Thesis Name</h4>
-                    <p class="m-0 p-2">
-                        <h6 class="d-inline-block">Thesis Domain</h6>
-                        | 2019-2020
-                      </p>
-                  </div></a
-                >
-              </div>
-            </div>
+              <h5 class="card-header text-white bg-info">Thesis Title</h5>
+              <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $db = "test_db";
+            
+                // create a connection
+                $conn = mysqli_connect($servername, $username, $password, $db);
+
+                $sql = "select *from thesis_admin";
+                $result = mysqli_query($conn, $sql);
+                $num = mysqli_num_rows($result);
+                while($row = mysqli_fetch_assoc($result)) {
+                  echo '
+                  <div class="card-body bg-white">
+                  <a
+                    href="thesis_details_admin.php"
+                    class="text-decoration-none text-black"
+                    ><div class="p-3 mt-2 mb-2 border border border-2  border-info">
+                      <h4 class="mb-3">' .$row['Thesis_title']. '</h4>
+                      <p class="m-0 p-2">
+                          <h6 class="d-inline-block">' .$row['Thesis_domain']. '&nbsp &nbsp</h6>'.
+                           $row['Academic_year']
+                        .'</p>
+                    </div></a
+                  >
+                </div>
+                  ';
+                }
+
+              ?>
+              
           </div>
           <!-- Right BAR ends -->
         </div>
@@ -365,16 +325,3 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     -->
   </body>
 </html>
-
-
-<?php 
-
-}else{
-
-     header("Location: ../logout.php");
-
-     exit();
-
-}
-
- ?>

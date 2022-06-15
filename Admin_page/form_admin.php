@@ -10,7 +10,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!--   meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
@@ -46,6 +46,54 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <title>Form_admin</title>
   </head>
   <body class="bg-light">
+
+
+   <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $db = "test_db";
+    
+        // create a connection
+        $conn = mysqli_connect($servername, $username, $password, $db);
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                  $Course_name = $_POST['Course_name'];
+                  $No_of_Student = $_POST['No_of_Student'];
+                  $Academic_year = $_POST['AcademicYear'];
+                  $StudentID=$_POST['StudentID'];
+                  $Member1Name = $_POST['TeamMember1'];
+                    $Member2Name = $_POST['TeamMember2'];
+                  $Proposal = $_POST['Proposal'];
+                    $Member3Name = $_POST['TeamMember3'];
+                  $Prototype = $_POST['Prototype'];
+                    $Member4Name = $_POST['TeamMember4'];
+                  $ThesisBook = $_POST['ThesisBook'];
+                    $Member5Name = $_POST['TeamMember5'];
+                    $CommenceDate = $_POST['CommenceDate'];
+                    $CompletionDate = $_POST['CompletionDate'];
+                  $ThesisTitle = $_POST['ThesisTitle'];
+                    $ThesisDomain = $_POST['ThesisDomain'];
+                  $ThesisSynopsis = $_POST['ThesisSynopsis'];
+                    $URLFrontend = $_POST['URLFrontend'];
+                  $GithubLink = $_POST['GithubLink'];
+                  $RelevantPublications = $_POST['RelevantPublications'];
+                  $ThesisFiles = $_POST['ThesisFiles'];
+            if($Course_name <> NULL) {
+                   $sql = "INSERT INTO `thesis_admin` (`Course_name`, `Academic_year`, `No_of_Student`, `Team_member_name_1`, `Team_member_name_2`, `Team_member_name_3`, `Team_member_name_4`, `Team_member_name_5`, `Thesis_domain`, `StudentID`, `Proposal`, `Prototype`, `ThesisBook`, `Commencedate`, `CompletionDate`, `ThesisSynopsis`, `URLFrontend`, `GithubLink`, `RelevantPublications`, `ThesisFiles`, `Thesis_title`) VALUES ('$Course_name', '$Academic_year',  $No_of_Student, ' $Member1Name', '$Member2Name', '$Member3Name', '$Member4Name', '$Member5Name', '$ThesisDomain', ' $StudentID', ' $Proposal', ' $Prototype', '$ThesisBook', '$CommenceDate', '$CompletionDate', '$ThesisSynopsis', '$URLFrontend', '$GithubLink', ' $RelevantPublications', '$ThesisFiles', '$ThesisTitle');";
+                  $result = mysqli_query($conn, $sql);
+                  //   echo $ Course_name;
+                  // echo $AcademicYear;
+                  // echo $No_of_Student;
+
+                  // echo $StudentID;
+                  //echo  $Member1Name;
+               
+            }
+        }
+
+        
+
+    ?>
     <!-- navbar starts -->
     <nav
       class="navbar navbar-expand-xxl navbar-light bg-white border-bottom border-5 border-success"
@@ -117,17 +165,27 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       <div class="container mt-5">
         <h2 class="my-5">Thesis Submission form :</h2>
 
-        <form class="row g-3 bg-white border p-3" action="Submitted.php">
+        <form class="row g-3 bg-white border p-3" action="form_admin.php" method="post">
           <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
           <div class="col-md-6">
-            <label for="CourseName" class="form-label">
+            <label for=" Course_name" class="form-label">
               <h6>Course Name</h6>
             </label>
             <br />
 
-            <select class="form-control selectpicker" required>
-              <option selected disabled>CSE-400</option>
+            
+
+            <select  class="form-control selectpicker"   name="Course_name" id=" Course_name">
+              <option selected disabled>Course Name</option>
+              <option  value="CSE-301">CSE-301</option>
+              <option  value="CSE-303">CSE-303</option>
+              <option  value="CSE-305">CSE-305</option>
+              <option  value="CSE-309">CSE-309</option>
             </select>
+
+           
+
+
           </div>
 
           <div class="col-md-6">
@@ -136,7 +194,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <br />
 
-            <select class="form-control selectpicker" required>
+            <select class="form-control selectpicker"   name = "AcademicYear" id="AcademicYear">
               <option selected disabled>Academic Year</option>
               <option value="2016-2017">2016-2017</option>
               <option value="2017-2018">2017-2018</option>
@@ -150,13 +208,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </select>
           </div>
 
-          <div class="col-md-6">
-            <label for="NoOfStudent" class="form-label">
+         <div class="col-md-6">
+            <label for="No_of_Student" class="form-label">
               <h6>No of Student <font color="ff0000">*</font></h6>
             </label>
             <br />
 
-            <select class="form-control selectpicker" required>
+            <select class="form-control selectpicker"   name = "No_of_Student" id="No_of_Student">
               <option selected disabled>No of Student</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -164,20 +222,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-          </div>
+          </div> 
 
           <div class="col-md-6">
             <label for="StudentID" class="form-label">
-              <h6>Student ID <font color="ff0000">*</font></h6>
+              <h6>Student ID<font color="ff0000">*</font></h6>
             </label>
             <br />
             <select
               class="form-control selectpicker"
               multiple
               data-live-search="true"
-              required
+                name="StudentID" id="StudentID"
             >
-              <!-- <option selected disabled>Student ID</option> -->
+             <option selected disabled>Student ID</option>
               <option value="201814001">201814001</option>
               <option value="201814002">201814002</option>
               <option value="201814003">201814003</option>
@@ -301,7 +359,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               multiple
               data-live-search="true"
               data-placeholder="Supervisor,Co Supervisor"
-              required
             >
               <option value="Lec Muhaimin Bin Munir">
                 Lec Muhaimin Bin Munir
@@ -344,10 +401,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <input
               type="text"
-              disabled
               class="form-control"
-              id="TeamMember1"
-              required
+                name="TeamMember1" id="TeamMember1"
             />
           </div>
 
@@ -363,7 +418,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <label for="TeamMember2" class="form-label">
               <h6>Team Member-2 Name</h6>
             </label>
-            <input type="text" disabled class="form-control" id="TeamMember2" />
+            <input type="text"  class="form-control" name="TeamMember2" id="TeamMember2" />
           </div>
 
           <div class="col-md-6">
@@ -378,7 +433,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <label for="TeamMember3" class="form-label">
               <h6>Team Member-3 Name</h6>
             </label>
-            <input type="text" disabled class="form-control" id="TeamMember3" />
+            <input type="text"  class="form-control" name="TeamMember3" id="TeamMember3" />
           </div>
 
           <div class="col-md-6">
@@ -393,7 +448,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <label for="TeamMember4" class="form-label">
               <h6>Team Member-4 Name</h6>
             </label>
-            <input type="text" disabled class="form-control" id="TeamMember4" />
+            <input type="text"  class="form-control" name="TeamMember4" id="TeamMember4" />
           </div>
 
           <div class="col-md-6">
@@ -408,7 +463,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <label for="TeamMember5" class="form-label">
               <h6>Team Member-5 Name</h6>
             </label>
-            <input type="text" disabled class="form-control" id="TeamMember5" />
+            <input type="text"  class="form-control" name="TeamMember5" id="TeamMember5" />
           </div>
 
           <div class="col-md-6">
@@ -426,9 +481,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <input
               type="text"
               class="form-control"
+              name="CommenceDate"
               id="CommenceDate"
               placeholder="DD/MM/YYYY"
-              required
+               
             />
           </div>
 
@@ -439,9 +495,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <input
               type="text"
               class="form-control"
+              name= "CompletionDate"
               id="CompletionDate"
               placeholder="DD/MM/YYYY"
-              required
+               
             />
           </div>
 
@@ -451,9 +508,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <textarea
               class="form-control"
+              name="ThesisTitle"
               id="ThesisTitle"
               rows="3"
-              required
+               
             ></textarea>
           </div>
           <div class="col-md-12">
@@ -463,9 +521,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
             <textarea
               class="form-control"
+              name="ThesisDomain"
               id="ThesisDomain"
               rows="5"
-              required
+               
             ></textarea>
           </div>
 
@@ -476,9 +535,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
             <textarea
               class="form-control"
+              name="ThesisSynopsis"
               id="ThesisSynopsis"
               rows="5"
-              required
+               
             ></textarea>
           </div>
 
@@ -495,7 +555,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <h6>Proposal(ppt/pdf)</h6>
             </label>
             <br />
-            <input type="File" accept=".ppt, .pptx,.pdf" />
+            <input type="File"  name="Proposal"
+              id="Proposal" accept=".ppt, .pptx,.pdf" />
           </div>
 
           <div class="col-md-6">
@@ -503,7 +564,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <h6>Prototype(ppt/pdf)</h6>
             </label>
             <br />
-            <input type="File" accept=".ppt, .pptx,.pdf" />
+            <input type="File" name="Prototype"
+              id="Prototype"accept=".ppt, .pptx,.pdf" />
           </div>
 
           <div class="col-md-6">
@@ -511,7 +573,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <h6>Thesis Book(ppt/pdf/zip) <font color="ff0000">*</font></h6>
             </label>
             <br />
-            <input type="File" required />
+            <input type="File" name="ThesisBook"
+              id="ThesisBook"  />
           </div>
 
           <div class="col-md-12">
@@ -521,6 +584,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <input
               type="text"
               class="form-control"
+              name="URLFrontend"
               id="URLFrontend"
               placeholder="URL of Front end"
             />
@@ -533,6 +597,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <input
               type="text"
               class="form-control"
+              name="GithubLink"
               id="GithubLink"
               placeholder="Github Link"
             />
@@ -543,7 +608,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <h6>Thesis File(s) (ppt/pdf/zip)</h6>
             </label>
             <br />
-            <input type="File" id="ThesisFiles" name="files" multiple />
+            <input type="File" id="ThesisFiles" name="ThesisFiles" multiple />
             <br /><br />
           </div>
 
@@ -553,18 +618,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <textarea
               class="form-control"
+              name="RelevantPublications"
               id="RelevantPublications"
               rows="5"
-              required
+               
             ></textarea>
-          </div>
+          </div> 
 
           <div class="col-md-12">
             <button type="submit" class="btn btn-success">Submit</button>
           </div>
         </form>
       </div>
-      <!-- footer -->
+
+       <!-- footer -->
 
       <div class="container-fluid bg-black py-2 mt-5">
         <div class="row">

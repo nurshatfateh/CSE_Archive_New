@@ -111,6 +111,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       <!-- firstcontainer starts -->
       <div class="container pt-5">
         <div class="bg-white border border-info border-3 p-5 mt-3">
+           <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $db = "test_db";
+            
+                // create a connection
+                $conn = mysqli_connect($servername, $username, $password, $db);
+
+                $sql = "select *from thesis_admin";
+                $result = mysqli_query($conn, $sql);
+                $num = mysqli_num_rows($result);
+                while($row = mysqli_fetch_assoc($result)) {
+                  echo '
+                 
+                  ';
+                }
+
+              ?>
           <h1>Thesis Title : Lorem ipsum dolor</h1>
           <h5 class="mt-5">Thesis Domain : Artificial Intelligence</h5><br>
           <h5>Thesis synopsis :</h5>

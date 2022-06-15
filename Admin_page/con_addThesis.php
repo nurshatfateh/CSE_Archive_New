@@ -3,12 +3,6 @@
 	$NoOfStudent = $_POST['NoOfStudent'];
 	$Academic_year = $_POST['AcademicYear'];
 	$StudentID=$_POST['StudentID'];
-	// $Supervisors = $_POST['Supervisors'];
-	// $Supervisor1 = $_POST['supervisor1'];
-	// $Supervisor2 = $_POST['supervisor2'];
-	// $Supervisor3 = $_POST['supervisor3'];
-	// $Supervisor4 = $_POST['supervisor4'];
-	// $Member1ID = $_POST['StudentID1'];
 	$Member1Name = $_POST['TeamMember1'];
 	$TeamPhoto = $_POST['TeamPhoto'];
     $Member2Name = $_POST['TeamMember2'];
