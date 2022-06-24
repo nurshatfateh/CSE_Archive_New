@@ -1,3 +1,62 @@
+<?php
+$insert = false;
+if(isset($_POST['name'])){
+$sname= "localhost";
+
+$unmae= "root";
+
+$password = "";
+
+$db_name = "test_db";
+
+$conn = mysqli_connect($sname, $unmae, $password, $db_name);
+
+
+// Collect post variables
+$id = $_POST['id'];
+$name = $_POST['name'];
+$position = $_POST['position'];
+$joindate = $_POST['joindate'];
+$dept = $_POST['dept'];
+$research = $_POST['research'];
+$degree = $_POST['degree'];
+$dob = $_POST['dob'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+$current = $_POST['current'];
+$pass= $_POST['pass'];
+$sql = "INSERT INTO faculty (id, name, position, joindate, dept, research, degree, dob, phone, email, current, pass) VALUES ('" . $id . "', '" . $name . "', '" . $position . "', '" . $joindate . "', '" . $dept . "', '" . $research . "', '" . $degree . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $current . "', '" . $pass . "')";
+// echo $sql;
+
+// Execute the query
+if($conn->query($sql) == true){
+  // echo "Successfully inserted";
+
+  // Flag for successful insertion
+  $insert = true;
+  echo '<script type="text/javascript">';
+  echo ' alert("DONE!")';  //not showing an alert box.
+  echo '</script>';
+
+}
+else{
+  echo "ERROR: $sql <br> $conn->error";
+}
+
+
+
+
+$conn->close();
+}
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,30 +107,35 @@ $('.input-daterange').datepicker({
 <!-- Font -->
 <link href="http://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
 </head>
-  <body >
+<body >
 
 <!-- navbar starts -->
 <nav class="navbar navbar-expand-xxl navbar-light border-bottom border-5 border-success">
   <div class="container-fluid"> <a 	 href="registerform.html">
-    <button
-          class="navbar-toggler mb-3"
+    <button 
+				class="navbar-toggler mb-3"
           type="button"
-			
-        >
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+				>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
       <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
     </svg>
     </button>
-    </a> <a href="index.html"> <img class="ms-md-5 ms-1" src="img/navlogo.png" alt="logo"
+    </a> <a href="index.php"> <img class="ms-md-5 ms-1" src="img/navlogo.png" alt="logo"
         /></a> </div>
 </nav>
+	
 <div class="bg-light" >
   <div class="container" style="padding: 10px 10px 0px 0px;">
     <h2 style="text-align: left"><b>Teacher Registration Form:</b></h2>
   </div>
   <div class="container mt-5">
-    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="Submitted.html">
+    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="TeacherReg.php" method="post">
       
       <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
       
@@ -79,55 +143,24 @@ $('.input-daterange').datepicker({
         <label for="TeacherName" class="form-label">
         <h6>Teacher Name<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" required class="form-control" id="TeacherName" />
+        <input type="text" name="name" required class="form-control" id="TeacherName" />
       </div>
+   
       <div class="col-md-6">
-        <label for="TeacherID" class="form-label">
-        <h6>Teacher ID<font color="ff0000">*</font></h6>
+        <label for="Teacherid" class="form-label">
+        <h6>ID<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" required class="form-control" id="TeacherID" />
+        <input type="text" name="id" required class="form-control" id="Teacherid" />
       </div>
-      <div class="col-md-6">
-        <label for="Teacher Photo" class="form-label">
-        <h6>Teacher Photo</h6>
-        </label>
-        <br />
-        <input type="File" accept="image/*" />
-      </div>
-      <div class="col-md-6">
-        <label for="Position" class="form-label">
-        <h6>Position<font color="ff0000">*</font></h6>
-        </label>
-        <br/>
-        <select class="form-control selectpicker" required>
-          <option selected disabled>Position</option>
-          <option value="lecturer">Lecturer</option>
-          <option value="assistant_professor">Assistant Professor</option>
-          <option value="associate_professor">Associate Professor</option>
-          <option value="professor">Professor</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <label for="Is currently on service?" class="form-label">
-        <h6>Currently on service?</h6>
-        </label>
-        <div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="CurrentTeacherYes">
-            <label class="form-check-label" for="CurrentTeacherYes"> Yes </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="CurrentTeacherNo" >
-            <label class="form-check-label" for="CurrentTeacherNo"> No </label>
-          </div>
-        </div>
-      </div>
+    
+    
+     
       <div class="col-md-6">
         <label for="Department" class="form-label">
         <h6>Department<font color="ff0000">*</font></h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required>
+        <select class="form-control selectpicker" required name="dept" >
           <option selected disabled>Department</option>
           <option value="CE">Department of Civil Engineering (CE)</option>
           <option value="EWCE">Department of Environmental, Water Resources and Coastal Engineering (EWCE)</option>
@@ -144,79 +177,88 @@ $('.input-daterange').datepicker({
           <option value="SH">Department of Science &amp; Humanities (SH)</option>
         </select>
       </div>
+      <div class="col-md-6">
+        <label for="Teacher Photo" class="form-label">
+        <h6>Teacher Photo</h6>
+        </label>
+        <br />
+        <input type="File" accept="image/*" />
+      </div>
+      <div class="col-md-6">
+        <label for="Join" class="form-label">
+        <h6>Joining Year<font color="ff0000">*</font></h6>
+        </label>
+        <input type="text" name="joindate" required class="form-control" id="join" />
+      </div>
+    
+      <div class="col-md-6"  ></div>
       <div class="col-md-6"  >
         <label for="Date_Of_Birth" class="form-label">
         <h6>Date of birth</h6>
         </label>
         <div class="input-group input-daterange">
-          <input type="text" id="DOB" placeholder="DD/MM/YYYY" class="form-control text-left mr-2">
+          <input type="text" id="DOB" name="dob" placeholder="DD/MM/YY" class="form-control text-left mr-2">
           <span class="fa fa-calendar" id="fa-1"></span> </div>
       </div>
-      <div class="col-md-6" >
-        <label for="Date_of_join" class="form-label"
-              >
-        <h6>Date of joining</h6>
+   
+      <div class="col-md-6">
+        <label for="Research Domain" class="form-label">
+        <h6>Research Domain<font color="ff0000">*</font></h6>
         </label>
-        <div class="input-group input-daterange">
-          <input type="text" id="JoinDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
-          <span class="fa fa-calendar" id="fa-2"></span> </div>
+        <input type="text" name="research"  required class="form-control" id="Research" />
       </div>
-      <div class="col-md-12">
-        <label for="degree" class="form-label"
-              >
-        <h6>Degrees<font color="ff0000">*</font></h6>
+      <div class="col-md-6">
+        <label for="Degree" class="form-label">
+        <h6>Degree<font color="ff0000">*</font></h6>
         </label>
-        <textarea
-              class="form-control"
-              id="degree"
-              rows="3"
-              required
-            ></textarea>
+        <input type="text" name="degree"  required class="form-control" id="degree" />
       </div>
-      <div class="col-md-12">
-        <label for="research" class="form-label"
-              >
-        <h6>Research Domain</h6>
+      <div class="col-md-6">
+        <label for="position" class="form-label">
+        <h6>Position<font color="ff0000">*</font></h6>
         </label>
-        <textarea
-              class="form-control"
-              id="research"
-              rows="3"
-            ></textarea>
+        <input type="text" name="position"  required class="form-control" id="position" />
       </div>
-      <div class="col-md-12">
-        <label for="publication" class="form-label"
-              >
-        <h6>Publications</h6>
+      <div class="col-md-6">
+        <label for="Current" class="form-label">
+        <h6>Currently A Faculty?<font color="ff0000">*</font></h6>
         </label>
-        <textarea
-              class="form-control"
-              id="publication"
-              rows="3"
-            ></textarea>
+        <br />
+        <select class="form-control selectpicker" required name="current" >
+          <option selected disabled>Yes/No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        
+        </select>
       </div>
+  
+    
       <div class="col-md-6">
         <label for="Phone Number" class="form-label">
         <h6>Phone Number<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" required class="form-control" id="PhoneNumber" />
+        <input type="text" name="phone" required class="form-control" id="PhoneNumber" />
       </div>
       <div class="col-md-12" id="pwd-container">
         <section class="login-form">
           <div class="form-floating mt-3 mb-2">
-            <input type="email" name="email" placeholder="Email" required class="form-control input-lg"  />
-            <label for="email">Email address<font color="ff0000">*</font></label>
+            <input type="email" name="email" placeholder="Email" required  class="form-control input-lg"/>
+            <label for="email">
+            <h6>Email address<font color="ff0000">*</font></h6>
+            </label>
           </div>
           <div class="form-floating mt-3 mb-2">
-            <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
-            <label for="password">Password<font color="ff0000">*</font></label>
+            <input type="password" name="pass" class="form-control input-lg" id="password" placeholder="Password" required />
+            <label for="password">
+            <h6>Password<font color="ff0000">*</font></h6>
+            </label>
           </div>
           <div class="pwstrength_viewport_progress"></div>
         </section>
       </div>
       <div class="col-md-12">
         <div class="form-floating mt-3 mb-2">
-          <input type="text" style="-webkit-text-security: disc" class="form-control input-lg" id="confirmpassword" placeholder="Confirm Password" required="true" />
+          <input type="text" style="-webkit-text-security: disc" class="form-control input-lg" id="confirmpassword" placeholder="Confirm Password" required />
           <label for="confirmpassword">Confirm Password<font color="ff0000">*</font></label>
           <div class="form-text confirm-message"></div>
         </div>
@@ -224,10 +266,13 @@ $('.input-daterange').datepicker({
       <div class="col-md-6"><br>
       </div>
       <div class="col-md-12 text-center">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success" >Submit</button>
+        
+
       </div>
     </form>
   </div>
+
 
 <!-- footer -->
 
@@ -279,12 +324,12 @@ $('.input-daterange').datepicker({
 
     });
 </script>
-	  
 </body>
 	
-		<style>
+	<style>
 	input:not(:valid) {
      color: #FF0000;
   }	
 	</style>
+	
 </html>

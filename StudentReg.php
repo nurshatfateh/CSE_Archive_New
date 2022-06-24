@@ -95,7 +95,20 @@ $conn->close();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> 
+<script>
+    $(document).ready(function(){
 
+$('.input-daterange').datepicker({
+    format: 'dd/mm/yyyy',
+    autoclose: true,
+    calendarWeeks : false,
+    clearBtn: true,
+    disableTouchKeyboard: true
+});
+
+});
+	  
+	  </script> 
 
 <!-- Font -->
 <link href="http://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
@@ -217,11 +230,13 @@ $conn->close();
         <input type="text" name="regno" required class="form-control" id="RegistrationNumber" />
       </div>
       <div class="col-md-6"  ></div>
-      <div class="col-md-6">
-        <label for="Registration Number" class="form-label">
-        <h6>Date of Birth<font color="ff0000">*</font></h6>
+      <div class="col-md-6"  >
+        <label for="Date_Of_Birth" class="form-label">
+        <h6>Date of birth</h6>
         </label>
-        <input type="text" name="dob" required class="form-control" id="dob" placeholder="DD/MM/YY" />
+        <div class="input-group input-daterange">
+          <input type="text" id="DOB" name="dob" placeholder="DD/MM/YY" class="form-control text-left mr-2">
+          <span class="fa fa-calendar" id="fa-1"></span> </div>
       </div>
    
       <div class="col-md-6">
@@ -237,14 +252,14 @@ $conn->close();
         <input type="text" name="mother"  required class="form-control" id="MotherName" />
       </div>
       <div class="col-md-6">
-        <label for="current" class="form-label">
+        <label for="Current" class="form-label">
         <h6>Currently A Student?<font color="ff0000">*</font></h6>
         </label>
         <br />
         <select class="form-control selectpicker" required name="current" >
           <option selected disabled>Yes/No</option>
-          <option value="Government">Yes</option>
-          <option value="Non-Government">No</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         
         </select>
       </div>
