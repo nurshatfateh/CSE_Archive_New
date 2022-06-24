@@ -181,7 +181,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                   href="studentprofile_pending_admin.php"
                   class="text-decoration-none text-black">
                   <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;201914055      :     Saheenur Islam Sumon   (BME-02)
+                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/sumon.jpg" style="width:50px;height:60px;"  alt="profile"/> &nbsp;&nbsp;201914055      :     Saheenur Islam Sumon   (BME-02)
                     <a href="student_details_admin.php">
                       <div class="btn-group float-end" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-outline-success">Accept</button>
@@ -192,22 +192,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                   </div>
                 </a>
               </div>
-              <div class="card-body bg-white ">
-                <a
-                  href="studentprofile_pending_admin.php"
-                  class="text-decoration-none text-black">
-                  <div class="p-3  border border-2  border-info">
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;201614055     :     Takik Hasan   (CSE-16)
-                    <a href="student_details_admin.php">
-                      <div class="btn-group float-end" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-success">Accept</button>
-                        <button type="button" class="btn btn-outline-danger">Reject</button>
-                      </div>
-                    </a>
-                  </h6> 
-                  </div>
-                </a>
-              </div>
+     
              
               
               

@@ -119,16 +119,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                
              <div class="row">
                  <div class="col-lg-4 col-12 my-auto">
-                    <img src="../img/studentpic.jpg" class="my-autorounded my-3 mx-auto d-block border border-3 border-info rounded " style="width: 60%;" alt="...">
+                    <img src="../img/sumon.jpg" class="my-autorounded my-3 mx-auto d-block border border-3 border-info rounded " style="width: 60%;" alt="...">
                  </div>
                  
                
                 <div class="col-12 col-lg-8 ">
                       
                   <div class="p-3 mt-3  mx-auto border border-3 border-info rounded ">
-                    <h2 class="mb-1 ">Student Name</h2>
+                    <h2 class="mb-1 ">Saheenur Islam Sumon</h2>
                   
-                    <h6 class="mb-0">Student Roll : 202014040</h6>
+                    <h6 class="mb-0">Student Roll :  201914055 :  </h6>
                   
                         <ul class="mt-2">
                             <li>
@@ -138,7 +138,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                 Admitted Semester: Spring/2020
                             </li>
                             <li>
-                                Department : B.Sc. in Computer Science & Engineering (CSE)
+                                Department : B.Sc. in BME-02
                             </li>
                             <li>
                                 Student Quota : General
@@ -232,7 +232,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 <div class="info-card p-3 border border-3 border-info m-3 rounded ">
                   <h4>Email
                     </h4>
-                  <p>nurshatfateh@gmail.com</p>
+                  <p>sumonh@gmail.com</p>
                 </div>
   
               

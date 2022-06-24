@@ -181,7 +181,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         href="facultyprofile_pending_admin.php"
                         class="text-decoration-none text-black">
                         <div class="p-3  border border-2  border-info">
-                            <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Abdus Sattar   :   CSE 
+                            <h6 class="text-decoration-none text-black"><img class="ms-3 .img-fluid" src="../img/sattar.png" style="width:50px;height:60px;" alt="profile"/> &nbsp;&nbsp;Abdus Sattar   :   CSE 
                             <a href="faculty_details_admin.php" class="text-decoration-none">
                               <div class="btn-group float-end" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-outline-success">Accept</button>
@@ -192,21 +192,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         </div>
                         </a>
                     </div>
-                    <div class="card-body bg-white ">
-                        <a
-                        href="facultyprofile_pending_admin.php"
-                        class="text-decoration-none text-black">
-                        <div class="p-3  border border-2  border-info">
-                            <h6 class="text-decoration-none text-black"><img class="ms-3" src="../img/profile.png" alt="profile"/> &nbsp;&nbsp;Swapnil Biswas   :   CSE
-                            <a href="faculty_details_admin.php">
-                              <div class="btn-group float-end" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-outline-success">Accept</button>
-                                <button type="button" class="btn btn-outline-danger">Reject</button>
-                              </div>
-                            </a></h6>
-                        </div>
-                        </a>
-                    </div>
+            
                    
               
               

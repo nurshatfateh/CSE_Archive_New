@@ -118,7 +118,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                
              <div class="row">
                  <div class="col-lg-4 col-12 my-auto">
-                    <img src="../img/studentpic.jpg" class="rounded my-3 mx-auto d-block border border-3 border-info" style="width: 60%;" alt="...">
+                    <img src="../img/sattar.png" style="width:220px;height:250px;" class="rounded my-3 mx-auto d-block border border-3 border-info" style="width: 60%;" alt="...">
                  </div>
                  
                
