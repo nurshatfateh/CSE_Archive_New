@@ -46,7 +46,7 @@ if (isset($_POST['submit']))
                 $phone = $getData[8];
                 $email = $getData[9];
                 $current = $getData[10];
-        
+                $pass = $getData[11];
  
                 // If user already exists in the database with the same id
                 $query = "SELECT id FROM faculty WHERE id = '" . $getData[0] . "'";
@@ -55,18 +55,20 @@ if (isset($_POST['submit']))
  
                 if ($check->num_rows > 0)
                 {
-                    mysqli_query($conn, "INSERT INTO faculty (id, name, position, joindate, dept, research, degree, dob, phone, email, current) VALUES ('" . $id . "', '" . $name . "', '" . $position . "', '" . $joindate . "', '" . $dept . "', '" . $research . "', '" . $degree . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $current . "')");
+                    mysqli_query($conn, "INSERT INTO faculty (id, name, position, joindate, dept, research, degree, dob, phone, email, current, pass) VALUES ('" . $id . "', '" . $name . "', '" . $position . "', '" . $joindate . "', '" . $dept . "', '" . $research . "', '" . $degree . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $current . "', '" . $pass . "')");
                 }
                 else
                 {
-                    mysqli_query($conn, "INSERT INTO faculty (id, name, position, joindate, dept, research, degree, dob, phone, email, current) VALUES ('" . $id . "', '" . $name . "', '" . $position . "', '" . $joindate . "', '" . $dept . "', '" . $research . "', '" . $degree . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $current . "')");
+                    mysqli_query($conn, "INSERT INTO faculty (id, name, position, joindate, dept, research, degree, dob, phone, email, current, pass) VALUES ('" . $id . "', '" . $name . "', '" . $position . "', '" . $joindate . "', '" . $dept . "', '" . $research . "', '" . $degree . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $current . "', '" . $pass . "')");
                 
                 }
             }
  
             // Close opened CSV file
             fclose($csvFile);
- 
+            echo '<script type="text/javascript">';
+            echo ' alert("DONE!")';  //not showing an alert box.
+            echo '</script>';
             header("Location: studentadmin_admin.php");
          
     }

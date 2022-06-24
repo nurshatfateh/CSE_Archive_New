@@ -1,0 +1,4 @@
+id,name ,position,joindate,dept,research,degree,dob,phone,email,current,pass
+20201,Nafiz Imtiaz Khan,Lecturer,14-02-01,CSE,Artificial Intelligence,PHD in AI,14-02-01,1933318385,nafiz@gmail.com,Yes,1
+20202,Muhaimin Bin Munir,Lecturer,04-02-01,CSE,Machine Learning,PHD in ML,04-02-01,1933318355,rafi@gmail.com,Yes,2
+20203,Shadman Aadeeb,Lecturer,05-02-01,CSE,Natural Language Processing,PHD in NLP,05-02-01,1933318388,aadeeb@gmail.com,Yes,3

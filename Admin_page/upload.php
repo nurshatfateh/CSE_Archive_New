@@ -5,6 +5,7 @@ include_once 'db_conn.php';
 if (isset($_POST['submit']))
 {
  
+    
     // Allowed mime types
     $fileMimes = array(
         'text/x-comma-separated-values',
@@ -23,7 +24,7 @@ if (isset($_POST['submit']))
     // Validate whether selected file is a CSV file
     if (!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $fileMimes))
     {
- 
+      
             // Open uploaded CSV file with read-only mode
             $csvFile = fopen($_FILES['file']['tmp_name'], 'r');
  
@@ -52,27 +53,33 @@ if (isset($_POST['submit']))
                 $blood = $getData[14];
                 $current = $getData[15];
                 $session = $getData[16];
+                $pass = $getData[17];
    
          
  
                 // If user already exists in the database with the same roll
+                
                 $query = "SELECT roll FROM student WHERE roll = '" . $getData[0] . "'";
  
                 $check = mysqli_query($conn, $query);
  
                 if ($check->num_rows > 0)
                 {
-                    mysqli_query($conn, "INSERT INTO student (roll, name, regno, batch, dept, quota, parentjob, dob, phone, email, presadd, permadd, father, mother, blood, current, session) VALUES ('" . $roll . "', '" . $name . "', '" . $regno . "', '" . $batch . "', '" . $dept . "', '" . $quota . "', '" . $parentjob . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $presadd . "', '" . $permadd . "', '" . $father . "', '" . $mother . "', '" . $blood . "', '" . $current . "', '" . $session . "')");
+                    
+                    mysqli_query($conn, "INSERT INTO student (roll, name, regno, batch, dept, quota, parentjob, dob, phone, email, presadd, permadd, father, mother, blood, current, session, pass) VALUES ('" . $roll . "', '" . $name . "', '" . $regno . "', '" . $batch . "', '" . $dept . "', '" . $quota . "', '" . $parentjob . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $presadd . "', '" . $permadd . "', '" . $father . "', '" . $mother . "', '" . $blood . "', '" . $current . "', '" . $session . "', '" . $pass . "')");
+                
                 }
                 else
                 {
-                    mysqli_query($conn, "INSERT INTO student (roll, name, regno, batch, dept, quota, parentjob, dob, phone, email, presadd, permadd, father, mother, blood, current, session) VALUES ('" . $roll . "', '" . $name . "', '" . $regno . "', '" . $batch . "', '" . $dept . "', '" . $quota . "', '" . $parentjob . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $presadd . "', '" . $permadd . "', '" . $father . "', '" . $mother . "', '" . $blood . "', '" . $current . "', '" . $session . "')");
+                    mysqli_query($conn, "INSERT INTO student (roll, name, regno, batch, dept, quota, parentjob, dob, phone, email, presadd, permadd, father, mother, blood, current, session, pass) VALUES ('" . $roll . "', '" . $name . "', '" . $regno . "', '" . $batch . "', '" . $dept . "', '" . $quota . "', '" . $parentjob . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $presadd . "', '" . $permadd . "', '" . $father . "', '" . $mother . "', '" . $blood . "', '" . $current . "', '" . $session . "', '" . $pass . "')");
                 }
+             
+                
             }
  
             // Close opened CSV file
             fclose($csvFile);
- 
+            
             header("Location: studentadmin_admin.php");
          
     }

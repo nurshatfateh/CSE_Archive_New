@@ -40,6 +40,10 @@ if($conn->query($sql) == true){
 
   // Flag for successful insertion
   $insert = true;
+  echo '<script type="text/javascript">';
+  echo ' alert("DONE!")';  //not showing an alert box.
+  echo '</script>';
+
 }
 else{
   echo "ERROR: $sql <br> $conn->error";
@@ -91,20 +95,7 @@ $conn->close();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> 
-<script>
-    $(document).ready(function(){
 
-$('.input-daterange').datepicker({
-    format: 'dd/mm/yyyy',
-    autoclose: true,
-    calendarWeeks : false,
-    clearBtn: true,
-    disableTouchKeyboard: true
-});
-
-});
-	  
-	  </script> 
 
 <!-- Font -->
 <link href="http://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
@@ -230,7 +221,7 @@ $('.input-daterange').datepicker({
         <label for="Registration Number" class="form-label">
         <h6>Date of Birth<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" name="dob" required class="form-control" id="dob" placeholder="DD/MM/YYYY" />
+        <input type="text" name="dob" required class="form-control" id="dob" placeholder="DD/MM/YY" />
       </div>
    
       <div class="col-md-6">
@@ -332,7 +323,9 @@ $('.input-daterange').datepicker({
       <div class="col-md-6"><br>
       </div>
       <div class="col-md-12 text-center">
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success" >Submit</button>
+        
+
       </div>
     </form>
   </div>
