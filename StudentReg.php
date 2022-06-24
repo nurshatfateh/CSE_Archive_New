@@ -1,3 +1,64 @@
+<?php
+$insert = false;
+if(isset($_POST['name'])){
+$sname= "localhost";
+
+$unmae= "root";
+
+$password = "";
+
+$db_name = "test_db";
+
+$conn = mysqli_connect($sname, $unmae, $password, $db_name);
+
+
+// Collect post variables
+$roll = $_POST['roll'];
+$name = $_POST['name'];
+$regno = $_POST['regno'];
+$batch = $_POST['batch'];
+$dept = $_POST['dept'];
+$quota = $_POST['quota'];
+$parentjob = $_POST['parentjob'];
+$dob = $_POST['dob'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+$presadd = $_POST['presadd'];
+$permadd = $_POST['permadd'];
+$father = $_POST['father'];
+$mother = $_POST['mother'];
+$blood = $_POST['blood'];
+$current = $_POST['current'];
+$session = $_POST['session'];
+$pass= $_POST['pass'];
+$sql = "INSERT INTO student (roll, name, regno, batch, dept, quota, parentjob, dob, phone, email, presadd, permadd, father, mother, blood, current, pass, session) VALUES ('" . $roll . "', '" . $name . "', '" . $regno . "', '" . $batch . "', '" . $dept . "', '" . $quota . "', '" . $parentjob . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $presadd . "', '" . $permadd . "', '" . $father . "', '" . $mother . "', '" . $blood . "', '" . $current . "', '" . $pass . "', '" . $session . "')";
+// echo $sql;
+
+// Execute the query
+if($conn->query($sql) == true){
+  // echo "Successfully inserted";
+
+  // Flag for successful insertion
+  $insert = true;
+}
+else{
+  echo "ERROR: $sql <br> $conn->error";
+}
+
+
+
+
+$conn->close();
+}
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +128,7 @@ $('.input-daterange').datepicker({
       <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
     </svg>
     </button>
-    </a> <a href="index.html"> <img class="ms-md-5 ms-1" src="img/navlogo.png" alt="logo"
+    </a> <a href="index.php"> <img class="ms-md-5 ms-1" src="img/navlogo.png" alt="logo"
         /></a> </div>
 </nav>
 	
@@ -76,7 +137,7 @@ $('.input-daterange').datepicker({
     <h2 style="text-align: left"><b>Student Registration Form:</b></h2>
   </div>
   <div class="container mt-5">
-    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="Submitted.html">
+    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="StudentReg.php" method="post">
       
       <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
       
@@ -84,137 +145,48 @@ $('.input-daterange').datepicker({
         <label for="StudentName" class="form-label">
         <h6>Student Name<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" required class="form-control" id="StudentName" />
+        <input type="text" name="name" required class="form-control" id="StudentName" />
       </div>
       <div class="col-md-6">
-        <label for="AcademicYear" class="form-label">
-        <h6>Academic year<font color="ff0000">*</font></h6>
+        <label for="Session" class="form-label">
+        <h6>Session<font color="ff0000">*</font></h6>
+        </label>
+        <input type="text" name="session" required class="form-control" id="Session" />
+      </div>
+      <div class="col-md-6">
+        <label for="StudentRoll" class="form-label">
+        <h6>Student Roll<font color="ff0000">*</font></h6>
+        </label>
+        <input type="text" name="roll" required class="form-control" id="StudentRoll" />
+      </div>
+      <div class="col-md-6">
+        <label for="Batch" class="form-label">
+        <h6>Batch<font color="ff0000">*</font></h6>
+        </label>
+        <input type="text" name="batch" required class="form-control" id="Batch" />
+      </div>
+      <div class="col-md-6">
+        <label for="quota" class="form-label">
+        <h6>Quota<font color="ff0000">*</font></h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required>
-          <option selected disabled>Academic Year</option>
-          <option value="2016-2017">2016-2017</option>
-          <option value="2017-2018">2017-2018</option>
-          <option value="2018-2019">2018-2019</option>
-          <option value="2019-2020">2019-2020</option>
-          <option value="2020-2021">2020-2021</option>
-          <option value="2021-2022">2021-2022</option>
-          <option value="2022-2023">2022-2023</option>
-          <option value="2023-2024">2023-2024</option>
-          <option value="2024-2025">2024-2025</option>
+        <select class="form-control selectpicker" required name="quota" >
+          <option selected disabled>Type</option>
+          <option value="Army">Army</option>
+          <option value="Civil">Civil</option>
+        
         </select>
       </div>
       <div class="col-md-6">
-        <label for="Student ID" class="form-label">
-        <h6>Student ID<font color="ff0000">*</font></h6>
+        <label for="job" class="form-label">
+        <h6>Parent's Job<font color="ff0000">*</font></h6>
         </label>
         <br />
-        <select
-              class="form-control selectpicker"
-              data-live-search="true"
-              required
-            >
-          <!-- <option selected disabled>Student ID</option> -->
-          <option value="201814001">201814001</option>
-          <option value="201814002">201814002</option>
-          <option value="201814003">201814003</option>
-          <option value="201814004">201814004</option>
-          <option value="201814005">201814005</option>
-          <option value="201814006">201814006</option>
-          <option value="201814007">201814007</option>
-          <option value="201814008">201814008</option>
-          <option value="201814009">201814009</option>
-          <option value="201814010">201814010</option>
-          <option value="201814011">201814011</option>
-          <option value="201814012">201814012</option>
-          <option value="201814013">201814013</option>
-          <option value="201814014">201814014</option>
-          <option value="201814015">201814015</option>
-          <option value="201814016">201814016</option>
-          <option value="201814017">201814017</option>
-          <option value="201814018">201814018</option>
-          <option value="201814019">201814019</option>
-          <option value="201814020">201814020</option>
-          <option value="201814021">201814021</option>
-          <option value="201814022">201814022</option>
-          <option value="201814023">201814023</option>
-          <option value="201814024">201814024</option>
-          <option value="201814025">201814025</option>
-          <option value="201814026">201814026</option>
-          <option value="201814027">201814027</option>
-          <option value="201814028">201814028</option>
-          <option value="201814029">201814029</option>
-          <option value="201814030">201814030</option>
-          <option value="201814031">201814031</option>
-          <option value="201814032">201814032</option>
-          <option value="201814033">201814033</option>
-          <option value="201814034">201814034</option>
-          <option value="201814035">201814035</option>
-          <option value="201814036">201814036</option>
-          <option value="201814037">201814037</option>
-          <option value="201814038">201814038</option>
-          <option value="201814039">201814039</option>
-          <option value="201814040">201814040</option>
-          <option value="201814041">201814041</option>
-          <option value="201814042">201814042</option>
-          <option value="201814043">201814043</option>
-          <option value="201814044">201814044</option>
-          <option value="201814045">201814045</option>
-          <option value="201814046">201814046</option>
-          <option value="201814047">201814047</option>
-          <option value="201814048">201814048</option>
-          <option value="201814049">201814049</option>
-          <option value="201814050">201814050</option>
-          <option value="201814051">201814051</option>
-          <option value="201814052">201814052</option>
-          <option value="201814053">201814053</option>
-          <option value="201814054">201814054</option>
-          <option value="201814055">201814055</option>
-          <option value="201814056">201814056</option>
-          <option value="201814057">201814057</option>
-          <option value="201814058">201814058</option>
-          <option value="201814059">201814059</option>
-          <option value="201814060">201814060</option>
-          <option value="201814061">201814061</option>
-          <option value="201814062">201814062</option>
-          <option value="201814063">201814063</option>
-          <option value="201814064">201814064</option>
-          <option value="201814065">201814065</option>
-          <option value="201814066">201814066</option>
-          <option value="201814067">201814067</option>
-          <option value="201814068">201814068</option>
-          <option value="201814069">201814069</option>
-          <option value="201814070">201814070</option>
-          <option value="201814071">201814071</option>
-          <option value="201814072">201814072</option>
-          <option value="201814073">201814073</option>
-          <option value="201814074">201814074</option>
-          <option value="201814075">201814075</option>
-          <option value="201814076">201814076</option>
-          <option value="201814077">201814077</option>
-          <option value="201814078">201814078</option>
-          <option value="201814079">201814079</option>
-          <option value="201814080">201814080</option>
-          <option value="201814081">201814081</option>
-          <option value="201814082">201814082</option>
-          <option value="201814083">201814083</option>
-          <option value="201814084">201814084</option>
-          <option value="201814085">201814085</option>
-          <option value="201814086">201814086</option>
-          <option value="201814087">201814087</option>
-          <option value="201814088">201814088</option>
-          <option value="201814089">201814089</option>
-          <option value="201814090">201814090</option>
-          <option value="201814091">201814091</option>
-          <option value="201814092">201814092</option>
-          <option value="201814093">201814093</option>
-          <option value="201814094">201814094</option>
-          <option value="201814095">201814095</option>
-          <option value="201814096">201814096</option>
-          <option value="201814097">201814097</option>
-          <option value="201814098">201814098</option>
-          <option value="201814099">201814099</option>
-          <option value="201814100">201814100</option>
+        <select class="form-control selectpicker" required name="parentjob" >
+          <option selected disabled>Type</option>
+          <option value="Government">Government</option>
+          <option value="Non-Government">Non-Government</option>
+        
         </select>
       </div>
       <div class="col-md-6">
@@ -222,7 +194,7 @@ $('.input-daterange').datepicker({
         <h6>Department<font color="ff0000">*</font></h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required>
+        <select class="form-control selectpicker" required name="dept" >
           <option selected disabled>Department</option>
           <option value="CE">Department of Civil Engineering (CE)</option>
           <option value="EWCE">Department of Environmental, Water Resources and Coastal Engineering (EWCE)</option>
@@ -246,56 +218,44 @@ $('.input-daterange').datepicker({
         <br />
         <input type="File" accept="image/*" />
       </div>
-      <div class="col-md-6">
-        <label for="Is currently a student?" class="form-label">
-        <h6>Currently a student?</h6>
-        </label>
-        <div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="CurrentStudentYes" >
-            <label class="form-check-label" for="CurrentStudentYes"> Yes </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="CurrentStudentNo" >
-            <label class="form-check-label" for="CurrentStudentNo"> No </label>
-          </div>
-        </div>
-      </div>
+     
       <div class="col-md-6">
         <label for="Registration Number" class="form-label">
         <h6>Registration Number<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" required class="form-control" id="RegistrationNumber" />
+        <input type="text" name="regno" required class="form-control" id="RegistrationNumber" />
       </div>
       <div class="col-md-6"  ></div>
-      <div class="col-md-6"  >
-        <label for="Date_Of_Birth" class="form-label">
-        <h6>Date of birth<font color="ff0000">*</font></h6>
+      <div class="col-md-6">
+        <label for="Registration Number" class="form-label">
+        <h6>Date of Birth<font color="ff0000">*</font></h6>
         </label>
-        <div class="input-group input-daterange">
-          <input type="text" id="DOB" placeholder="DD/MM/YYYY" class="form-control text-left mr-2" required>
-          <span class="fa fa-calendar" id="fa-1"></span> </div>
+        <input type="text" name="dob" required class="form-control" id="dob" placeholder="DD/MM/YYYY" />
       </div>
-      <div class="col-md-6" >
-        <label for="Admission_Date" class="form-label"
-              >
-        <h6>Admission Date</h6>
-        </label>
-        <div class="input-group input-daterange">
-          <input type="text" id="AdmitDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
-          <span class="fa fa-calendar" id="fa-2"></span> </div>
-      </div>
+   
       <div class="col-md-6">
         <label for="Father's Name" class="form-label">
         <h6>Father's Name<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" required class="form-control" id="FatherName" />
+        <input type="text" name="father"  required class="form-control" id="FatherName" />
       </div>
       <div class="col-md-6">
         <label for="Mother's Name" class="form-label">
         <h6>Mother's Name<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" required class="form-control" id="MotherName" />
+        <input type="text" name="mother"  required class="form-control" id="MotherName" />
+      </div>
+      <div class="col-md-6">
+        <label for="current" class="form-label">
+        <h6>Currently A Student?<font color="ff0000">*</font></h6>
+        </label>
+        <br />
+        <select class="form-control selectpicker" required name="current" >
+          <option selected disabled>Yes/No</option>
+          <option value="Government">Yes</option>
+          <option value="Non-Government">No</option>
+        
+        </select>
       </div>
       <div class="col-md-12">
         <label for="Present Address" class="form-label"
@@ -306,6 +266,7 @@ $('.input-daterange').datepicker({
               class="form-control"
               id="PresentAddress"
               rows="3"
+              name="presadd"
             ></textarea>
       </div>
       <div class="col-md-12">
@@ -313,10 +274,12 @@ $('.input-daterange').datepicker({
               >
         <h6>Permanent Address</h6>
         </label>
+        
         <textarea
               class="form-control"
               id="PermanentAddress"
               rows="3"
+              name="permadd"
             ></textarea>
       </div>
       <div class="col-md-6">
@@ -324,7 +287,7 @@ $('.input-daterange').datepicker({
         <h6>Blood Group<font color="ff0000">*</font></h6>
         </label>
         <br/>
-        <select class="form-control selectpicker" required>
+        <select class="form-control selectpicker" required name="blood" >
           <option selected disabled>Blood Group</option>
           <option value="A+">A+</option>
           <option value="A-">A-</option>
@@ -340,7 +303,7 @@ $('.input-daterange').datepicker({
         <label for="Phone Number" class="form-label">
         <h6>Phone Number<font color="ff0000">*</font></h6>
         </label>
-        <input type="text" required class="form-control" id="PhoneNumber" />
+        <input type="text" name="phone" required class="form-control" id="PhoneNumber" />
       </div>
       <div class="col-md-12" id="pwd-container">
         <section class="login-form">
@@ -351,7 +314,7 @@ $('.input-daterange').datepicker({
             </label>
           </div>
           <div class="form-floating mt-3 mb-2">
-            <input type="password" class="form-control input-lg" id="password" placeholder="Password" required />
+            <input type="password" name="pass" class="form-control input-lg" id="password" placeholder="Password" required />
             <label for="password">
             <h6>Password<font color="ff0000">*</font></h6>
             </label>
