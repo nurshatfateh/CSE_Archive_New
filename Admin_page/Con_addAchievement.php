@@ -20,7 +20,7 @@
     $Member5Name = $_POST['TeamMember5'];
     $AchievementTitle = $_POST['AchievementTitle'];
     $Achievement_detailes = $_POST['AchievementDetailes'];
-	$AchievementPhoto = $_POST['AchievementPic'];
+	//$AchievementPhoto = $_POST['AchievementPic'];
     $PrizeMoney = $_POST['PrizeMoney'];
 
 
@@ -30,12 +30,32 @@
 		echo "$conn->connect_error";
 		die("Connection Failed : ". $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("insert into addachievement(EventName, Organizer, Academic_year,TeamName,StudentNo,Supervisor1,Supervisor2,Supervisor3,Supervisor4, Member1ID,Member1Name,Member2ID,Member2Name,Member3ID,Member3Name,Member4ID,Member4Name,Member5ID,Member5Name,AchievementTitle,Achievement_detailes,AchievementPhoto,PrizeMoney) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param("sssssssssssssssssssssss", $EventName, $Organizer, $Academic_year,$TeamName,$StudentNo,$Supervisor1,$Supervisor2,$Supervisor3,$Supervisor4, $Member1ID,$Member1Name,$Member2ID,$Member2Name,$Member3ID,$Member3Name,$Member4ID,$Member4Name,$Member5ID,$Member5Name,$AchievementTitle,$Achievement_detailes,$AchievementPhoto,$PrizeMoney);
+
+        $Get_image_name = $_FILES['AchievementPic']['name'];
+			
+		$image_Path = "images/".basename($Get_image_name);  
+
+		$stmt = $conn->prepare("insert into addachievement(EventName, Organizer, Academic_year,TeamName,StudentNo,Supervisor1,Supervisor2,Supervisor3,Supervisor4, Member1ID,Member1Name,Member2ID,Member2Name,Member3ID,Member3Name,Member4ID,Member4Name,Member5ID,Member5Name,AchievementTitle,Achievement_detailes,PrizeMoney,AchievementPhoto) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssssssssssssssssssssss", $EventName, $Organizer, $Academic_year,$TeamName,$StudentNo,$Supervisor1,$Supervisor2,$Supervisor3,$Supervisor4, $Member1ID,$Member1Name,$Member2ID,$Member2Name,$Member3ID,$Member3Name,$Member4ID,$Member4Name,$Member5ID,$Member5Name,$AchievementTitle,$Achievement_detailes,$PrizeMoney,$Get_image_name);
 		$execval = $stmt->execute();
 		echo $execval;
 		echo " Achievement added successfully...";
+		
+         
+	  
+			// Database$sql = "INSERT INTO addachievement (AchievementPhoto) VALUES ('$Get_image_name')";
+			
+			 // Run SQL query
+			//mysqli_query($conn, $sql);
+	  
+			if (move_uploaded_file($_FILES['AchievementPic']['tmp_name'], $image_Path)) {
+				echo "Your Image uploaded successfully";
+		    }else{
+				echo "Not Insert Image";
+			}
+		
 		$stmt->close();
 		$conn->close();
 	}
+
 ?>

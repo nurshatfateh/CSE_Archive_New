@@ -116,7 +116,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       <div class="container mt-5">
         <h2 class="my-5">Add Achievements :</h2>
 
-        <form class="row g-3 bg-white border p-3" action="Con_addAchievement.php" method="post">
+        <form class="row g-3 bg-white border p-3" action="Con_addAchievement.php" method="post" enctype="multipart/form-data">
           <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
           <div class="col-md-6">
             <label for="Event Name" class="form-label">
@@ -209,7 +209,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <br />
             <select
               class="form-control selectpicker"
-              multiple
               data-live-search="true"
               data-placeholder="Supervisor,Co Supervisor"
               required
@@ -232,7 +231,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <br />
             <select
               class="form-control selectpicker"
-              multiple
               data-live-search="true"
               data-placeholder="Supervisor,Co Supervisor"
               required
@@ -255,10 +253,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <br />
             <select
               class="form-control selectpicker"
-              multiple
               data-live-search="true"
               data-placeholder="Supervisor,Co Supervisor"
-              required
 			        name="supervisor3"
 			        id="supervisor3"
             >
@@ -278,7 +274,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <br />
             <select
               class="form-control selectpicker"
-              multiple
               data-live-search="true"
               data-placeholder="Supervisor,Co Supervisor"
 			        name="supervisor4"
@@ -452,8 +447,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <h6>Achievement Photo(jpg/png/jpeg)</h6>
             </label>
             <br />
-            <input type="File" accept="image/*" id="AchievementPic"
-              name="AchievementPic"/>
+            <input type="file"  id="AchievementPic" name="AchievementPic"/>
           </div>
 
       

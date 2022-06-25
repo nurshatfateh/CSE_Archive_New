@@ -120,7 +120,7 @@ $row = mysqli_fetch_array($result);
           <div class="p-3 mt-2 mb-2 border border-3 border-info">
             <h2 class="mb-5 text-center fw-bold">ACHIEVEMENT DETAILS</h2>
             <img
-              src="../img/acvm1.jpg"
+              <?php  echo "src='images/".$row['AchievementPhoto']."' " ;?>
               class="rounded my-3 mx-auto d-block"
               style="width: 80%"
               alt="..."
