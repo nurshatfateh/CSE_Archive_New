@@ -125,7 +125,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 <div class="col-12 col-lg-8 ">
                       
                   <div class="p-3 mt-3  mx-auto border border-3 border-info rounded ">
-                    <h2 class="mb-1 ">Faculty Name</h2>
+                    <h2 class="mb-1 ">Abdus Sattar</h2>
                   
                     <h6 class="mb-0">Faculty Position: Professor</h6>
                   
