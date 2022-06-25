@@ -115,40 +115,86 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         </div>
       </div>
       <!-- Acheivement head end -->
+      
 
       <!-- carousel start  -->
-
       <div class="container px-4 pt-5">
       <div class="row bg-light border border-3">
  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <?php
+          include_once 'db_conn.php';
+          $result = mysqli_query($conn,"SELECT * FROM addachievement");
+          ?>
+          <?php
+          if (mysqli_num_rows($result) > 0) {
+          ?>
+          <?php
+          $i=0;
+          while($row = mysqli_fetch_array($result)) {
+          ?>
+      <?php if($i ==0) { ?>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?php echo "$i" ;?>" class="active" aria-current="true" aria-label="Slide <?php echo "$i" ;?>"></button>
+    <?php } else { ?>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?php echo "$i" ;?>" aria-label="Slide <?php echo "$i" ;?>"></button>
+    <?php } ?>
+    <?php
+
+          $i++;
+          }
+          ?>
+          <?php
+          }
+          else{
+          echo "No result found";
+          }
+          ?>
   </div>
   <div class="carousel-inner">
+  <?php
+          include_once 'db_conn.php';
+          $result = mysqli_query($conn,"SELECT * FROM addachievement");
+          ?>
+          <?php
+          if (mysqli_num_rows($result) > 0) {
+          ?>
+          <?php
+          $i=0;
+          while($row = mysqli_fetch_array($result)) {
+          ?>
+       <?php if ($i == 0) { ?>
     <div class="carousel-item active">
- <img src="../img/acvm1.jpg" class="d-block  my-3 mx-auto"  style="width: 100%; height: 600px;" alt="..."></a>
+    <img <?php  echo "src='images/".$row['AchievementPhoto']."' " ;?> class="d-block  my-3 mx-auto"  style="width: 100%; height: 600px;" alt="..."></a>
         <div class="carousel-caption  d-md-block fw-bolder bg-black " >
-          <h2 class=" fw-bolder text-white">MIST WINS URC-2022</h2>
-          <!-- <p class=" fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, error.</p> -->
-        </div>
-      </div>
-    <div class="carousel-item">
-      <img src="../img/acvm2.jpg" class="d-block my-3 mx-auto"  style="width: 100%; height:600px ;" alt="...">
-     <div class="carousel-caption  d-md-block fw-bolder bg-black " >
-          <h2 class=" fw-bolder text-white">UVC PURGE 2.0 MADE</h2>
+          <h2 class=" fw-bolder text-white"><?php echo $row["AchievementTitle"]; ?></h2>
           <!-- <p class=" fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, error.</p> -->
         </div>
     </div>
+    <?php } else { ?>
+
     <div class="carousel-item">
-      <img src="../img/acvm3.jpg" class="d-block  rounded my-3 mx-auto"  style="width: 100%; height:600px ;" alt="...">
-      <div class="carousel-caption  d-md-block fw-bolder bg-black " >
-          <h2 class=" fw-bolder text-white">BEST PAPER WINNER</h2>
+    <img <?php  echo "src='images/".$row['AchievementPhoto']."' " ;?> class="d-block  my-3 mx-auto"  style="width: 100%; height: 600px;" alt="..."></a>
+        <div class="carousel-caption  d-md-block fw-bolder bg-black " >
+          <h2 class=" fw-bolder text-white"><?php echo $row["AchievementTitle"]; ?></h2>
           <!-- <p class=" fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, error.</p> -->
         </div>
     </div>
+    <?php } ?>
+      <?php
+          $i++;
+          }
+          ?>
+          <?php
+          }
+          else{
+          echo "No result found";
+          }
+          ?>
+          
   </div>
+
+  
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -179,8 +225,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           $i=0;
           while($row = mysqli_fetch_array($result)) {
           ?>
-
-
+          
           <div class="col-sm-4 mb-5 mt-5">
             <div class="card border-2 border-info ms-3">
               <div class="card-body">

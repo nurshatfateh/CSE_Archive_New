@@ -214,6 +214,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               required
 			        name="supervisor1"
 			        id="supervisor1"
+              multiple data-max-options="1"
             >
               <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
               <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
@@ -231,11 +232,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <br />
             <select
               class="form-control selectpicker"
-              data-live-search="true"
+              data-live-search="true" 
               data-placeholder="Supervisor,Co Supervisor"
               required
 			        name="supervisor2"
 			        id="supervisor2"
+              multiple data-max-options="1"
             >
               <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
               <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
@@ -257,6 +259,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               data-placeholder="Supervisor,Co Supervisor"
 			        name="supervisor3"
 			        id="supervisor3"
+              multiple data-max-options="1"
             >
               <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
               <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
@@ -278,7 +281,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               data-placeholder="Supervisor,Co Supervisor"
 			        name="supervisor4"
 			        id="supervisor4"
-            >
+              multiple data-max-options="1"
+            >  
               <option value="Lec Muhaimin Bin Munir">Lec Muhaimin Bin Munir</option>
               <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz Khan</option>
               <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
