@@ -119,7 +119,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                
              <div class="row">
                  <div class="col-lg-4 col-12 my-auto">
-                    <img src="../img/studen2.jpg" class="my-autorounded my-3 mx-auto d-block border border-3 border-info rounded " style="width: 60%;" alt="...">
+                    <img src="../img/sumon.jpg" class="my-autorounded my-3 mx-auto d-block border border-3 border-info rounded " style="width: 60%;" alt="...">
                  </div>
                  
                
