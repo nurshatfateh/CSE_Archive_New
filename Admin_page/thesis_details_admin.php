@@ -109,8 +109,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <!-- middle part starts -->
     <div class="bg-light">
       <!-- firstcontainer starts -->
-      <div class="container pt-5">
-        <div class="bg-white border border-info border-3 p-5 mt-3">
+      
            <?php
                 $servername = "localhost";
                 $username = "root";
@@ -125,23 +124,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 $num = mysqli_num_rows($result);
                 while($row = mysqli_fetch_assoc($result)) {
                   echo '
-                 
+                 <div class="container pt-5">
+                  <div class="bg-white border border-info border-3 p-5 mt-3">
+                  <h1>Thesis Title : ' .$row['Thesis_title']. '</h1>
+          <h5 class="mt-5">Thesis Domain : ' .$row['Thesis_title']. '</h5><br>
+          <h5>Thesis synopsis :</h5>
+          <p>
+            ' .$row['ThesisSynopsis']. '
+          </p>
+        </div>
+      </div>
                   ';
                 }
 
               ?>
-          <h1>Thesis Title : Lorem ipsum dolor</h1>
-          <h5 class="mt-5">Thesis Domain : Artificial Intelligence</h5><br>
-          <h5>Thesis synopsis :</h5>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only
-          </p>
-        </div>
-      </div>
+          
       <!-- firstcontainer ends -->
 
       <!-- secondcontainer starts  -->
