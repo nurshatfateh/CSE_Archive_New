@@ -419,7 +419,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
           <div class="col-md-12">
             <label for="Achievement detailes" class="form-label">
-              <h6>Achievement detailes <font color="ff0000">*</font></h6>
+              <h6>Achievement details <font color="ff0000">*</font></h6>
             </label>
 
             <textarea

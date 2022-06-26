@@ -175,7 +175,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
             
 
-            <select  class="form-control selectpicker"   name="Course_name" id=" Course_name">
+            <select  class="form-control selectpicker"   name="Course_name" id="Course_name">
               <option selected disabled>Course Name</option>
               <option  value="CSE-301">CSE-301</option>
               <option  value="CSE-303">CSE-303</option>
@@ -235,7 +235,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               data-live-search="true"
                 name="StudentID" id="StudentID"
             >
-             <option selected disabled>Student ID</option>
               <option value="201814001">201814001</option>
               <option value="201814002">201814002</option>
               <option value="201814003">201814003</option>

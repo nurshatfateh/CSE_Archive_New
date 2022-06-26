@@ -3,7 +3,12 @@
 session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+  include_once 'db_conn.php';
 
+$code=$_GET["id"]; 
+$result = mysqli_query($conn,"SELECT * FROM projects where id=$code");
+
+$row = mysqli_fetch_array($result);
  ?>
 
 <!DOCTYPE html>
@@ -113,23 +118,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="card-body bg-white">
           <div class="p-3 mt-2 mb-2 border border-3 border-info">
             <h2 class="mb-2 text-center">Project Name</h2>
+            <p><?php echo $row["ProjectName"]; ?></p>
             <img
               src="../img/projectsingle.png"
               class="rounded my-3 mx-auto d-block"
               style="width: 60%"
               alt="..."
             />
-            <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
+            <h6 class="mb-2 text-center">Project Domain |<?php echo $row["Academicyear"]; ?></h6>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
-              enim possimus iste cumque voluptatem. Odio veritatis accusantium
-              nihil temporibus amet animi, aliquam blanditiis adipisci quis ea
-              pariatur minus impedit architecto incidunt nobis repellendus
-              perspiciatis tempore voluptate earum qui, mollitia natus fuga.
-              Ullam sit saepe distinctio eligendi, unde nesciunt totam. A, optio
-              reprehenderit? Totam dolores earum magni hic quisquam ullam
-              officia modi iusto, culpa, ex velit, commodi repellat tempora
-              exercitationem nisi.
+             <?php echo $row["ProjectDomain"]; ?>
             </p>
           </div>
         </div>
@@ -142,40 +140,40 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="row border bg-white m-0">
           <!-- left part starts  -->
           <div class="col-12 col-md-4 side-nav p-3">
-            <div class="info-card p-2 border border-2 border-info m-3 rounded">
+            <!-- <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Course Name</h4>
               <p>CSE-224</p>
-            </div>
+            </div> -->
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Academic Year</h4>
-              <p>2021-2022</p>
+              <p><?php echo $row["Academicyear"]; ?></p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Number of Student</h4>
-              <p>3</p>
+              <p><?php echo $row["NoofStudent"]; ?></p>
             </div>
 
-            <div class="info-card p-3 border border-2 border-info m-3 rounded">
+            <!-- <div class="info-card p-3 border border-2 border-info m-3 rounded">
               <h4>No. of Publication</h4>
               <p>4</p>
-            </div>
+            </div> -->
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Commence Date</h4>
-              <p>18-12-2021</p>
+               <p><?php echo $row["CommenceDate"]; ?></p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Completion Date</h4>
-              <p>20-01-2022</p>
+               <p><?php echo $row["CompletionDate"]; ?></p>
             </div>
 
-            <!-- <div class="info-card p-3 border border-success">
+            <div class="info-card p-3 border border-success">
                             <h4>Budget</h4>
-                            <p>4,651 BDT</p>
-                        </div> -->
+                             <p><?php echo $row["Budget"]; ?></p>
+                        </div>
 
             <!-- <div class="info-card p-3 border border-success">
                             <h4>DOI</h4>
@@ -191,7 +189,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div
                 class="border d-flex align-items-center text-black border-2 border-info p-2 rounded"
               >
-                <p class="m-0">Project_Name_Files • (7.4 mb)</p>
+                <p class="m-0"><?php echo $row["ProjectFile"]; ?></p>
                 <a href="#" class="ms-auto inline-block btn btn-success"
                   >Download <i class="fa fa-download"></i
                 ></a>
@@ -203,7 +201,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div
                 class="border d-flex align-items-center text-black border-2 border-info p-2 rounded"
               >
-                <p class="m-0">Project_Name_Proposal • (7.4 mb)</p>
+                 <p class="m-0"><?php echo $row["Proposal"]; ?></p>
                 <a href="#" class="ms-auto inline-block btn btn-success"
                   >Download <i class="fa fa-download"></i
                 ></a>
@@ -215,7 +213,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div
                 class="border d-flex align-items-center text-black border-2 border-info p-2 rounded"
               >
-                <p class="m-0">Project_Name_Prototype • (7.4 mb)</p>
+                 <p class="m-0"><?php echo $row["Prototype"]; ?></p>
                 <a href="#" class="ms-auto inline-block btn btn-success"
                   >Download <i class="fa fa-download"></i
                 ></a>
@@ -248,7 +246,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     src="../img/student1.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Abir hossain</h5>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member-1Name"]; ?></h5>
                   <p class="m-0 text-center">202014001</p>
                 </div>
                 <div
@@ -260,7 +258,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     src="../img/studen2.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Shoeb Ahmed Tanjim</h5>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member-2Name"]; ?></h5>
                   <p class="m-0 text-center">202014002</p>
                 </div>
                 <div
@@ -272,7 +270,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     src="../img/student3.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Shovon Niverd Pereira</h5>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member-3Name"]; ?></h5>
                   <p class="m-0 text-center">202014002</p>
                 </div>
               </div>
