@@ -457,7 +457,7 @@ $('.input-daterange').datepicker({
             <br />
             <input type="File" accept="image/*" />
           </div>
-          <div class="col-md-6"  >
+          <!-- <div class="col-md-6"  >
             <label for="CommenceDate" class="form-label">
               <h6>Commence Date <font color="ff0000">*</font></h6>
             </label>
@@ -467,9 +467,9 @@ $('.input-daterange').datepicker({
           <span class="fa fa-calendar" id="fa-1"></span>
         </div>
 			  
-          </div>
+          </div> -->
 
-          <div class="col-md-6" >
+          <!-- <div class="col-md-6" >
             <label for="CompletionDate" class="form-label"
               ><h6>Completion Date <font color="ff0000">*</font></h6>
 			  </label>
@@ -478,7 +478,7 @@ $('.input-daterange').datepicker({
           <span class="fa fa-calendar" id="fa-2"></span>
         </div>
 				  
-          </div>
+          </div> -->
           <div class="col-md-12">
             <label for="Project Title" class="form-label"
               ><h6>Project Title <font color="ff0000">*</font></h6>
@@ -521,7 +521,7 @@ $('.input-daterange').datepicker({
               <h6>Team Photo(jpg/png/jpeg)</h6>
             </label>
             <br />
-            <input type="File" accept="image/*" id="TeamPhoto" name="TeamPhoto" />
+            <input type="File"  id="TeamPhoto" name="TeamPhoto" />
           </div>
 
           <div class="col-md-6">
