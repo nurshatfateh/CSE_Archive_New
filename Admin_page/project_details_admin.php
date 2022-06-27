@@ -5,8 +5,8 @@ session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   include_once 'db_conn.php';
 
-$code=$_GET["id"]; 
-$result = mysqli_query($conn,"SELECT * FROM projects where id=$code");
+
+$result = mysqli_query($conn,"SELECT * FROM projects");
 
 $row = mysqli_fetch_array($result);
  ?>
@@ -117,18 +117,16 @@ $row = mysqli_fetch_array($result);
       <div class="container pt-5">
         <div class="card-body bg-white">
           <div class="p-3 mt-2 mb-2 border border-3 border-info">
-            <h2 class="mb-2 text-center">Project Name</h2>
-            <p><?php echo $row["ProjectName"]; ?></p>
+            <h2 class="mb-2 text-center"><?php echo $row["ProjectName"]; ?></h2>
+          
             <img
-              src="../img/projectsingle.png"
+              src="../img/proj3.jpg"
               class="rounded my-3 mx-auto d-block"
               style="width: 60%"
               alt="..."
             />
-            <h6 class="mb-2 text-center">Project Domain |<?php echo $row["Academicyear"]; ?></h6>
-            <p>
-             <?php echo $row["ProjectDomain"]; ?>
-            </p>
+            <h6 class="mb-2 text-center"><?php echo $row["ProjectDomain"]; ?> | <?php echo $row["Academicyear"]; ?></h6>
+           
           </div>
         </div>
       </div>
@@ -155,10 +153,10 @@ $row = mysqli_fetch_array($result);
               <p><?php echo $row["NoofStudent"]; ?></p>
             </div>
 
-            <!-- <div class="info-card p-3 border border-2 border-info m-3 rounded">
-              <h4>No. of Publication</h4>
-              <p>4</p>
-            </div> -->
+            <div class="info-card p-3 border border-2 border-info m-3 rounded">
+              <h4>Project Type</h4>
+              <p><?php echo $row["ProjectType"]; ?></p>
+            </div>
 
             <div class="info-card p-2 border border-2 border-info m-3 rounded">
               <h4>Commence Date</h4>
@@ -170,10 +168,10 @@ $row = mysqli_fetch_array($result);
                <p><?php echo $row["CompletionDate"]; ?></p>
             </div>
 
-            <div class="info-card p-3 border border-success">
-                            <h4>Budget</h4>
-                             <p><?php echo $row["Budget"]; ?></p>
-                        </div>
+           <div class="info-card p-2 border border-2 border-info m-3 rounded">
+              <h4>Budget</h4>
+               <p><?php echo $row["Budget"]; ?></p>
+            </div>
 
             <!-- <div class="info-card p-3 border border-success">
                             <h4>DOI</h4>
@@ -246,8 +244,8 @@ $row = mysqli_fetch_array($result);
                     src="../img/student1.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center"><?php echo $row["Member-1Name"]; ?></h5>
-                  <p class="m-0 text-center">202014001</p>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member1Name"]; ?></h5>
+                  <p class="m-0 text-center">202014049</p>
                 </div>
                 <div
                   class="col-md-3 col-6 py-4 border border-info border-2 m-3 rounded"
@@ -258,7 +256,7 @@ $row = mysqli_fetch_array($result);
                     src="../img/studen2.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center"><?php echo $row["Member-2Name"]; ?></h5>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member2Name"]; ?></h5>
                   <p class="m-0 text-center">202014002</p>
                 </div>
                 <div
@@ -270,7 +268,7 @@ $row = mysqli_fetch_array($result);
                     src="../img/student3.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center"><?php echo $row["Member-3Name"]; ?></h5>
+                  <h5 class="mt-3 text-center"><?php echo $row["Member3Name"]; ?></h5>
                   <p class="m-0 text-center">202014002</p>
                 </div>
               </div>

@@ -261,11 +261,29 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
           <!-- LEFT BAR ends -->
           <!-- Right BAR -->
+
           <div class="col-xxl-9 col-12">
            
 
             <div class="card mb-2 border-3 border border-info rounded">
-              <h5 class="card-header text-white bg-info">Others' Project</h5>
+            
+          <?php
+          include_once 'db_conn.php';
+          $result = mysqli_query($conn,"SELECT * FROM projects");
+
+          ?>
+
+          <?php 
+          if (mysqli_num_rows($result) > 0){
+          ?>
+
+            <?php
+            while($row = mysqli_fetch_array($result)){
+            ?>
+
+              <h5 class="card-header text-white bg-info fw-bolder">OTHER'S PROJECT</h5>
+
+
 
               <div class="card-body bg-white">
                 <a
@@ -274,30 +292,36 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                   ><div
                     class="p-3 mt-2 mb-2 border-2 border border-info rounded"
                   >
-                    <h4 class="mb-2 text-center">Others' Project Name</h4>
+                    <h4 class="mb-2 text-center"><?php echo $row["ProjectName"];?></h4>
                     <img
-                      src="../img/projectsingle.png"
+                      src="../img/proj3.jpg"
                       class="rounded my-3 mx-auto d-block"
                       style="width: 60%"
                       alt="..."
                     />
-                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
+                    <h6 class="mb-2 text-center"><?php echo $row["ProjectDomain"];?> | <?php echo $row["Academicyear"];?></h6>
                     <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Vero enim possimus iste cumque voluptatem. Odio veritatis
-                      accusantium nihil temporibus amet animi, aliquam
-                      blanditiis adipisci quis ea pariatur minus impedit
-                      architecto incidunt nobis repellendus perspiciatis tempore
-                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
-                      distinctio eligendi, unde nesciunt totam. A, optio
-                      reprehenderit? Totam dolores earum magni hic quisquam
-                      ullam officia modi iusto, culpa, ex velit, commodi
-                      repellat tempora exercitationem nisi.
+                      <?php echo $row["ProjectSynopsis"];?>
                     </p>
                   </div></a
                 >
               </div>
-              <div class="card-body bg-white">
+              
+            <?php
+            }
+            ?>
+          
+            <?php
+          
+          }else{
+              echo "No result found";
+            }
+            ?>
+
+
+
+
+              <!-- <div class="card-body bg-white">
                 <a
                   href="project_details_admin.php"
                   class="text-decoration-none text-black"
@@ -386,8 +410,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     </p>
                   </div></a
                 >
-              </div>
-              <div class="card-body bg-white">
+              </div> -->
+              <!-- <div class="card-body bg-white">
                 <a
                   href="project_details_admin.php"
                   class="text-decoration-none text-black"
@@ -416,7 +440,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     </p>
                   </div></a
                 >
-              </div>
+              </div> -->
             </div>
           </div>
           <!-- Right BAR ends -->

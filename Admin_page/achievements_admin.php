@@ -238,7 +238,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 /></a> 
                 <p class="card-text fw-bold"><?php echo $row["AchievementTitle"]; ?></p>
                 <p class="card-text fw-normal text-wrap">
-                <?php echo substr ($row["Achievement_detailes"], 0, 150); ?>
+                <?php echo substr ($row["Achievement_details"], 0, 150); ?>
                 </p>
                 <a href="achievments_details_admin.php?id=<?php echo $row["id"];?>"
                   >View More</a

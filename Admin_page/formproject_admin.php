@@ -361,8 +361,8 @@ $('.input-daterange').datepicker({
               type="text"
               placeholder="Member-1 Name"
               class="form-control"
-              id="Member-1Name"
-              name="Member-1Name"
+              id="Member1Name"
+              name="Member1Name"
             />
           </div>
 
@@ -382,8 +382,8 @@ $('.input-daterange').datepicker({
               type="text"
               placeholder="Member-2 Name"
               class="form-control"
-              id="Member-2Name"
-              name="Member-2Name"
+              id="Member2Name"
+              name="Member2Name"
             />
           </div>
 
@@ -403,8 +403,8 @@ $('.input-daterange').datepicker({
               type="text"
               placeholder="Member-3 Name"
               class="form-control"
-              id="Member-3Name"
-              name="Member-3Name"
+              id="Member3Name"
+              name="Member3Name"
             />
           </div>
 
@@ -424,8 +424,8 @@ $('.input-daterange').datepicker({
               type="text"
               placeholder="Member-4 Name"
               class="form-control"
-              id="Member-4Name"
-              name="Member-4Name"
+              id="Member4Name"
+              name="Member4Name"
             />
           </div>
 
@@ -445,8 +445,8 @@ $('.input-daterange').datepicker({
               type="text"
               placeholder="Member-5 Name"
               class="form-control"
-              id="Member51Name"
-              name="Member-5Name"
+              id="Member5Name"
+              name="Member5Name"
             />
           </div>
 
@@ -457,7 +457,7 @@ $('.input-daterange').datepicker({
             <br />
             <input type="File" accept="image/*" />
           </div>
-          <!-- <div class="col-md-6"  >
+          <div class="col-md-6"  >
             <label for="CommenceDate" class="form-label">
               <h6>Commence Date <font color="ff0000">*</font></h6>
             </label>
@@ -467,9 +467,9 @@ $('.input-daterange').datepicker({
           <span class="fa fa-calendar" id="fa-1"></span>
         </div>
 			  
-          </div> -->
+          </div>
 
-          <!-- <div class="col-md-6" >
+          <div class="col-md-6" >
             <label for="CompletionDate" class="form-label"
               ><h6>Completion Date <font color="ff0000">*</font></h6>
 			  </label>
@@ -478,7 +478,24 @@ $('.input-daterange').datepicker({
           <span class="fa fa-calendar" id="fa-2"></span>
         </div>
 				  
-          </div> -->
+          </div>
+
+           <div class="col-md-12">
+            <label for="ProjectType" class="form-label">
+              <h6>Project Type<font color="ff0000">*</font></h6>
+            </label>
+            <br />
+
+            <select class="form-control selectpicker"  name="ProjectType">
+              <option selected disabled>Project Type</option>
+              <option value="StudentProject">Student Project</option>
+              <option value="FacultyProject">Faculty Project</option>
+              <option value="DeptProject">Dept Project</option>
+             
+            </select>
+          </div>
+
+
           <div class="col-md-12">
             <label for="Project Title" class="form-label"
               ><h6>Project Title <font color="ff0000">*</font></h6>
