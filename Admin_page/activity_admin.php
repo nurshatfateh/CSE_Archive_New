@@ -110,7 +110,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="card">
           <div class="card-body bg-primary p-4">
             <h1 class="d-inline-block text-white ms-4">ACTIVITIES</h1>
-            <a href="activities_form_admin.php"
+            <a href="add_activity_admin.php"
               ><button type="button" class="btn btn-light btn-lg float-end">
                 + Add ACTIVITIES
               </button></a
@@ -125,33 +125,76 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       <div class="container px-4 pt-5">
       <div class="row bg-light border border-3">
  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+ <div class="carousel-indicators">
+    <?php
+          include_once 'db_conn.php';
+          $result = mysqli_query($conn,"SELECT * FROM addactivity");
+          ?>
+          <?php
+          if (mysqli_num_rows($result) > 0) {
+          ?>
+          <?php
+          $i=0;
+          while($row = mysqli_fetch_array($result)) {
+          ?>
+      <?php if($i ==0) { ?>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?php echo "$i" ;?>" class="active" aria-current="true" aria-label="Slide <?php echo "$i" ;?>"></button>
+    <?php } else { ?>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?php echo "$i" ;?>" aria-label="Slide <?php echo "$i" ;?>"></button>
+    <?php } ?>
+    <?php
+
+          $i++;
+          }
+          ?>
+          <?php
+          }
+          else{
+          echo "No result found";
+          }
+          ?>
   </div>
   <div class="carousel-inner">
+  <?php
+          include_once 'db_conn.php';
+          $result = mysqli_query($conn,"SELECT * FROM addactivity");
+          ?>
+          <?php
+          if (mysqli_num_rows($result) > 0) {
+          ?>
+          <?php
+          $i=0;
+          while($row = mysqli_fetch_array($result)) {
+          ?>
+       <?php if ($i == 0) { ?>
     <div class="carousel-item active">
- <img src="../img/act1.jpg" class="d-block  my-3 mx-auto"  style="width: 100%; height: 600px;" alt="..."></a>
+    <img <?php  echo "src='images/".$row['ActivityPhoto']."' " ;?> class="d-block  my-3 mx-auto"  style="width: 100%; height: 600px;" alt="..."></a>
         <div class="carousel-caption  d-md-block fw-bolder bg-black " >
-          <h2 class=" fw-bolder text-white">CYBER RANGE INAUGURATION CEREMONY</h2>
-          <!-- <p class=" fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, error.</p> -->
-        </div>
-      </div>
-    <div class="carousel-item">
-      <img src="../img/act2.jpg" class="d-block my-3 mx-auto"  style="width: 100%; height:600px ;" alt="...">
-       <div class="carousel-caption  d-md-block fw-bolder bg-black " >
-          <h2 class=" fw-bolder text-white">NATIONAL COLLEGIATE PROGRAMMING CONTEST</h2>
+          <h2 class=" fw-bolder text-white"><?php echo $row["EventName"]; ?></h2>
           <!-- <p class=" fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, error.</p> -->
         </div>
     </div>
+    <?php } else { ?>
+
     <div class="carousel-item">
-      <img src="../img/act3.jpg" class="d-block  rounded my-3 mx-auto"  style="width: 100%; height:600px ;" alt="...">
-      <div class="carousel-caption  d-md-block fw-bolder bg-black " >
-          <h2 class=" fw-bolder text-white">SOFT-EXPO 2022</h2>
+    <img <?php  echo "src='images/".$row['ActivityPhoto']."' " ;?> class="d-block  my-3 mx-auto"  style="width: 100%; height: 600px;" alt="..."></a>
+        <div class="carousel-caption  d-md-block fw-bolder bg-black " >
+          <h2 class=" fw-bolder text-white"><?php echo $row["EventName"]; ?></h2>
           <!-- <p class=" fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, error.</p> -->
         </div>
     </div>
+    <?php } ?>
+      <?php
+          $i++;
+          }
+          ?>
+          <?php
+          }
+          else{
+          echo "No result found";
+          }
+          ?>
+          
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -173,24 +216,51 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 
           <!-- 1 -->
+          <?php
+          include_once 'db_conn.php';
+          $result = mysqli_query($conn,"SELECT * FROM addactivity");
+          ?>
+          <?php
+          if (mysqli_num_rows($result) > 0) {
+          ?>
+          <?php
+          $i=0;
+          while($row = mysqli_fetch_array($result)) {
+          ?>
+<div class="col-sm-12 mb-5 mt-5">
        <div class="card w-100 mt-3 p-3 mb-3 border border-2 border-info">
-  <div class="card-body">
-    <h5 class="card-title fw-bolder text-center">Programming contest</h5>
-     <a href="activity_details_admin.php"
-                  ><img
-                    src="../img/act5.jpg"
-                    class="d-block my-3 mx-auto"
-                    style="width: 50%; height: 300px"
-                    alt="..."
-                /></a>
-    <p class="card-text fw-normal">The state of the art cyber security training facility, sponsored by ICT division of the Govt. of the Peoples’ Republic of Bangladesh was inaugurated on 10th April by Hon’ble State Minister of ICT Division, MR. Zunaid Ahmed Palak, MP.
-    </p>
-  <div class="button text-center mt-4"><a href="activity_details_admin.php" class="btn btn-primary">More details</a></div>
-  </div>
+              <div class="card-body">
+                <h5 class="card-title fw-bolder text-center"><?php echo $row["EventName"]; ?></h5>
+                <a href="activity_details_admin.php?id=<?php echo $row["id"];?>"
+                              ><img
+                              <?php  echo "src='images/".$row['ActivityPhoto']."' " ;?>
+                                class="d-block my-3 mx-auto"
+                                style="width: 50%; height: 300px"
+                                alt="..."
+                            /></a>
+                
+                <br><br><p class="card-text fw-normal text-wrap"><?php echo substr ($row["PostDetails"], 0, 305); ?>
+                <a href="activity_details_admin.php?id=<?php echo $row["id"];?>"
+                              >View More</a></p>
+              <!-- <div class="button text-center mt-4"><a href="activity_details_admin.php" class="btn btn-primary">More details</a></div>
+              </div> -->
+              </div>
+        </div>
 </div>
+<?php
+          $i++;
+          }
+          ?>
+          <?php
+          }
+          else{
+          echo "No result found";
+          }
+          ?>
+
 
   <!-- 2 -->
- <div class="card w-100 mt-3 p-3 mb-3 border border-2 border-info">
+ <!-- <div class="card w-100 mt-3 p-3 mb-3 border border-2 border-info">
   <div class="card-body">
     <h5 class="card-title fw-bolder text-center">Cyberthon</h5>
      <a href="activity_details_admin.php"
@@ -257,7 +327,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   </div>
 </div>
 
-        </div>
+        </div> -->
+      </div>
       </div>
 
       <!-- Achivements card end -->

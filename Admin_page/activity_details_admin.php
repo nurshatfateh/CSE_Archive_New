@@ -4,6 +4,16 @@ session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
+ 
+  include_once 'db_conn.php';
+
+$code=$_GET["id"]; 
+$result = mysqli_query($conn,"SELECT * FROM addactivity where id=$code");
+
+$row = mysqli_fetch_array($result);
+
+
+
  ?>
 
 
@@ -108,25 +118,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       <div class="container pt-5">
         <div class="card-body bg-white">
           <div class="p-3 mt-2 mb-2 border border-3 border-info">
-            <h2 class="mb-5 text-center fw-bold">ACTIVITY DETAILS</h2>
+            <h2 class="mb-5 text-center fw-bold"><?php echo $row["EventName"]; ?></h2>
             <img
-              src="../img/act5.jpg"
+              <?php  echo "src='images/".$row['ActivityPhoto']."' " ;?>
               class="rounded my-3 mx-auto d-block"
               style="width: 80%"
               alt="..."
             />
-            <h6 class="mb-2 mt-3 text-center">Programming contest held</h6>
-            <!-- <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
-              enim possimus iste cumque voluptatem. Odio veritatis accusantium
-              nihil temporibus amet animi, aliquam blanditiis adipisci quis ea
-              pariatur minus impedit architecto incidunt nobis repellendus
-              perspiciatis tempore voluptate earum qui, mollitia natus fuga.
-              Ullam sit saepe distinctio eligendi, unde nesciunt totam. A, optio
-              reprehenderit? Totam dolores earum magni hic quisquam ullam
-              officia modi iusto, culpa, ex velit, commodi repellat tempora
-              exercitationem nisi.
-            </p> -->
+            <h3 class="mb-2 mt-3 text-center"><?php echo $row["EventTag"]; ?></h3><br><br>
+            <h5 class="text-center">Starting Date :
+            <?php echo $row["CommenceDate"]; ?>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <!-- </p> -->
+            Ending Date :
+            <?php echo $row["CompletionDate"]; ?>
+            </h5>
+            <h5 class="text-center">Organizer : 
+            <?php echo $row["Organizer"]; ?>
+            </h5>
           </div>
         </div>
       </div>
@@ -144,37 +152,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="col-12 p-4 pt-4 main-content">
             <div class="info-detail mt-2 border border-2 border-info p-3">
               <p class="card-text fw-normal">
-                Team Mongol Barota was born in 2013, with a vision of reaching
-                higher than ever. Since its inception, this ambitious little
-                team had only one objective: To present our institute, as well
-                as our country on a global platform with pride. Since then, the
-                team has begun designing and fabricating futuristic Mars rovers
-                in order to challenge other teams across the globe. Over the
-                years, the team has grown and evolved into something marvelous.
-                As future engineers, we prioritise collaboration, learning, and
-                collective effort all throughout any project, to turn our
-                initial vision into concrete reality. Now we go forward with the
-                motto, "Nothing is constant, other than change", constantly
-                evolving, to keep up with the challenges we face.
-              </p>
-              <p class="card-text fw-normal">
-                After a long hiatus, Team Mongol Barota has risen from its
-                ashes, with a new rover, aptly named "PHOENIX". The team, now
-                stronger than ever, participated in the University Rover
-                Challenge of 2021, and won the championship with flying colors.
-                This was a first in the history of our team, the institute, as
-                well as our country, Bangladesh. The key to this success was the
-                efficient collaboration among the CSE and ME departments, making
-                the team stronger than ever.
-              </p>
-              <p class="card-text fw-normal">
-                Team Mongol Barota's first attempt at the European Rover
-                Challenge was on 2016. The team had tried their best, with high
-                ambition and will to reach the top. However, the team had not
-                been successful in that attempt, resulting in our team entering
-                a period of hiatus for the next few years. Part of the journey
-                is the hardship and the loss, something that the team felt
-                profoundly after the challenge came to an end.
+              <?php echo $row["PostDetails"]; ?>
               </p>
             </div>
 
