@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2022 at 08:59 PM
+-- Generation Time: Jun 29, 2022 at 06:30 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,21 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `thesis_admin` (
-  `Course_name` varchar(20) DEFAULT NULL,
-  `Academic_year` varchar(30) DEFAULT NULL,
+  `Course_name` varchar(255) DEFAULT NULL,
+  `Academic_year` varchar(255) DEFAULT NULL,
   `No_of_Student` int(10) DEFAULT NULL,
-  `Team_member_name_1` varchar(30) DEFAULT NULL,
+  `Team_member_name_1` varchar(255) DEFAULT NULL,
   `Team_member_name_2` varchar(30) DEFAULT NULL,
   `Team_member_name_3` varchar(30) DEFAULT NULL,
   `Team_member_name_4` varchar(30) DEFAULT NULL,
   `Team_member_name_5` varchar(30) DEFAULT NULL,
-  `Thesis_domain` varchar(100) NOT NULL,
-  `StudentID` varchar(20) NOT NULL,
+  `Thesis_domain` varchar(255) NOT NULL,
+  `StudentID` varchar(255) NOT NULL,
   `Proposal` varchar(100) NOT NULL,
   `Prototype` varchar(100) NOT NULL,
   `ThesisBook` varchar(100) NOT NULL,
-  `Commencedate` datetime DEFAULT NULL,
-  `CompletionDate` datetime DEFAULT NULL,
+  `Commencedate` varchar(255) DEFAULT NULL,
+  `CompletionDate` varchar(255) DEFAULT NULL,
   `ThesisSynopsis` varchar(100) NOT NULL,
   `URLFrontend` varchar(100) NOT NULL,
   `GithubLink` varchar(100) NOT NULL,
@@ -56,12 +56,29 @@ CREATE TABLE `thesis_admin` (
 -- Dumping data for table `thesis_admin`
 --
 
-INSERT INTO `thesis_admin` (`Course_name`, `Academic_year`, `No_of_Student`, `Team_member_name_1`, `Team_member_name_2`, `Team_member_name_3`, `Team_member_name_4`, `Team_member_name_5`, `Thesis_domain`, `StudentID`, `Proposal`, `Prototype`, `ThesisBook`, `Commencedate`, `CompletionDate`, `ThesisSynopsis`, `URLFrontend`, `GithubLink`, `RelevantPublications`, `ThesisFiles`, `Thesis_title`) VALUES
-('', '', 0, '', '', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', ''),
-('cse-301', '2019-20', 4, 'saifur', 'majdoor', 'khanchi', 'bhabi', 'billu', 'THESISDOMAIN', '202014019', 'PROPOSAL', 'PROTOTYPE', 'THESISBOOK', '2022-06-21 00:00:00', '2022-06-08 00:00:00', 'THESISSYNOPSIS', 'URL', 'GITLINK', 'RELEVEANRPUBLICATON', 'THESISFIEL', 'THESISTITLE'),
-('CSE-303', '2019-2020', 3, ' MASKAS1', 'ASASALJ2', 'ASASLKAS4', 'asasa', 'mm-5', 'DSFSDVSFFVS', ' 201814006', ' ', ' ', 'CSE_302_SubQueries.pdf', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'DSFDVDFVFDV', 'DSFDVC ', 'DCSDVCDFCS', ' DFSDFDSVS', '', 'SDEWFRSDGVDSV'),
-('CSE-309', '2016-2017', 5, ' asas', 'm2', 'ASASLKAS4', 'asasa', 'mm-5', 'asasasa', ' 201814007', ' Database-System-Concepts-7th-Edition.pdf', ' ', 'MCC-intro-1.pdf', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'asasasa', 'asas', 'asasasas', ' asasasas', '', 'asasas'),
-('CSE-309', '2017-2018', 5, ' MASKAS1', 'ASASALJ2', 'mm3', 'm4', 'mm-5', 'DBMS', ' 201814006', ' ', ' ', 'CSE_302_SubQueries.pdf', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'HELLOWORLD', 'HTTP', 'GIT', ' HELLOJAVA', '', 'BINARY SEARCH');
+INSERT INTO `thesis_admin` (`Course_name`, `Academic_year`, `No_of_Student`, `Team_member_name_1`, `Team_member_name_2`, `Team_member_name_3`, `Team_member_name_4`, `Team_member_name_5`, `Thesis_domain`, `StudentID`, `Proposal`, `Prototype`, `ThesisBook`, `Commencedate`, `CompletionDate`, `ThesisSynopsis`, `URLFrontend`, `GithubLink`, `RelevantPublications`, `ThesisFiles`, `Thesis_title`, `thesisID`) VALUES
+('CSE-309', '2017-2018', 5, 'Farhan nizami', 'Abu Hena Rony', 'Jamal Uddin', 'Masum Talukder', 'Bijoya ghosh', 'Database input output', ' 201814006,202014019', 'Organized collection of structured information, or data, typically stored electronically in a comput', 'Database management system', 'CSE_302_SubQueries.pdf', '12-12-2019', '12-12-2020', 'Data structure that stores organized information. Most databases contain multiple tables, which may ', 'www.database.com', 'GIT', ' HELLOJAVA12345', 'thesis extract digest', 'Deep learning obstacle avoidance', 5),
+('CSE-305', '2020-2021', 5, 'Easin Arafat', 'Shoeb Ahmed Tanjim', 'Shovon Niverd pereira', 'Rayhan Ferdous Faisal', 'Adib Hossain', 'Software Models are trained with labeled data sets', ' 201814005,202014025,202014043', 'Supervised machine learning models are trained with labeled data sets', 'Algorithm would be trained with pictures of dogs and other things, all labeled by humans', 'BLOCKCHAIN OVERVIEW.pptx', '12-9-2020', '12-10-2022', 'Machine learning (ML) is a type of artificial intelligence (AI) that allows software applications to', 'www.ml.com', 'repo/ml', ' Advanced Deep learning', 'thesis extract digest second', 'Advanced Machine Learning', 6);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `thesis_admin`
+--
+ALTER TABLE `thesis_admin`
+  ADD PRIMARY KEY (`thesisID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `thesis_admin`
+--
+ALTER TABLE `thesis_admin`
+  MODIFY `thesisID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

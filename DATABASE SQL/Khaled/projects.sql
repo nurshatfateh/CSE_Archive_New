@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2022 at 09:09 PM
+-- Generation Time: Jun 29, 2022 at 06:36 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -60,8 +60,8 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`ProjectName`, `Academicyear`, `NoofStudent`, `StudentID`, `Supervisors`, `Member1Name`, `Member2Name`, `Member3Name`, `Member4Name`, `Member5Name`, `CommenceDate`, `CompletionDate`, `ProjectTitle`, `ProjectDomain`, `ProjectSynopsis`, `TeamPhoto`, `Proposal`, `Prototype`, `Budget`, `URLofFrontend`, `GithubLink`, `ProjectFile`, `RelevantProjects`, `ProjectID`, `ProjectType`) VALUES
-('Mist archive', '2021-2022', 4, '202014016,202014019,202014033,202014040', 'lec nafiz, lec muhaimin, lec adeeb', 'Easin Arafat', 'Khaled Hasan ', 'Md Rashid Ul Islam', 'Nurshat Fateh Ali', '', '2022-06-01', '2022-06-16', 'Data archive cse', 'whole cse dept', 'Archive', '', 'Hello archive', 'yes', '200000', 'http / archive ', 'github repo', 'mistdataarchive', 'dbms', 1, 'Studentproject'),
-('CYBER RANGE', '2021-2022', 5, '201814005', 'Lec Shadman Aadeeb', 'NURSHAT', 'NAIEM', 'RASHID', 'TANVIN', 'KHALED', '15/06/2022', '22/06/2022', 'PENETRATION', 'CYBER', 'SECURITY', '', '', '', '1234', 'WWW.CYBERRANGE.COM', 'REPO', 'blockchain10.jpg', 'ML', 3, 'StudentProject');
+('MIST DATA ARCHIVE', '2021-2022', 4, '202014016,202014019,202014033,202014040', 'lec nafiz, lec muhaimin, lec adeeb', 'Easin Arafat', 'Khaled Hasan ', 'Md Rashid Ul Islam', 'Nurshat Fateh Ali', 'Tanvin Jamal', '2022-06-01', '2022-06-16', 'Data archive cse', 'whole cse dept', 'Data archiving is the practice of identifying data that is no longer active and moving it out of production systems into long-term storage systems.', '', 'Hello archive12345', 'Long-term retention', '200000', 'http / archive ', 'github repo', 'mistdataarchive', 'dbms', 1, 'Studentproject'),
+('CYBER RANGE', '2021-2022', 5, '201814005', 'Lec Shadman Aadeeb', 'Nurshat Fateh Ali', 'Solaiman Islam Naiem', 'Rashid Ul Islam', 'Tanvin Jamal', 'Khaled Hasan Irfan', '15/06/2022', '22/06/2022', 'Penetration testing', 'protect computer networks from cyberattacks and unauthorized access', 'Cyber security is the application of technologies, processes and controls to protect systems, networks, programs, devices and data from cyber attacks.', '', 'Ensure of Cyber security  ', 'Cyberthreats prevention ', '10000', 'WWW.CYBERRANGE.COM', 'REPO', 'blockchain10.jpg', 'ML', 3, 'StudentProject');
 
 --
 -- Indexes for dumped tables
@@ -81,7 +81,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `ProjectID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ProjectID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
