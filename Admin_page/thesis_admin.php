@@ -279,6 +279,7 @@
           <!-- Right BAR ends -->
         </div>
       </div>
+      </div>
 
       <!-- card section -->
 

@@ -258,6 +258,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           echo "No result found";
           }
           ?>
+          </div>
+          </div>
 
       <!-- Achivements card end -->
 
@@ -287,6 +289,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
       <!-- footer -->
     </div>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
