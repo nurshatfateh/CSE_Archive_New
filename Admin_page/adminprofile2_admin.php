@@ -1,17 +1,22 @@
 <?php 
-
 session_start();
-
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-
-  include_once 'db_conn.php';
- 
-
+  include_once 'db_conn.php'; 
 $code=$_GET["id"]; 
-$result = mysqli_query($conn,"SELECT * FROM faculty where id=$code");
 
-$row = mysqli_fetch_array($result);
+$result = mysqli_query($conn,"SELECT * FROM student where roll=$code");
+if (mysqli_num_rows($result) === 1){
+$me = mysqli_fetch_array($result);
+$joined=$me["session"];
+$pos="Student";
+}
 
+else{
+  $result = mysqli_query($conn,"SELECT * FROM faculty where id=$code");
+  $me = mysqli_fetch_array($result);
+  $joined=$me["joindate"];
+  $pos=$me["position"];
+}
  ?>
 
 <!DOCTYPE html>
@@ -40,7 +45,7 @@ $row = mysqli_fetch_array($result);
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
-    <title>Profile_admin</title>
+    <title>Profile_Admin</title>
   </head>
   <body>
     <!-- navbar starts -->
@@ -57,17 +62,21 @@ $row = mysqli_fetch_array($result);
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="home_admin.php">
+        <a
+                  href="home2_admin.php? id= <?php echo $code;?>"
+                class="nav-link active text-success fw-bolder"
+                aria-current="page"
+               
+                >
           <img class="ms-md-5 ms-1" src="../img/navlogo.png" alt="logo"
         /></a>
-
         <div
           class="collapse navbar-collapse mx-5 fw-bold"
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="home_admin.php">Home</a>
+          <li class="nav-item mx-3">
+              <a class="nav-link"  href="home2_admin.php? id= <?php echo $code;?>">Home</a>
             </li>
             <li class="nav-item mx-3">
               <a
@@ -90,11 +99,17 @@ $row = mysqli_fetch_array($result);
               <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-
-          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim hossain</h6></a> 
-
-
+          <a
+                  href="adminprofile2_admin.php? id= <?php echo $code;?>"
+             
+               
+                >
+            <img class="ms-3" src="../img/profile.png" alt="profile"
+          /></a>
+          <a
+                  href="adminprofile2_admin.php? id= <?php echo $code;?>" class="text-decoration-none text-black">
+            <h6 class="mt-2 mx-3"><?php echo $me["name"]; ?></h6></a
+          >
           <a href="../logout.php"
             ><button type="button" class="btn btn-danger mx-3">
               Log Out
@@ -112,7 +127,7 @@ $row = mysqli_fetch_array($result);
        <div class="container pt-5">
         <div class="card">
           <div class="card-body bg-primary p-4">
-            <h1 class="d-inline-block text-white ms-4">Faculty Profile</h1>
+            <h1 class="d-inline-block text-white ms-4">My Profile</h1>
            
           </div>
         </div>
@@ -132,27 +147,22 @@ $row = mysqli_fetch_array($result);
                 <div class="col-12 col-lg-8 ">
                       
                   <div class="p-3 mt-3  mx-auto border border-3 border-info rounded ">
-                    <h2 class="mb-1 "><?php echo $row["name"]; ?></h2>
+                    <h2 class="mb-1 ">Name: <?php echo $me["name"]; ?></h2>
                   
-                    <h6 class="mb-0">Faculty Position: <?php echo $row["position"]; ?></h6>
-                    
+                    <h5 class="mb-0">Positon: <?php echo $pos; ?></h5>
                   
                         <ul class="mt-2">
-                            <li>
-                                Faculty ID: <?php echo $row["id"]; ?>
+                            <li><h6>
+                                 ID: <?php echo $code; ?>
                             </li>
-                            <li>
-                                Date of joining: <?php echo $row["joindate"]; ?>
+                            <li><h6>
+                                Join date: <?php echo $joined; ?>
                             </li>
-                            <li>
-                                Department : <?php echo $row["dept"]; ?>
+                            <li><h6>
+                                Department : <?php echo $me["dept"]; ?>
                             </li>
-                            <li>
-                                Research Domain : <?php echo $row["research"]; ?>
-                            </li>
-                            <li>
-                                Degree : <?php echo $row["degree"]; ?>
-                            </li>
+                        
+                         
                         </ul>
                 
                    
@@ -169,21 +179,21 @@ $row = mysqli_fetch_array($result);
 
       <div class="container pt-3">
         <div class="row border bg-white m-0">
-          <!-- left part starts  -->
-          <div class="col-12 col-lg-4 side-nav p-3 ">
-            <div class="info-card p-2 border border-3 border-info m-3  rounded ">
+       
+
+          <div class="info-card p-2 border border-3 border-info m-3  rounded ">
               <h4>Date of Birth</h4>
-              <p><?php echo $row["dob"]; ?></p>
+              <p><?php echo $me["dob"]; ?></p>
             </div>
             <div class="info-card p-2 border border-3 border-info m-3 rounded ">
                 <h4>Phone Number
                   </h4>
-                <p><?php echo "0".$row["phone"]; ?></p>
+                <p><?php echo $me["phone"]; ?></p>
               </div>
               <div class="info-card p-2 border border-3 border-info m-3 rounded ">
                 <h4>Email
                   </h4>
-                <p><?php echo $row["email"]; ?></p>
+                <p><?php echo $me["email"]; ?></p>
               </div>
 
            
@@ -196,104 +206,9 @@ $row = mysqli_fetch_array($result);
             <div class="info-card p-3 border border-3 border-info m-3 rounded ">
               <h4>Is currently on service?
                 </h4>
-              <p><?php echo $row["current"]; ?></p>
+              <p><?php echo $me["current"]; ?></p>
             </div>
-
-            
-
-            
-          </div>
-          <!-- left parts ends  -->
-
-          <!-- right parts starts  -->
-          <div class="col-lg-8 col-12 p-4 pt-4 mt-2 ">
-          
          
-            <div class="card mb-5 border border-3 border-info rounded ">
-                <h5 class="card-header text-white bg-info ">Thesis</h5>
-                <div class="card-body bg-white ">
-                  <a
-                    href="thesis_details_admin.php"
-                    class="text-decoration-none text-black"
-                    ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
-                      <h4 class="mb-2">My Thesis Name</h4>
-                      <div class="d-flex align-items-center text-black">
-                        <p class="m-0 p-2">
-                          <h6 class="d-inline-block">Thesis Domain</h6>
-                          | 2019-2020
-                        </p>
-                        <a href="form_admin.php" class="ms-auto inline-block btn btn-dark"
-                          >Edit <i class="fa fa-edit"></i
-                        ></a>
-                      </div></div
-                  ></a>
-                </div>
-                <div class="card-body bg-white">
-                   <a
-                    href="thesis_details_admin.php"
-                    class="text-decoration-none text-black"
-                    ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
-                      <h4 class="mb-2">My Thesis Name</h4>
-                      <div class="d-flex align-items-center text-black">
-                        <p class="m-0 p-2">
-                          <h6 class="d-inline-block">Thesis Domain</h6>
-                          | 2019-2020
-                        </p>
-                        <a href="form_admin.php" class="ms-auto inline-block btn btn-dark"
-                          >Edit <i class="fa fa-edit"></i
-                        ></a>
-                      </div></div
-                  ></a>
-                </div>
-                <div class="card-body bg-white">
-                    <a
-                     href="thesis_details_admin.php"
-                     class="text-decoration-none text-black"
-                     ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded ">
-                       <h4 class="mb-2">My Thesis Name</h4>
-                       <div class="d-flex align-items-center text-black">
-                         <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
-                           | 2019-2020
-                         </p>
-                         <a href="#" class="ms-auto inline-block btn btn-dark"
-                           >Edit <i class="fa fa-edit"></i
-                         ></a>
-                       </div></div
-                   ></a>
-                 </div>
-                 <div class="card-body bg-white">
-                    <a
-                     href="thesis_details_admin.php"
-                     class="text-decoration-none text-black"
-                     ><div class="p-3 mt-2 mb-2 border  border-info border-2 rounded " >
-                       <h4 class="mb-2">My Thesis Name</h4>
-                        <div class="d-flex align-items-center text-black">
-                          <p class="m-0 p-2">
-                            <h6 class="d-inline-block">Thesis Domain</h6>
-                            | 2019-2020
-                          </p>
-                          <a href="#" class="ms-auto inline-block btn btn-dark"
-                            >Edit <i class="fa fa-edit"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </a>
-                 </div>
-  
-            </div>
-
-            
-          
-          </div>
-        
-              
-            
-            
-          
-          </div>
-
-          <!-- right parts ends  -->
 
          
           

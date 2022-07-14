@@ -36,37 +36,31 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     }else{
 
-        $sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
+        $sql = "SELECT * FROM student WHERE roll='$uname' AND pass='$pass'";
 
         $result = mysqli_query($conn, $sql);
+
+        $sql = "SELECT * FROM faculty WHERE id='$uname' AND pass='$pass'";
+
+        $result2= mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) === 1) {
 
             $row = mysqli_fetch_assoc($result);
 
-            if ($row['user_name'] === $uname && $row['password'] === $pass) {
+            if ($row['roll'] === $uname && $row['pass'] === $pass) {
 
                 echo "Logged in!";
 
-                $_SESSION['user_name'] = $row['user_name'];
+                $_SESSION['user_name'] = $row['roll'];
 
                 $_SESSION['name'] = $row['name'];
 
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['id'] = $row['roll'];
+                $a=$row["roll"];
+                header("Location: Admin_page/home2_admin.php? id= $a ");
 
-
-                if($uname=="admin")
-                {
-                    header("Location: Admin_page/home_admin.php");
-                }
-                else if($uname=="faculty")
-                {
-                    header("Location: Faculty_page/home_faculty.html");
-                }
-                else if($uname=="student")
-                {
-                    header("Location: Student_page/home_student.html");
-                }
+              
 
                 
 
@@ -80,7 +74,43 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
             }
 
-        }else{
+        }
+        else if (mysqli_num_rows($result2) === 1) {
+
+            $row = mysqli_fetch_assoc($result2);
+
+            if ($row['id'] === $uname && $row['pass'] === $pass) {
+
+                echo "Logged in!";
+
+                $_SESSION['user_name'] = $row['id'];
+
+                $_SESSION['name'] = $row['name'];
+
+                $_SESSION['id'] = $row['id'];
+                $a=$row["id"];
+                header("Location: Admin_page/home2_admin.php? id= $a ");
+    
+
+               
+
+                
+
+                exit();
+
+            }else{
+
+                header("Location: index.php?error=Incorect User name or password");
+
+                exit();
+
+            }
+
+        }
+        
+        
+        
+        else{
 
             header("Location: index.php?error=Incorect User name or password");
 

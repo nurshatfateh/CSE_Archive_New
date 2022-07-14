@@ -1,9 +1,15 @@
 <?php 
-
 session_start();
-
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-
+  include_once 'db_conn.php'; 
+$code=$_GET["id"]; 
+$result = mysqli_query($conn,"SELECT * FROM student where roll=$code");
+if (mysqli_num_rows($result) === 1){
+$me = mysqli_fetch_array($result);}
+else{
+  $result = mysqli_query($conn,"SELECT * FROM faculty where id=$code");
+  $me = mysqli_fetch_array($result);
+}
  ?>
 
 
@@ -56,7 +62,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <span class="navbar-toggler-icon"></span>
         </button>
         <a
-                  href="home_admin.php? id= <?php echo $me["roll"];?>"
+                  href="home2_admin.php? id= <?php echo $code;?>"
                 class="nav-link active text-success fw-bolder"
                 aria-current="page"
                
@@ -71,7 +77,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
             <a
-                  href="home_admin.php? id= <?php echo $me["roll"];?>"
+                  href="home2_admin.php? id= <?php echo $code;?>"
                 class="nav-link active text-success fw-bolder"
                 aria-current="page"
                
@@ -96,11 +102,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="adminprofile_admin.php">
+          <a
+                  href="adminprofile2_admin.php? id= <?php echo $code;?>"
+             
+               
+                >
             <img class="ms-3" src="../img/profile.png" alt="profile"
           /></a>
-          <a href="adminprofile_admin.php" class="text-decoration-none text-black">
-            <h6 class="mt-2 mx-3">Tanjim Hasan</h6></a
+          <a
+                  href="adminprofile2_admin.php? id= <?php echo $code;?>" class="text-decoration-none text-black">
+            <h6 class="mt-2 mx-3"><?php echo $me["name"]; ?></h6></a
           >
 
           <a href="../logout.php"

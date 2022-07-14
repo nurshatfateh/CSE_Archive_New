@@ -153,9 +153,9 @@ $('.input-daterange').datepicker({
       </div>
       <div class="col-md-6">
         <label for="Session" class="form-label">
-        <h6>Session<font color="ff0000">*</font></h6>
+        <h6>Session</h6>
         </label>
-        <input type="text" name="session" required class="form-control" id="Session" />
+        <input type="text" name="session"  class="form-control" id="Session" />
       </div>
       <div class="col-md-6">
         <label for="StudentRoll" class="form-label">
@@ -165,16 +165,16 @@ $('.input-daterange').datepicker({
       </div>
       <div class="col-md-6">
         <label for="Batch" class="form-label">
-        <h6>Batch<font color="ff0000">*</font></h6>
+        <h6>Batch</h6>
         </label>
-        <input type="text" name="batch" required class="form-control" id="Batch" />
+        <input type="text" name="batch"  class="form-control" id="Batch" />
       </div>
       <div class="col-md-6">
         <label for="quota" class="form-label">
-        <h6>Quota<font color="ff0000">*</font></h6>
+        <h6>Quota</h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required name="quota" >
+        <select class="form-control selectpicker"  name="quota" >
           <option selected disabled>Type</option>
           <option value="Army">Army</option>
           <option value="Civil">Civil</option>
@@ -183,10 +183,10 @@ $('.input-daterange').datepicker({
       </div>
       <div class="col-md-6">
         <label for="job" class="form-label">
-        <h6>Parent's Job<font color="ff0000">*</font></h6>
+        <h6>Parent's Job</h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required name="parentjob" >
+        <select class="form-control selectpicker"  name="parentjob" >
           <option selected disabled>Type</option>
           <option value="Government">Government</option>
           <option value="Non-Government">Non-Government</option>
@@ -195,10 +195,10 @@ $('.input-daterange').datepicker({
       </div>
       <div class="col-md-6">
         <label for="Department" class="form-label">
-        <h6>Department<font color="ff0000">*</font></h6>
+        <h6>Department</h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required name="dept" >
+        <select class="form-control selectpicker"  name="dept" >
           <option selected disabled>Department</option>
           <option value="CE">Department of Civil Engineering (CE)</option>
           <option value="EWCE">Department of Environmental, Water Resources and Coastal Engineering (EWCE)</option>
@@ -225,9 +225,9 @@ $('.input-daterange').datepicker({
      
       <div class="col-md-6">
         <label for="Registration Number" class="form-label">
-        <h6>Registration Number<font color="ff0000">*</font></h6>
+        <h6>Registration Number</h6>
         </label>
-        <input type="text" name="regno" required class="form-control" id="RegistrationNumber" />
+        <input type="text" name="regno"  class="form-control" id="RegistrationNumber" />
       </div>
       <div class="col-md-6"  ></div>
       <div class="col-md-6"  >
@@ -241,22 +241,22 @@ $('.input-daterange').datepicker({
    
       <div class="col-md-6">
         <label for="Father's Name" class="form-label">
-        <h6>Father's Name<font color="ff0000">*</font></h6>
+        <h6>Father's Name</h6>
         </label>
-        <input type="text" name="father"  required class="form-control" id="FatherName" />
+        <input type="text" name="father"   class="form-control" id="FatherName" />
       </div>
       <div class="col-md-6">
         <label for="Mother's Name" class="form-label">
-        <h6>Mother's Name<font color="ff0000">*</font></h6>
+        <h6>Mother's Name</h6>
         </label>
-        <input type="text" name="mother"  required class="form-control" id="MotherName" />
+        <input type="text" name="mother"   class="form-control" id="MotherName" />
       </div>
       <div class="col-md-6">
         <label for="Current" class="form-label">
-        <h6>Currently A Student?<font color="ff0000">*</font></h6>
+        <h6>Currently A Student?</h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required name="current" >
+        <select class="form-control selectpicker"  name="current" >
           <option selected disabled>Yes/No</option>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
@@ -290,10 +290,10 @@ $('.input-daterange').datepicker({
       </div>
       <div class="col-md-6">
         <label for="Blood Group" class="form-label">
-        <h6>Blood Group<font color="ff0000">*</font></h6>
+        <h6>Blood Group</h6>
         </label>
         <br/>
-        <select class="form-control selectpicker" required name="blood" >
+        <select class="form-control selectpicker"  name="blood" >
           <option selected disabled>Blood Group</option>
           <option value="A+">A+</option>
           <option value="A-">A-</option>
@@ -307,20 +307,20 @@ $('.input-daterange').datepicker({
       </div>
       <div class="col-md-6">
         <label for="Phone Number" class="form-label">
-        <h6>Phone Number<font color="ff0000">*</font></h6>
+        <h6>Phone Number</h6>
         </label>
-        <input type="text" name="phone" required class="form-control" id="PhoneNumber" />
+        <input type="text" name="phone"  class="form-control" id="PhoneNumber" />
       </div>
       <div class="col-md-12" id="pwd-container">
         <section class="login-form">
           <div class="form-floating mt-3 mb-2">
-            <input type="email" name="email" placeholder="Email" required  class="form-control input-lg"/>
+            <input type="email" name="email" required placeholder="Email"   class="form-control input-lg"/>
             <label for="email">
             <h6>Email address<font color="ff0000">*</font></h6>
             </label>
           </div>
           <div class="form-floating mt-3 mb-2">
-            <input type="password" name="pass" class="form-control input-lg" id="password" placeholder="Password" required />
+            <input type="password" name="pass" required class="form-control input-lg" id="password" placeholder="Password"  />
             <label for="password">
             <h6>Password<font color="ff0000">*</font></h6>
             </label>
@@ -330,8 +330,8 @@ $('.input-daterange').datepicker({
       </div>
       <div class="col-md-12">
         <div class="form-floating mt-3 mb-2">
-          <input type="text" style="-webkit-text-security: disc" class="form-control input-lg" id="confirmpassword" placeholder="Confirm Password" required />
-          <label for="confirmpassword">Confirm Password<font color="ff0000">*</font></label>
+          <input type="text" style="-webkit-text-security: disc" class="form-control input-lg" id="confirmpassword" placeholder="Confirm Password"  />
+          <label for="confirmpassword">Confirm Password</label>
           <div class="form-text confirm-message"></div>
         </div>
       </div>
