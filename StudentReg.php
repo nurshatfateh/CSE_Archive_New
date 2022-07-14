@@ -95,20 +95,7 @@ $conn->close();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> 
-<!-- <script>
-    $(document).ready(function(){
 
-$('.input-daterange').datepicker({
-    format: 'dd/mm/yyyy',
-    autoclose: true,
-    calendarWeeks : false,
-    clearBtn: true,
-    disableTouchKeyboard: true
-});
-
-});
-	  
-	  </script>  -->
 
 <!-- Font -->
 <link href="http://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
