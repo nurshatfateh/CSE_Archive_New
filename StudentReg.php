@@ -95,7 +95,7 @@ $conn->close();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> 
-<script>
+<!-- <script>
     $(document).ready(function(){
 
 $('.input-daterange').datepicker({
@@ -108,7 +108,7 @@ $('.input-daterange').datepicker({
 
 });
 	  
-	  </script> 
+	  </script>  -->
 
 <!-- Font -->
 <link href="http://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
@@ -230,12 +230,15 @@ $('.input-daterange').datepicker({
         <input type="text" name="regno"  class="form-control" id="RegistrationNumber" />
       </div>
       <div class="col-md-6"  ></div>
+   
       <div class="col-md-6"  >
         <label for="Date_Of_Birth" class="form-label">
         <h6>Date of birth</h6>
         </label>
-        <div class="input-group input-daterange">
-          <input type="text" id="DOB" name="dob" placeholder="DD/MM/YY" class="form-control text-left mr-2">
+        <div class="input-group ">
+        <input type="date" id="dob" name="dob"
+       value="2000-02-14"
+       min="1900-01-01" max="2008-01-01"  class="form-control text-left mr-2">
           <span class="fa fa-calendar" id="fa-1"></span> </div>
       </div>
    
@@ -331,7 +334,7 @@ $('.input-daterange').datepicker({
       <div class="col-md-12">
         <div class="form-floating mt-3 mb-2">
           <input type="text" style="-webkit-text-security: disc" class="form-control input-lg" id="confirmpassword" placeholder="Confirm Password"  />
-          <label for="confirmpassword">Confirm Password</label>
+          <label for="confirmpassword">Confirm Password<font color="ff0000">*</font></label>
           <div class="form-text confirm-message"></div>
         </div>
       </div>

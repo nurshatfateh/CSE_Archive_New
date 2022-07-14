@@ -89,7 +89,7 @@ $conn->close();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> 
-<script>
+<!-- <script>
     $(document).ready(function(){
 
 $('.input-daterange').datepicker({
@@ -102,7 +102,7 @@ $('.input-daterange').datepicker({
 
 });
 	  
-	  </script> 
+	  </script>  -->
 
 <!-- Font -->
 <link href="http://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
@@ -157,10 +157,10 @@ $('.input-daterange').datepicker({
      
       <div class="col-md-6">
         <label for="Department" class="form-label">
-        <h6>Department<font color="ff0000">*</font></h6>
+        <h6>Department</h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required name="dept" >
+        <select class="form-control selectpicker"  name="dept" >
           <option selected disabled>Department</option>
           <option value="CE">Department of Civil Engineering (CE)</option>
           <option value="EWCE">Department of Environmental, Water Resources and Coastal Engineering (EWCE)</option>
@@ -186,45 +186,65 @@ $('.input-daterange').datepicker({
       </div>
       <div class="col-md-6">
         <label for="Join" class="form-label">
-        <h6>Joining Year<font color="ff0000">*</font></h6>
+        <h6>Joining Year</h6>
         </label>
-        <input type="text" name="joindate" required class="form-control" id="join" />
+        <input type="text" name="joindate"  class="form-control" id="join" />
       </div>
-    
+
       <div class="col-md-6"  ></div>
+
+
       <div class="col-md-6"  >
+        <label for="Date_Of_Birth" class="form-label">
+        <h6>Date of birth</h6>
+        </label>
+        <div class="input-group ">
+        <input type="date" id="dob" name="dob"
+       value="2000-02-14"
+       min="1900-01-01" max="2008-01-01"  class="form-control text-left mr-2">
+          <span class="fa fa-calendar" id="fa-1"></span> </div>
+      </div>
+<!--     
+      
+      <input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31"> -->
+
+
+
+      <!-- <div class="col-md-6"  >
         <label for="Date_Of_Birth" class="form-label">
         <h6>Date of birth</h6>
         </label>
         <div class="input-group input-daterange">
           <input type="text" id="DOB" name="dob" placeholder="DD/MM/YY" class="form-control text-left mr-2">
           <span class="fa fa-calendar" id="fa-1"></span> </div>
-      </div>
+      </div> -->
    
       <div class="col-md-6">
         <label for="Research Domain" class="form-label">
-        <h6>Research Domain<font color="ff0000">*</font></h6>
+        <h6>Research Domain</h6>
         </label>
-        <input type="text" name="research"  required class="form-control" id="Research" />
+        <input type="text" name="research"  class="form-control" id="Research" />
       </div>
       <div class="col-md-6">
         <label for="Degree" class="form-label">
-        <h6>Degree<font color="ff0000">*</font></h6>
+        <h6>Degree</h6>
         </label>
-        <input type="text" name="degree"  required class="form-control" id="degree" />
+        <input type="text" name="degree"  class="form-control" id="degree" />
       </div>
       <div class="col-md-6">
         <label for="position" class="form-label">
-        <h6>Position<font color="ff0000">*</font></h6>
+        <h6>Position</h6>
         </label>
-        <input type="text" name="position"  required class="form-control" id="position" />
+        <input type="text" name="position"   class="form-control" id="position" />
       </div>
       <div class="col-md-6">
         <label for="Current" class="form-label">
-        <h6>Currently A Faculty?<font color="ff0000">*</font></h6>
+        <h6>Currently A Faculty?</h6>
         </label>
         <br />
-        <select class="form-control selectpicker" required name="current" >
+        <select class="form-control selectpicker" name="current" >
           <option selected disabled>Yes/No</option>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
@@ -235,9 +255,9 @@ $('.input-daterange').datepicker({
     
       <div class="col-md-6">
         <label for="Phone Number" class="form-label">
-        <h6>Phone Number<font color="ff0000">*</font></h6>
+        <h6>Phone Number</h6>
         </label>
-        <input type="text" name="phone" required class="form-control" id="PhoneNumber" />
+        <input type="text" name="phone" class="form-control" id="PhoneNumber" />
       </div>
       <div class="col-md-12" id="pwd-container">
         <section class="login-form">
