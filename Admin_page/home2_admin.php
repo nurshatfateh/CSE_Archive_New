@@ -3,16 +3,32 @@ session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   include_once 'db_conn.php'; 
 $code=$_GET["id"]; 
+
 $result = mysqli_query($conn,"SELECT * FROM student where roll=$code");
+$result2 = mysqli_query($conn,"SELECT * FROM faculty where id=$code");
+$result3 = mysqli_query($conn,"SELECT * FROM admin where id=$code");
+
 if (mysqli_num_rows($result) === 1){
-$me = mysqli_fetch_array($result);}
-else{
-  $result = mysqli_query($conn,"SELECT * FROM faculty where id=$code");
-  $me = mysqli_fetch_array($result);
+$me = mysqli_fetch_array($result);
+$joined=$me["session"];
+$pos="Student";
+}
+
+else if (mysqli_num_rows($result2) === 1){
+  
+  $me = mysqli_fetch_array($result2);
+  $joined=$me["joindate"];
+  $pos=$me["position"];
+  
+}
+else if (mysqli_num_rows($result3) === 1){
+  
+  $me = mysqli_fetch_array($result3);
+  $joined=$me["joindate"];
+  $pos=$me["position"];
+  
 }
  ?>
-
-
 
 
 
