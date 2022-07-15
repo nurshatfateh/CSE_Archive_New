@@ -129,7 +129,7 @@ $row = mysqli_fetch_array($result);
                
              <div class="row">
                  <div class="col-lg-4 col-12 my-auto">
-                    <img src="img/studentpic.jpg" class="my-autorounded my-3 mx-auto d-block border border-3 border-info rounded " style="width: 60%;" alt="...">
+                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" class="my-autorounded my-3 mx-auto d-block border border-3 border-info rounded " style="width: 60%;" alt="...">
                  </div>
                  
                

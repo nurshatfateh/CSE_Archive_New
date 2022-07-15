@@ -25,7 +25,20 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $current = $_POST['current'];
 $pass= $_POST['pass'];
-$sql = "INSERT INTO faculty (id, name, position, joindate, dept, research, degree, dob, phone, email, current, pass) VALUES ('" . $id . "', '" . $name . "', '" . $position . "', '" . $joindate . "', '" . $dept . "', '" . $research . "', '" . $degree . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $current . "', '" . $pass . "')";
+
+
+
+
+      // Get file info 
+      $fileName = basename($_FILES["image"]["name"]); 
+      $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+       
+
+          $image = $_FILES['image']['tmp_name']; 
+          $imgContent = addslashes(file_get_contents($image)); 
+       
+ 
+$sql = "INSERT INTO faculty (id, name, position, joindate, dept, research, degree, dob, phone, email, current, pass, image) VALUES ('" . $id . "', '" . $name . "', '" . $position . "', '" . $joindate . "', '" . $dept . "', '" . $research . "', '" . $degree . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $current . "', '" . $pass . "', '" . $imgContent . "')";
 // echo $sql;
 
 // Execute the query
@@ -135,7 +148,7 @@ $('.input-daterange').datepicker({
     <h2 style="text-align: left"><b>Teacher Registration Form:</b></h2>
   </div>
   <div class="container mt-5">
-    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="TeacherReg.php" method="post">
+    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="TeacherReg.php" method="post" enctype="multipart/form-data">
       
       <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
       
@@ -177,13 +190,13 @@ $('.input-daterange').datepicker({
           <option value="SH">Department of Science &amp; Humanities (SH)</option>
         </select>
       </div>
-      <div class="col-md-6">
-        <label for="Teacher Photo" class="form-label">
-        <h6>Teacher Photo</h6>
-        </label>
-        <br />
-        <input type="File" accept="image/*" />
-      </div>
+
+
+
+      
+
+
+      
       <div class="col-md-6">
         <label for="Join" class="form-label">
         <h6>Joining Year</h6>
@@ -283,6 +296,18 @@ $('.input-daterange').datepicker({
           <div class="form-text confirm-message"></div>
         </div>
       </div>
+
+
+
+      <div class="col-md-6">
+      <label>Teacher's Photo:</label>
+    <input type="file" name="image">
+
+      </div>
+
+
+
+
       <div class="col-md-6"><br>
       </div>
       <div class="col-md-12 text-center">

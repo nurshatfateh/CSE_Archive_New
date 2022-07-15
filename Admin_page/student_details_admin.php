@@ -226,7 +226,7 @@ while($row = mysqli_fetch_array($result)) {
                   class="text-decoration-none text-black">
                   <div class="p-3  border border-2  border-info">
                     
-                    <h6 class="text-decoration-none text-black"><img class="ms-3" src="img/profile.png" alt="profile"/>&nbsp;&nbsp;<?php echo $row["roll"]."      :          ".$row["name"]."    (".$row["batch"].")"; 
+                    <h6 class="text-decoration-none text-black"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" style="width:50px;height:50px;border-radius: 50%;"/>&nbsp;&nbsp;<?php echo $row["roll"]."      :          ".$row["name"]."    (".$row["batch"].")"; 
                     
                     ?> </h6> 
                   </div>

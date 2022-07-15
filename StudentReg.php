@@ -31,7 +31,13 @@ $blood = $_POST['blood'];
 $current = $_POST['current'];
 $session = $_POST['session'];
 $pass= $_POST['pass'];
-$sql = "INSERT INTO student (roll, name, regno, batch, dept, quota, parentjob, dob, phone, email, presadd, permadd, father, mother, blood, current, pass, session) VALUES ('" . $roll . "', '" . $name . "', '" . $regno . "', '" . $batch . "', '" . $dept . "', '" . $quota . "', '" . $parentjob . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $presadd . "', '" . $permadd . "', '" . $father . "', '" . $mother . "', '" . $blood . "', '" . $current . "', '" . $pass . "', '" . $session . "')";
+$fileName = basename($_FILES["image"]["name"]); 
+$fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+ 
+
+    $image = $_FILES['image']['tmp_name']; 
+    $imgContent = addslashes(file_get_contents($image)); 
+$sql = "INSERT INTO student (roll, name, regno, batch, dept, quota, parentjob, dob, phone, email, presadd, permadd, father, mother, blood, current, pass, session, image) VALUES ('" . $roll . "', '" . $name . "', '" . $regno . "', '" . $batch . "', '" . $dept . "', '" . $quota . "', '" . $parentjob . "', '" . $dob . "', '" . $phone . "', '" . $email . "', '" . $presadd . "', '" . $permadd . "', '" . $father . "', '" . $mother . "', '" . $blood . "', '" . $current . "', '" . $pass . "', '" . $session . "', '" . $imgContent . "')";
 // echo $sql;
 
 // Execute the query
@@ -128,7 +134,7 @@ $conn->close();
     <h2 style="text-align: left"><b>Student Registration Form:</b></h2>
   </div>
   <div class="container mt-5">
-    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="StudentReg.php" method="post">
+    <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="StudentReg.php" method="post" enctype="multipart/form-data">
       
       <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
       
@@ -202,13 +208,7 @@ $conn->close();
           <option value="SH">Department of Science &amp; Humanities (SH)</option>
         </select>
       </div>
-      <div class="col-md-6">
-        <label for="Student Photo" class="form-label">
-        <h6>Student Photo</h6>
-        </label>
-        <br />
-        <input type="File" accept="image/*" />
-      </div>
+    
      
       <div class="col-md-6">
         <label for="Registration Number" class="form-label">
@@ -216,7 +216,7 @@ $conn->close();
         </label>
         <input type="text" name="regno"  class="form-control" id="RegistrationNumber" />
       </div>
-      <div class="col-md-6"  ></div>
+     
    
       <div class="col-md-6"  >
         <label for="Date_Of_Birth" class="form-label">
@@ -324,6 +324,12 @@ $conn->close();
           <label for="confirmpassword">Confirm Password<font color="ff0000">*</font></label>
           <div class="form-text confirm-message"></div>
         </div>
+      </div>
+
+      <div class="col-md-6">
+      <label>Student's Photo:</label>
+    <input type="file" name="image">
+
       </div>
       <div class="col-md-6"><br>
       </div>

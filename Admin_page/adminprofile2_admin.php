@@ -115,8 +115,7 @@ else if (mysqli_num_rows($result3) === 1){
              
                
                 >
-            <img class="ms-3" src="../img/profile.png" alt="profile"
-          /></a>
+                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($me['image']); ?>" class="ms-3" style="width:50px;height:50px;border-radius: 50%;"/> </a>
           <a
                   href="adminprofile2_admin.php? id= <?php echo $code;?>" class="text-decoration-none text-black">
             <h6 class="mt-2 mx-3"><?php echo $me["name"]; ?></h6></a
@@ -150,8 +149,10 @@ else if (mysqli_num_rows($result3) === 1){
             <div class="card-body bg-white">
                
              <div class="row">
-                 <div class="col-lg-4 col-12 my-auto">
-                    <img src="../img/studentpic.jpg" class="rounded my-3 mx-auto d-block border border-3 border-info" style="width: 60%;" alt="...">
+                 <div class="col-lg-4 col-12 my-auto ">
+
+                 
+                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($me['image']); ?>" class="rounded my-3 mx-auto d-block border border-3 border-info" style="width: 60%;" alt="...">
                  </div>
                  
                
