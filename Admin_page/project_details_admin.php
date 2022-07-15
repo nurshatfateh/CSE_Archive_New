@@ -5,8 +5,8 @@ session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   include_once 'db_conn.php';
 
-
-$result = mysqli_query($conn,"SELECT * FROM projects");
+$code=$_GET["ProjectID"]; 
+$result = mysqli_query($conn,"SELECT * FROM projects where id=$code");
 
 $row = mysqli_fetch_array($result);
  ?>
@@ -120,7 +120,7 @@ $row = mysqli_fetch_array($result);
             <h2 class="mb-2 text-center"><?php echo $row["ProjectName"]; ?></h2>
           
             <img
-              src="../img/proj3.jpg"
+              <?php  echo "src='images/".$row['ProjectPhoto']."' " ;?>
               class="rounded my-3 mx-auto d-block"
               style="width: 60%"
               alt="..."

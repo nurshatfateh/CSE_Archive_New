@@ -170,19 +170,18 @@ CREATE TABLE `projects` (
   `ProjectName` varchar(255) NOT NULL,
   `Academicyear` varchar(255) NOT NULL,
   `NoofStudent` int(10) NOT NULL,
-  `StudentID` varchar(255) NOT NULL,
   `Supervisors` varchar(255) NOT NULL,
   `Member1Name` varchar(255) NOT NULL,
   `Member2Name` varchar(255) NOT NULL,
   `Member3Name` varchar(255) NOT NULL,
   `Member4Name` varchar(255) NOT NULL,
   `Member5Name` varchar(255) NOT NULL,
-  `CommenceDate` varchar(255) NOT NULL,
-  `CompletionDate` varchar(255) NOT NULL,
+  `CommenceDate` date NOT NULL,
+  `CompletionDate` date NOT NULL,
   `ProjectTitle` varchar(255) NOT NULL,
   `ProjectDomain` varchar(255) NOT NULL,
   `ProjectSynopsis` varchar(255) NOT NULL,
-  `TeamPhoto` varchar(255) NOT NULL,
+  `ProjectPhoto` varchar(255) NOT NULL,
   `Proposal` varchar(255) NOT NULL,
   `Prototype` varchar(255) NOT NULL,
   `Budget` varchar(255) NOT NULL,
@@ -195,12 +194,11 @@ CREATE TABLE `projects` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+
+--
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`ProjectName`, `Academicyear`, `NoofStudent`, `StudentID`, `Supervisors`, `Member1Name`, `Member2Name`, `Member3Name`, `Member4Name`, `Member5Name`, `CommenceDate`, `CompletionDate`, `ProjectTitle`, `ProjectDomain`, `ProjectSynopsis`, `TeamPhoto`, `Proposal`, `Prototype`, `Budget`, `URLofFrontend`, `GithubLink`, `ProjectFile`, `RelevantProjects`, `ProjectID`, `ProjectType`) VALUES
-('MIST DATA ARCHIVE', '2021-2022', 4, '202014016,202014019,202014033,202014040', 'lec nafiz, lec muhaimin, lec adeeb', 'Easin Arafat', 'Khaled Hasan ', 'Md Rashid Ul Islam', 'Nurshat Fateh Ali', 'Tanvin Jamal', '2022-06-01', '2022-06-16', 'Data archive cse', 'whole cse dept', 'Data archiving is the practice of identifying data that is no longer active and moving it out of production systems into long-term storage systems.', '', 'Hello archive12345', 'Long-term retention', '200000', 'http / archive ', 'github repo', 'mistdataarchive', 'dbms', 1, 'Studentproject'),
-('CYBER RANGE', '2021-2022', 5, '201814005', 'Lec Shadman Aadeeb', 'Nurshat Fateh Ali', 'Solaiman Islam Naiem', 'Rashid Ul Islam', 'Tanvin Jamal', 'Khaled Hasan Irfan', '15/06/2022', '22/06/2022', 'Penetration testing', 'protect computer networks from cyberattacks and unauthorized access', 'Cyber security is the application of technologies, processes and controls to protect systems, networks, programs, devices and data from cyber attacks.', '', 'Ensure of Cyber security  ', 'Cyberthreats prevention ', '10000', 'WWW.CYBERRANGE.COM', 'REPO', 'blockchain10.jpg', 'ML', 3, 'StudentProject');
 
 -- --------------------------------------------------------
 
@@ -336,7 +334,7 @@ ALTER TABLE `pass_reset`
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
-  ADD PRIMARY KEY (`ProjectID`) USING BTREE;
+  ADD PRIMARY KEY (`ProjectID`);
 
 --
 -- Indexes for table `student`

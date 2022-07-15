@@ -182,7 +182,7 @@ $('.input-daterange').datepicker({
             </select>
           </div>
 
-          <div class="col-md-6">
+          <!-- <div class="col-md-6">
             <label for="Student ID" class="form-label">
               <h6>Student ID <font color="ff0000">*</font></h6>
             </label>
@@ -193,7 +193,7 @@ $('.input-daterange').datepicker({
               data-live-search="true"
               name="StudentID"
             >
-              <!-- <option selected disabled>Student ID</option> -->
+               <option selected disabled>Student ID</option> 
               <option value="201814001">201814001</option>
               <option value="201814002">201814002</option>
               <option value="201814003">201814003</option>
@@ -295,7 +295,7 @@ $('.input-daterange').datepicker({
               <option value="201814099">201814099</option>
               <option value="201814100">201814100</option>
             </select>
-          </div>
+          </div> -->
 
           <div class="col-md-6">
             <label for="Supervisor(s)" class="form-label">
@@ -331,31 +331,11 @@ $('.input-daterange').datepicker({
             </select>
           </div>
 
-          <div class="col-md-6">
-            <label for="Supervisor(s)" class="form-label">
-              <h6>
-                Supervisor(s) Photos(jpg/png/jpeg)
-                <a target="_blank" title="Format : Supervisor_Name.jpg"
-                  ><img
-                    src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png"
-                    height="13px"
-                /></a>
-              </h6>
-            </label>
-            <br />
-            <input
-              type="File"
-              accept="image/*"
-              id="files"
-              name="files"
-              multiple
-            />
-            <br /><br />
-          </div>
+        
 
-          <div class="col-md-6">
+          <div class="col-md-12">
             <label for="TeamMember1" class="form-label">
-              <h6>Team Member-1 Name <font color="ff0000">*</font></h6>
+              <h6>Team Member-1 ID <font color="ff0000">*</font></h6>
             </label>
             <input
               type="text"
@@ -366,17 +346,11 @@ $('.input-daterange').datepicker({
             />
           </div>
 
-          <div class="col-md-6">
-            <label for="TeamMember1 Photo" class="form-label">
-              <h6>Team Member-1 Photo(jpg/png/jpeg)</h6>
-            </label>
-            <br />
-            <input type="File" accept="image/*" />
-          </div>
+        
 
-          <div class="col-md-6">
+          <div class="col-md-12">
             <label for="TeamMember2" class="form-label">
-              <h6>Team Member-2 Name</h6>
+              <h6>Team Member-2 ID</h6>
             </label>
            <input
               type="text"
@@ -387,17 +361,11 @@ $('.input-daterange').datepicker({
             />
           </div>
 
-          <div class="col-md-6">
-            <label for="TeamMember2 Photo" class="form-label">
-              <h6>Team Member-2 Photo(jpg/png/jpeg)</h6>
-            </label>
-            <br />
-            <input type="File" accept="image/*" />
-          </div>
+          
 
-          <div class="col-md-6">
+          <div class="col-md-12">
             <label for="TeamMember3" class="form-label">
-              <h6>Team Member-3 Name</h6>
+              <h6>Team Member-3 ID</h6>
             </label>
             <input
               type="text"
@@ -408,17 +376,11 @@ $('.input-daterange').datepicker({
             />
           </div>
 
-          <div class="col-md-6">
-            <label for="TeamMember3 Photo" class="form-label">
-              <h6>Team Member-3 Photo(jpg/png/jpeg)</h6>
-            </label>
-            <br />
-            <input type="File" accept="image/*" />
-          </div>
+        
 
-          <div class="col-md-6">
+          <div class="col-md-12">
             <label for="TeamMember4" class="form-label">
-              <h6>Team Member-4 Name</h6>
+              <h6>Team Member-4 ID</h6>
             </label>
           <input
               type="text"
@@ -429,17 +391,11 @@ $('.input-daterange').datepicker({
             />
           </div>
 
-          <div class="col-md-6">
-            <label for="TeamMember4 Photo" class="form-label">
-              <h6>Team Member-4 Photo(jpg/png/jpeg)</h6>
-            </label>
-            <br />
-            <input type="File" accept="image/*" />
-          </div>
+        
 
-          <div class="col-md-6">
+          <div class="col-md-12">
             <label for="TeamMember5" class="form-label">
-              <h6>Team Member-5 Name</h6>
+              <h6>Team Member-5 ID</h6>
             </label>
             <input
               type="text"
@@ -450,13 +406,8 @@ $('.input-daterange').datepicker({
             />
           </div>
 
-          <div class="col-md-6">
-            <label for="TeamMember5 Photo" class="form-label">
-              <h6>Team Member-5 Photo(jpg/png/jpeg)</h6>
-            </label>
-            <br />
-            <input type="File" accept="image/*" />
-          </div>
+          
+          
           <div class="col-md-6"  >
             <label for="CommenceDate" class="form-label">
               <h6>Commence Date <font color="ff0000">*</font></h6>
@@ -534,11 +485,11 @@ $('.input-daterange').datepicker({
           </div>
 
           <div class="col-md-6">
-            <label for="Team Photo" class="form-label">
-              <h6>Team Photo(jpg/png/jpeg)</h6>
+            <label for="Project Photo" class="form-label">
+              <h6>Project Photo(jpg/png/jpeg)</h6>
             </label>
             <br />
-            <input type="File"  id="TeamPhoto" name="TeamPhoto" />
+            <input type="File" accept="image/*" id="ProjectPhoto" name="ProjectPhoto" />
           </div>
 
           <div class="col-md-6">
@@ -621,7 +572,7 @@ $('.input-daterange').datepicker({
           </div>
           <div class="col-md-6"><br></div>
           <div class="col-md-12 text-center">
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit"  class="btn btn-success">Submit</button>
           </div>
         </form>
       </div>

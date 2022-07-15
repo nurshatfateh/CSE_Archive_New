@@ -2,7 +2,6 @@
 	$ProjectName = $_POST['ProjectName'];
 	$Academicyear = $_POST['Academicyear'];
 	$NoofStudent = $_POST['NoofStudent'];
-	$StudentID=$_POST['StudentID'];
 	$Member_1Name = $_POST['Member1Name'];
 	$Member_2Name = $_POST['Member2Name'];
 	$Member_3Name = $_POST['Member3Name'];
@@ -31,12 +30,12 @@
 		die("Connection Failed : ". $conn->connect_error);
 	} else {
 
-    //    $Get_image_name = $_FILES['TeamPhoto']['name'];
+       $Get_image_name = $_FILES['ProjectPhoto']['name'];
 			
-		// $image_Path = "images/".basename($Get_image_name);  
+		   $image_Path = "images/".basename($Get_image_name);  
 
-		$stmt = $conn->prepare("insert into projects(ProjectName,Academicyear,NoofStudent, StudentID, Supervisors,Member1Name,Member2Name,Member3Name,Member4Name,Member5Name,CommenceDate,CompletionDate,ProjectType,ProjectTitle,ProjectDomain,ProjectSynopsis,Proposal, Prototype,Budget,URLofFrontend,GithubLink,ProjectFile,RelevantProjects) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-		$stmt->bind_param("ssissssssssssssssssssss", $ProjectName, $Academicyear, $NoofStudent,$StudentID,$Supervisors,$Member_1Name,$Member_2Name,$Member_3Name,$Member_4Name, $Member_5Name,	$CommenceDate,$CompletionDate,$ProjectType,$ProjectTitle,$ProjectDomain,$ProjectSynopsis,$Proposal,$Prototype,$Budget,$URLofFrontend,$GithubLink,$ProjectFile,$RelevantProjects);
+		$stmt = $conn->prepare("insert into projects(ProjectName,Academicyear,NoofStudent,Supervisors,Member1Name,Member2Name,Member3Name,Member4Name,Member5Name,CommenceDate,CompletionDate,ProjectType,ProjectTitle,ProjectDomain,ProjectSynopsis,Proposal, Prototype,Budget,URLofFrontend,GithubLink,ProjectFile,RelevantProjects,ProjectPhoto) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+		$stmt->bind_param("ssissssssssssssssssssss", $ProjectName, $Academicyear,	$NoofStudent,$Supervisors,$Member_1Name,$Member_2Name,$Member_3Name,$Member_4Name, $Member_5Name,	$CommenceDate,$CompletionDate,$ProjectType,$ProjectTitle,$ProjectDomain,$ProjectSynopsis,$Proposal,$Prototype,$Budget,$URLofFrontend,$GithubLink,$ProjectFile,$RelevantProjects,$Get_image_name);
 		$execval = $stmt->execute();
 		echo $execval;
 		echo " Project added successfully...";
@@ -45,11 +44,11 @@
 	  
 		
 	  
-			// if (move_uploaded_file($_FILES['TeamPhoto']['tmp_name'], $image_Path)) {
-			// 	echo "Your Image uploaded successfully";
-		  //   }else{
-			// 	echo "Not Inserted Image";
-			// }
+			if (move_uploaded_file($_FILES['ProjectPhoto']['tmp_name'], $image_Path)) {
+				echo "Your Image uploaded successfully";
+		    }else{
+				echo "Not Inserted Image";
+			}
 		
 		$stmt->close();
 		$conn->close();

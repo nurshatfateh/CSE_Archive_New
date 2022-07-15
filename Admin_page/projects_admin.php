@@ -149,94 +149,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     class="dropdown-menu"
                     aria-labelledby="dropdownMenuButton1"
                   >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">2020-2021</a></li>
                     <li>
-                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">2021-2022</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div
-                class="p-2 mt-3 border bg-white border-2 border border-info rounded"
-              >
-                <div class="dropdown">
-                  <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Sort By Teacher
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div
-                class="p-2 mt-3 border bg-white border-2 border border-info rounded"
-              >
-                <div class="dropdown">
-                  <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Sort By Batch
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div
-                class="p-2 mt-3 border bg-white border-2 border border-info rounded"
-              >
-                <div class="dropdown">
-                  <button
-                    class="btn dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Sort By Year
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">2022-2023</a>
                     </li>
                   </ul>
                 </div>
@@ -245,6 +163,39 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div
                 class="p-2 mt-3 border bg-white border-2 border border-info rounded"
               >
+                <div class="dropdown">
+                  <button
+                    class="btn dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Sort By Supervisor
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li><a class="dropdown-item" href="#">Lec Muhaimin</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Lec Nafiz Imtiaz</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Lec Shadman Adeeb</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+
+              
+            
+
+              <div
+                class="p-2 mt-3 border bg-white border-2 border border-info rounded"
+              >
+              <p class="fw-bolder text-center" >Enter domain name :</p>
                 <form action="" class="p-3">
                   <input
                     type="text"
@@ -294,7 +245,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                   >
                     <h4 class="mb-2 text-center"><?php echo $row["ProjectName"];?></h4>
                     <img
-                      src="../img/proj3.jpg"
+                    <?php  echo "src='images/".$row['ProjectPhoto']."' " ;?>
                       class="rounded my-3 mx-auto d-block"
                       style="width: 60%"
                       alt="..."
