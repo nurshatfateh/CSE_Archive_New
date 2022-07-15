@@ -46,7 +46,7 @@
           <div class="formDiv" style="transition-delay: 0.4s">
             <p>PASSWORD</p>
             <input type="password" name="password" required="" id="passwordInput"/>
-            <span class="register">Forgot Password?<a href="forgot.html">Click</a> </div>
+            <a class="forgotPas" href="#">FORGOT YOUR PASSWORD?</a> </div>
              <div class="formDiv" style="transition-delay: 0.6s">
             <button  class="acceptBtn" type="submit" onclick="loginValidator()">Login</button>
             <span class="register">Need an account?<a href="registerform.html">Register</a></span></div>
