@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-$thesisID = $_GET['id_'];
+
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
  ?>
@@ -119,7 +119,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 // create a connection
                 $conn = mysqli_connect($servername, $username, $password, $db);
 
-                $sql = "select *from thesis_admin where thesisID = $thesisID";
+                $sql = "select *from thesis_admin";
                 $result = mysqli_query($conn, $sql);
                 $num = mysqli_num_rows($result);
                 while($row = mysqli_fetch_assoc($result)) {
@@ -134,7 +134,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </p>
         </div>
       </div>
-               
+                  ';
+                }
+
+              ?>
           
       <!-- firstcontainer ends -->
 
@@ -146,29 +149,32 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="col-12 col-md-4 side-nav p-3 ">
             <div class="info-card p-2 border border-2 border-info m-3 ">
               <h4>Course Name</h4>
-              <p>' .$row['Course_name']. '</p>
+              <p>CSE-224</p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3">
               <h4>Academic Year</h4>
-              <p>' .$row['Academic_year']. '</p>
+              <p>2021-2022</p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3">
               <h4>Number of Student</h4>
-              <p>' .$row['No_of_Student']. '</p>
+              <p>3</p>
             </div>
 
-           
+            <div class="info-card p-3 border border-2 border-info m-3">
+              <h4>No. of Publication</h4>
+              <p>4</p>
+            </div>
 
             <div class="info-card p-2 border border-2 border-info m-3">
               <h4>Commence Date</h4>
-              <p>' .$row['Commencedate']. '</p>
+              <p>18-12-2021</p>
             </div>
 
             <div class="info-card p-2 border border-2 border-info m-3">
               <h4>Completion Date</h4>
-               <p>' .$row['CompletionDate']. '</p>
+              <p>20-01-2022</p>
             </div>
 
             <!-- <div class="info-card p-3 border border-success">
@@ -190,7 +196,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div
                 class="border border-2 border-info d-flex align-items-center  text-black p-2"
               >
-                <p class="m-0">' .$row['ThesisBook']. '</p>
+                <p class="m-0">Water filtering edition-2.pdf • (7.4 mb)</p>
                 <a href="#" class="ms-auto inline-block btn btn-success  "
                   >Download <i class="fa fa-download"></i
                 ></a>
@@ -202,7 +208,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div
                 class="border d-flex align-items-center  text-black border-2 border-info p-2" 
               >
-                <p class="m-0">' .$row['ThesisFiles']. '</p>
+                <p class="m-0">Project_Name_Files • (7.4 mb)</p>
                 <a href="#" class="ms-auto inline-block btn btn-success"
                   >Download <i class="fa fa-download"></i
                 ></a>
@@ -214,7 +220,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div
                 class="border d-flex align-items-center  text-black border-2 border-info p-2"
               >
-                <p class="m-0">' .$row['Proposal']. '</p>
+                <p class="m-0">Project_Name_Proposal • (7.4 mb)</p>
                 <a href="#" class="ms-auto inline-block btn btn-success"
                   >Download <i class="fa fa-download"></i
                 ></a>
@@ -226,7 +232,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div
                 class="border d-flex align-items-center  text-black border-2 border-info p-2"
               >
-                <p class="m-0">' .$row['Prototype']. '</p>
+                <p class="m-0">Project_Name_Prototype • (7.4 mb)</p>
                 <a href="#" class="ms-auto inline-block btn btn-success"
                   >Download <i class="fa fa-download"></i
                 ></a>
@@ -239,8 +245,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 class="border d-flex align-items-center p-3 text-black text-wrap border-2 border-info p-2"
               >
                 <p class="m-0">
-                 ' .$row['RelevantPublications']. '
-                 
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Accusantium amet error cupiditate? Impedit, incidunt. Quo,
+                  dolores dolore assumenda officiis voluptatum molestias
+                  corrupti iure odit ullam omnis quaerat quidem tenetur totam
+                  soluta saepe a explicabo dicta quisquam, provident, iste
+                  deserunt. Minus.
+                  <!-- • (7.4 mb) -->
                 </p>
                 <!-- <a href="#" class="ms-auto inline-block btn btn-success"
                   >Download <i class="fa fa-download"></i
@@ -269,28 +280,28 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 <div class="col-md-3 col-6 py-4 border border-info border-2 m-3 ">
                   <img
                      style="width: 60%;" class="mx-auto d-block"
-                    src="../img/student1.jpg"
+                    src="https://faces-img.xcdn.link/image-lorem-face-6688.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center"> ' .$row['Team_member_name_1']. '</h5>
+                  <h5 class="mt-3 text-center">Lionel Messi</h5>
                   <p class="m-0 text-center">202014001</p>
                 </div>
                 <div class="col-md-3 col-6 py-4 border border-info border-2 m-3">
                   <img
                      style="width: 60%;" class="mx-auto d-block"
-                    src="../img/studen2.jpg"
+                    src="https://faces-img.xcdn.link/image-lorem-face-6688.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">' .$row['Team_member_name_2']. '</h5>
+                  <h5 class="mt-3 text-center">Cristiano Ronaldo</h5>
                   <p class="m-0 text-center">202014002</p>
                 </div>
                 <div class="col-md-3 col-6 py-4 border border-info border-2 m-3">
                   <img
                      style="width: 60%;" class="mx-auto d-block"
-                    src="../img/student3.jpg"
+                    src="https://faces-img.xcdn.link/image-lorem-face-6688.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">' .$row['Team_member_name_3']. '</h5>
+                  <h5 class="mt-3 text-center">Cristiano Ronaldo</h5>
                   <p class="m-0 text-center">202014002</p>
                 </div>
            
@@ -298,32 +309,30 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
            
             </div>
 
-            <h3 class="mb-3 mt-3">Faculties</h3>
+            <h3 class="mb-3 mt-3">Faculty</h3>
             <div class="container ps-2 pe-2">
               <div class="row">
-                <div
-                  class="col-md-3 col-6 py-4 border border-info border-2 m-3 rounded"
-                >
+               
+                <div class="col-md-3 col-6 py-4 border border-info border-2 m-3">
                   <img
-                    style="width: 60%"
-                    class="mx-auto d-block"
-                    src="../img/raiyansir.jpg"
+                     style="width: 60%;" class="mx-auto d-block"
+                    src="https://faces-img.xcdn.link/image-lorem-face-6688.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Lec Raiyan Rahman</h5>
+                  <h5 class="mt-3 text-center">Cristiano Ronaldo</h5>
+                  <p class="m-0 text-center">202014002</p>
                 </div>
-                <div
-                  class="col-md-3 col-6 py-4 border border-info border-2 m-3 rounded"
-                >
+                <div class="col-md-3 col-6 py-4 border border-info border-2 m-3">
                   <img
-                    style="width: 60%"
-                    class="mx-auto d-block"
-                    src="../img/nafizsir.jpg"
+                     style="width: 60%;" class="mx-auto d-block"
+                    src="https://faces-img.xcdn.link/image-lorem-face-6688.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">Lec Nafiz Imtiaz Khan</h5>
+                  <h5 class="mt-3 text-center">Cristiano Ronaldo</h5>
+                  <p class="m-0 text-center">202014002</p>
                 </div>
               </div>
+           
             </div>
           </div>
 
@@ -331,10 +340,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         </div>
       </div>
       <!-- second container ends  -->
-                  ';
-       }
-
-       ?>
 
       <!-- footer -->
 

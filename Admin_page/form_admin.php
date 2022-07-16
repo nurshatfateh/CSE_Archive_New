@@ -9,6 +9,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+  
+
+
+
   <head>
     <!--   meta tags -->
     <meta charset="utf-8" />
@@ -25,6 +29,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+
+    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
@@ -42,6 +48,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 
     <title>Form_admin</title>
   </head>
@@ -474,11 +481,30 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
 
           <div class="col-md-6">
+          <script>
+            $(document).ready(function(){
+              
+                var dtToday= new Date();
+                var month=dtToday.getMonth()+1;
+                var day=dtToday.getDate();
+                var year = dtToday.getFullYear();
+                if(month<10)
+                    month='0'+month.toString();
+                if(day<10)
+                    day='0'+day.toString();
+
+                var maxDate=year+'-'+month+'-'+day;
+                $('#CommenceDate').attr('max',maxDate);
+              
+            })
+
+
+          </script>
             <label for="CommenceDate" class="form-label">
               <h6>Commence Date <font color="ff0000">*</font></h6>
             </label>
             <input
-              type="text"
+              type="date"
               class="form-control"
               name="CommenceDate"
               id="CommenceDate"
@@ -488,11 +514,55 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
 
           <div class="col-md-6">
+
+          <script>
+            $(function(){
+              $('#CommenceDate').change(function(){
+                var fromDateValue=$(this).val();
+                var toDateValue=new Date(fromDateValue);
+                toDateValue.setDate(toDateValue.getDate());
+                var month=toDateValue.getMonth()+1;
+                var day=toDateValue.getDate();
+                var year =toDateValue.getFullYear();
+                if(month<10)
+                    month='0'+month.toString();
+                if(day<10)
+                    day='0'+day.toString();
+                
+          
+
+                var sDate=year+'-'+month+'-'+day;
+                $('#CompletionDate').attr('min',sDate);
+
+                var dtToday= new Date();
+                var monthh=dtToday.getMonth()+1;
+                var dayy=dtToday.getDate();
+                var yearr = dtToday.getFullYear();
+                if(monthh<10)
+                    monthh='0'+monthh.toString();
+                if(dayy<10)
+                    dayy='0'+dayy.toString();
+
+                var maxDate=yearr+'-'+monthh+'-'+dayy;
+                $('#CompletionDate').attr('max',maxDate);
+
+
+                
+                
+
+
+
+
+              });
+            })
+
+
+          </script>
             <label for="CompletionDate" class="form-label"
               ><h6>Completion Date <font color="ff0000">*</font></h6>
             </label>
             <input
-              type="text"
+              type="date"
               class="form-control"
               name= "CompletionDate"
               id="CompletionDate"
@@ -517,15 +587,35 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             <label for="ThesisDomain" class="form-label">
               <h6>Thesis Domain <font color="ff0000">*</font></h6>
             </label>
-
-            <textarea
-              class="form-control"
-              name="ThesisDomain"
-              id="ThesisDomain"
-              rows="5"
-               
-            ></textarea>
+            <br />
+            <select
+              class="form-control selectpicker"
+              multiple
+              data-live-search="true"
+                name="ThesisDomain" id="ThesisDomain"
+                rows="5"
+            >
+              <option value="201814001">Artificial Intelligence</option>
+              <option value="201814002">Machine Learning</option>
+              <option value="201814003">Natural Language Processing</option>
+              <option value="201814004">Robotics</option>
+              <option value="201814005">Automation</option>
+              <option value="201814006">Embedded System</option>
+              <option value="201814007">Compiler Optimization</option>
+              <option value="201814008">Computer Architecture</option>
+              <option value="201814009">Bioinformatics and Computational Biology</option>
+              <option value="201814010">Data Mining</option>
+              <option value="201814011">Database</option>
+              <option value="201814012">Geographical Information System</option>
+              <option value="201814013">Graphics and Immersive Computing</option>
+              <option value="201814014">High Performance Computing</option>
+              <option value="201814015">Human Computer Interaction</option>
+              
+            
+              
+            </select>
           </div>
+          
 
           <div class="col-md-12">
             <label for="ThesisSynopsis" class="form-label">
@@ -625,7 +715,22 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div> 
 
           <div class="col-md-12">
-            <button type="submit" class="btn btn-success">Submit</button>
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1>Thesis Added</h1>
+                      </div>
+                      <div class="modal-body">
+                        This is my body
+                      </div>
+                      <div class="modal-footer">
+                        <input class="btn btn-default" value="Close">
+                      </div>
+                    </div>
+                </div>
+            </div> 
+            <button type="submit" class="btn btn-success" id="Submit" formtarget="#myModal">Submit</button>
           </div>
         </form>
       </div>
@@ -656,6 +761,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     </div>
 
     <!-- footer ends -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <script
