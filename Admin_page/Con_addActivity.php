@@ -1,9 +1,9 @@
 <?php
 	$EventName = $_POST['EventName'];
     $EventTag = $_POST['EventTag'];
-    $CommenceDate = $_POST['CommenceDate'];
-    $CompletionDate = $_POST['CompletionDate'];
-    $PostDetails=$_POST['PostDetails'];
+    $CommenceDate = date('Y-m-d', strtotime($_POST['CommenceDate'])) ;
+    $CompletionDate = date('Y-m-d', strtotime($_POST['CompletionDate'])) ;
+    $PostDetails=$_POST['PostDetails']; 
     $Organizer = $_POST['Organizer'];
 	
 	

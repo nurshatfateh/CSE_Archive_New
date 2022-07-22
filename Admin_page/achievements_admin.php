@@ -26,26 +26,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
-    <!-- Script -->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/function.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-    <script>
-      $(document).ready(function() {
-
-        $('.input-daterange').datepicker({
-          format: 'dd/mm/yyyy',
-          autoclose: true,
-          calendarWeeks: false,
-          clearBtn: true,
-          disableTouchKeyboard: true
-        });
-
-      });
-    </script>
-
-
 
 
 
@@ -120,7 +100,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="carousel-indicators">
             <?php
             include_once 'db_conn.php';
-            $result = mysqli_query($conn, "SELECT * FROM addachievement order by date LIMIT 5");
+            $result = mysqli_query($conn, "SELECT * FROM addachievement order by date desc LIMIT 5");
             ?>
             <?php
             if (mysqli_num_rows($result) > 0) {
@@ -148,7 +128,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="carousel-inner">
             <?php
             include_once 'db_conn.php';
-            $result = mysqli_query($conn, "SELECT * FROM addachievement order by date LIMIT 5");
+            $result = mysqli_query($conn, "SELECT * FROM addachievement order by date desc LIMIT 5");
 
 
             ?>
@@ -215,141 +195,203 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="col-xxl-3 col-12 mb-5">
           <div class="p-3 border bg-white border border-3  border-info">
             <h4 class="ps-2">Search Filter</h4>
-            <div class="p-2 mt-3 border bg-white border border-2  border-info">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Sort By Session
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item">2021-2022</a></li>
-                  <li>
-                    <a class="dropdown-item">2020-2021</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item">2019-2020</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
 
-            <div class="p-2 mt-3 border bg-white border border-2  border-info">
-              <div class="">
-                <p>
-                  Start Date
-                </p>
-                <div class="input-group input-daterange">
-                  <input type="text" id="StartDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
-                  <span class="fa fa-calendar" id="fa-2"></span>
+            <form method="post" id="myform">
+
+              <div class="p-2 mt-3 border bg-white border border-2  border-info">
+                <select class="form-control selectpicker" required name="year">
+                  <option selected disabled>Session</option>
+                  <option value="2016-2017">2016-2017</option>
+                  <option value="2017-2018">2017-2018</option>
+                  <option value="2018-2019">2018-2019</option>
+                  <option value="2019-2020">2019-2020</option>
+                  <option value="2020-2021">2020-2021</option>
+                  <option value="2021-2022">2021-2022</option>
+                  <option value="2022-2023">2022-2023</option>
+                  <option value="2023-2024">2023-2024</option>
+                  <option value="2024-2025">2024-2025</option>
+                </select>
+              </div>
+
+              <div class="p-2 mt-3 border bg-white border border-2  border-info">
+                <div class="">
+                  <p>
+                    Start Date
+                  </p>
+ 
+                    <input type="date" value=""  id="StartDate" name="start"  class="form-control text-left ml-2">
+                 
                 </div>
               </div>
-            </div>
 
-            <div class="p-2 mt-3 border bg-white border border-2  border-info">
-              <div class="">
-                <p>
-                  End Date
-                </p>
-                <div class="input-group input-daterange">
-                  <input type="text" id="EndDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
-                  <span class="fa fa-calendar" id="fa-2"></span>
+              <div class="p-2 mt-3 border bg-white border border-2  border-info">
+                <div class="">
+                  <p>
+                    End Date
+                  </p>
+         
+                    <input type="date" value="" id="EndDate" name="end"  class="form-control text-left ml-2">
+
                 </div>
               </div>
-            </div>
 
 
 
-            <div class="p-2 mt-3 border bg-white border border-2  border-info">
-              <form action="" class="p-3">
+              <div class="p-2 mt-3 border bg-white border border-2  border-info">
 
                 <input type="text" id="key" name="key" placeholder="Enter any keyword" class="p-2 border bg-white border border-2  border-info"><br><br>
 
-                <button type="button" class="btn btn-primary">Search</button>
-              </form>
-            </div>
-
-
+            </form>
+            <button type="submit" name="search" class="btn btn-primary">Search</button>
           </div>
-        </div>
-        <!-- LEFT BAR ends -->
-        <!-- Right BAR -->
-        <div class="col-xxl-9 col-12">
 
-          <div class="row bg-light border border-3 border border-info gx-4">
-            <!-- 1 -->
-
-            <?php
-            include_once 'db_conn.php';
-
-            $results_per_page = 3;
-
-            $result = mysqli_query($conn, "SELECT * FROM addachievement");
-
-            $number_of_results = mysqli_num_rows($result);
-
-            $number_of_pages = ceil($number_of_results / $results_per_page);
-
-            if (!isset($_GET['page'])) {
-              $page = 1;
-            } else {
-              $page = $_GET['page'];
-            }
-
-            $this_page_first_result = ($page - 1) * $results_per_page;
-
-            $sql = 'SELECT * FROM addachievement order by date LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
-            $result = mysqli_query($conn, $sql);
-
-            ?>
-            <?php
-            if (mysqli_num_rows($result) > 0) {
-            ?>
-              <?php
-              $i = 0;
-              while ($row = mysqli_fetch_array($result)) {
-              ?>
-
-                <div class="col-sm-4 mb-5 mt-5">
-                  <div class="card border-2 border-info ms-3">
-                    <div class="card-body">
-                      <a href="achievments_details_admin.php?id=<?php echo $row["id"]; ?>"><img <?php echo "src='images/" . $row['AchievementPhoto'] . "' "; ?> class="d-block my-3 mx-auto" style="width: 100%; height: 200px" alt="..." /></a>
-                      <p class="card-text fw-bold"><?php echo $row["AchievementTitle"]; ?></p>
-                      <p class="card-text fw-normal text-wrap">
-                        <?php echo substr($row["Achievement_detailes"], 0, 150); ?>
-                      </p>
-                      <a href="achievments_details_admin.php?id=<?php echo $row["id"]; ?>">View More</a>
-                    </div>
-                  </div>
-                </div>
-
-
-              <?php
-                $i++;
-              }
-              ?>
-            <?php
-            } else {
-              echo "No result found";
-            }
-            ?>
-          </div>
-          
-          <nav aria-label="Page navigation example" class="p-3" >
-              <ul class="pagination justify-content-center">
-                <?php
-                for ($i = 1; $i <= $number_of_pages; $i++) {
-                  if($i==$page)
-                  echo '<li class="page-item active"> <a class="page-link" href="achievements_admin.php?page=' . $i . '">'  . $i . '</a> </li>';                
-                  else
-                  echo '<li class="page-item"> <a class="page-link" href="achievements_admin.php?page=' . $i . '">'  . $i. '</a> </li>';
-                }
-                ?>
-                <li class="page-item"> <a href=""></a> </li>
-              </ul>
-            </nav>
 
         </div>
       </div>
-      <!-- Achivements card end -->
+      <!-- LEFT BAR ends -->
+      <!-- Right BAR -->
+      <div class="col-xxl-9 col-12">
+
+        <div class="row bg-light border border-3 border border-info gx-4">
+          <!-- 1 -->
+
+          <?php
+          include_once 'db_conn.php';
+
+
+
+          $results_per_page = 3;
+
+          $result = mysqli_query($conn, "SELECT * FROM addachievement");
+
+
+          $number_of_results = mysqli_num_rows($result);
+
+          $number_of_pages = ceil($number_of_results / $results_per_page);
+
+          if (!isset($_GET['page'])) {
+            $page = 1;
+          } else {
+            $page = $_GET['page'];
+          }
+
+          $this_page_first_result = ($page - 1) * $results_per_page;
+
+
+
+          $sql = 'SELECT * FROM addachievement  order by date desc LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+
+
+          if (isset($_POST['year'])) {
+            $year = $_POST['year'];
+          };
+          if (isset($_POST['start'])) {
+            $start = date('Y-m-d', strtotime($_POST['start']));
+          };
+          if (isset($_POST['end'])) {
+            $end = date('Y-m-d', strtotime($_POST['end']));
+          };
+          if (isset($_POST['key']) && $_POST['key']!="") {
+            $key = $_POST['key'];
+          };
+
+          if(isset($_POST['search']))
+          {
+          if ( isset($_POST['year'])) {
+            $number_of_pages = 1;
+            $sql = 'SELECT * FROM addachievement where Academic_year = "' . $year .
+              '" order by date desc ';
+          } 
+           else if (isset($_POST['start']) && isset($_POST['end']) && ($start!='1970-01-01' || $end!='1970-01-01') ) 
+           {
+            $number_of_pages = 1;
+            //echo $start. "  ";
+           // echo $end;
+            $sql =  $sql = "SELECT * FROM addachievement where date >= '"  .$start.
+            "' AND  date <=' " .$end. " ' order by date desc ";
+          }
+          /*else if ( isset($_POST['key']) || ($start =='1970-01-01' || $end =='1970-01-01')) {
+            $number_of_pages = 1;
+            echo $key;
+            $sql =  $sql = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  .$key.
+            "%' OR  Achievement_detailes LIKE '%" .$key. "%' OR Organizer LIKE '%" .$key. "%' OR TeamName like '%" .$key. "%' order by date desc ";
+          } */ 
+          else if(isset($_POST['key']) || !($start =='1970-01-01' || $end =='1970-01-01'))
+          {
+            $number_of_pages = 1;
+            //echo $key;
+            //echo $start. "  ";
+            //echo $end;
+            $sql =  $sql = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  .$key.
+            "%' OR  Achievement_detailes LIKE '%" .$key. "%' OR Organizer LIKE '%" .$key. "%' OR TeamName like '%" .$key. "%' 
+            AND date >= '" .$start. "' AND  date <=' " .$end. " 'order by date desc ";
+
+          }
+        }
+
+         xx:
+
+
+          $result = mysqli_query($conn, $sql);
+
+
+
+          ?>
+
+
+
+          <?php
+          if (mysqli_num_rows($result) > 0) {
+          ?>
+            <?php
+            $i = 0;
+            while ($row = mysqli_fetch_array($result)) {
+            ?>
+
+              <div class="col-sm-4 mb-5 mt-5">
+                <div class="card border-2 border-info ms-3">
+                  <div class="card-body">
+                    <a href="achievments_details_admin.php?id=<?php echo $row["id"]; ?>"><img <?php echo "src='images/" . $row['AchievementPhoto'] . "' "; ?> class="d-block my-3 mx-auto" style="width: 100%; height: 200px" alt="..." /></a>
+                    
+                    <p class="card-text fw-bold"><?php echo $row["AchievementTitle"]; ?></p>
+
+                    <font size="2" class="card-text fw-bold">Date: <?php echo date('d-M-y',strtotime($row["date"])); ?></font>
+                    
+                    <p class="card-text fw-normal text-wrap">
+                      <?php echo substr($row["Achievement_detailes"], 0, 150); ?>
+                    </p>
+                    <a href="achievments_details_admin.php?id=<?php echo $row["id"]; ?>">View More</a>
+                  </div>
+                </div>
+              </div>
+            <?php
+              $i++;
+            }
+            ?>
+          <?php
+          } else {
+            echo "No result found";
+          }
+          ?>
+        </div>
+
+        <nav aria-label="Page navigation example" class="p-3">
+          <ul class="pagination justify-content-center">
+            <?php
+            for ($i = 1; $i <= $number_of_pages; $i++) {
+              if ($i == $page)
+                echo '<li class="page-item active"> <a class="page-link" href="achievements_admin.php?page=' . $i . '">'  . $i . '</a> </li>';
+              else
+                echo '<li class="page-item"> <a class="page-link" href="achievements_admin.php?page=' . $i . '">'  . $i . '</a> </li>';
+            }
+            ?>
+            <li class="page-item"> <a href=""></a> </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+    <!-- Achivements card end -->
     </div>
     <!-- footer -->
 
@@ -390,7 +432,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
   </body>
-
+ 
+  <script>
+if ( window.history.replaceState ) {
+  document.getElementById("myform").reset();
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
   </html>
 
 

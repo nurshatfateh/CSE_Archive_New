@@ -128,7 +128,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
  <div class="carousel-indicators">
     <?php
           include_once 'db_conn.php';
-          $result = mysqli_query($conn,"SELECT * FROM addactivity");
+          $result = mysqli_query($conn,"SELECT * FROM addactivity order by CompletionDate LIMIT 5");
           ?>
           <?php
           if (mysqli_num_rows($result) > 0) {

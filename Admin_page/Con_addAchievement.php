@@ -24,7 +24,9 @@
     $Achievement_detailes = $_POST['AchievementDetailes'];
 	//$AchievementPhoto = $_POST['AchievementPic'];
     $PrizeMoney = $_POST['PrizeMoney'];
+	
 	$date =date('Y-m-d', strtotime($_POST['AcieveDate'])) ;
+
 
 	// Database connection
 	$conn = new mysqli('localhost','root','','test_db');
