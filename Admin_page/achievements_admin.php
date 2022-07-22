@@ -331,18 +331,22 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               echo "No result found";
             }
             ?>
-            <nav aria-label="Page navigation example" >
+          </div>
+          
+          <nav aria-label="Page navigation example" class="p-3" >
               <ul class="pagination justify-content-center">
                 <?php
-                for ($page = 1; $page <= $number_of_pages; $page++) {
-                  echo '<li class="page-item"> <a class="page-link" href="achievements_admin.php?page=' . $page . '">'  . $page . '</a> </li>';
+                for ($i = 1; $i <= $number_of_pages; $i++) {
+                  if($i==$page)
+                  echo '<li class="page-item active"> <a class="page-link" href="achievements_admin.php?page=' . $i . '">'  . $i . '</a> </li>';                
+                  else
+                  echo '<li class="page-item"> <a class="page-link" href="achievements_admin.php?page=' . $i . '">'  . $i. '</a> </li>';
                 }
                 ?>
                 <li class="page-item"> <a href=""></a> </li>
               </ul>
             </nav>
 
-          </div>
         </div>
       </div>
       <!-- Achivements card end -->
