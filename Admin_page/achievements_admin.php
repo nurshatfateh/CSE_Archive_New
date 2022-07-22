@@ -45,7 +45,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       });
     </script>
 
-    
+
 
 
 
@@ -120,7 +120,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="carousel-indicators">
             <?php
             include_once 'db_conn.php';
-            $result = mysqli_query($conn, "SELECT * FROM addachievement");
+            $result = mysqli_query($conn, "SELECT * FROM addachievement order by date LIMIT 5");
             ?>
             <?php
             if (mysqli_num_rows($result) > 0) {
@@ -148,7 +148,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="carousel-inner">
             <?php
             include_once 'db_conn.php';
-            $result = mysqli_query($conn, "SELECT * FROM addachievement");
+            $result = mysqli_query($conn, "SELECT * FROM addachievement order by date LIMIT 5");
+
+
             ?>
             <?php
             if (mysqli_num_rows($result) > 0) {
@@ -219,26 +221,26 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                   Sort By Session
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" >2021-2022</a></li>
+                  <li><a class="dropdown-item">2021-2022</a></li>
                   <li>
-                    <a class="dropdown-item" >2020-2021</a>
+                    <a class="dropdown-item">2020-2021</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" >2019-2020</a>
+                    <a class="dropdown-item">2019-2020</a>
                   </li>
                 </ul>
               </div>
             </div>
-            
+
             <div class="p-2 mt-3 border bg-white border border-2  border-info">
               <div class="">
                 <p>
                   Start Date
                 </p>
                 <div class="input-group input-daterange">
-              <input type="text" id="StartDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
-              <span class="fa fa-calendar" id="fa-2"></span>
-            </div>
+                  <input type="text" id="StartDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
+                  <span class="fa fa-calendar" id="fa-2"></span>
+                </div>
               </div>
             </div>
 
@@ -248,9 +250,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                   End Date
                 </p>
                 <div class="input-group input-daterange">
-              <input type="text" id="EndDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
-              <span class="fa fa-calendar" id="fa-2"></span>
-            </div>
+                  <input type="text" id="EndDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
+                  <span class="fa fa-calendar" id="fa-2"></span>
+                </div>
               </div>
             </div>
 
@@ -277,7 +279,26 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
             <?php
             include_once 'db_conn.php';
+
+            $results_per_page = 3;
+
             $result = mysqli_query($conn, "SELECT * FROM addachievement");
+
+            $number_of_results = mysqli_num_rows($result);
+
+            $number_of_pages = ceil($number_of_results / $results_per_page);
+
+            if (!isset($_GET['page'])) {
+              $page = 1;
+            } else {
+              $page = $_GET['page'];
+            }
+
+            $this_page_first_result = ($page - 1) * $results_per_page;
+
+            $sql = 'SELECT * FROM addachievement order by date LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+            $result = mysqli_query($conn, $sql);
+
             ?>
             <?php
             if (mysqli_num_rows($result) > 0) {
@@ -310,6 +331,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               echo "No result found";
             }
             ?>
+            <nav aria-label="Page navigation example" >
+              <ul class="pagination justify-content-center">
+                <?php
+                for ($page = 1; $page <= $number_of_pages; $page++) {
+                  echo '<li class="page-item"> <a class="page-link" href="achievements_admin.php?page=' . $page . '">'  . $page . '</a> </li>';
+                }
+                ?>
+                <li class="page-item"> <a href=""></a> </li>
+              </ul>
+            </nav>
+
           </div>
         </div>
       </div>

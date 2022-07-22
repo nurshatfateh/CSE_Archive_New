@@ -51,7 +51,8 @@
 			//mysqli_query($conn, $sql);
 	  
 			if (move_uploaded_file($_FILES['AchievementPic']['tmp_name'], $image_Path)) {
-				echo "Your Image uploaded successfully";
+				//echo "Your Image uploaded successfully";
+				header("Location:achievements_admin.php");
 		    }else{
 				echo "Not Insert Image";
 			}
