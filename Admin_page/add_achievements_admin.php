@@ -291,6 +291,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
               <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
               <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+              <option value="Lec Raiyan Rahman">Lec Raiyan Rahman</option>
             </select>
           </div>
           <div class="col-md-6" id="faculty2">
@@ -306,6 +307,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
               <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
               <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+              <option value="Lec Raiyan Rahman">Lec Raiyan Rahman</option>
             </select>
           </div>
           <div class="col-md-6" id="faculty3">
@@ -321,6 +323,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
               <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
               <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+              <option value="Lec Raiyan Rahman">Lec Raiyan Rahman</option>
             </select>
           </div>
           <div class="col-md-6" id="faculty4">
@@ -336,6 +339,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
               <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
               <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+              <option value="Lec Raiyan Rahman">Lec Raiyan Rahman</option>
             </select>
           </div>
 
