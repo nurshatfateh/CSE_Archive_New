@@ -5,7 +5,7 @@
     $CompletionDate = date('Y-m-d', strtotime($_POST['CompletionDate'])) ;
     $PostDetails=$_POST['PostDetails']; 
     $Organizer = $_POST['Organizer'];
-	
+	$session = $_POST['session'];
 	
 
 
@@ -20,8 +20,8 @@
 			
 		$image_Path = "images/".basename($Get_image_name);  
 
-		$stmt = $conn->prepare("insert into addactivity(EventName, EventTag, CommenceDate,CompletionDate,PostDetails,Organizer,ActivityPhoto) values(?,?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param("sssssss", $EventName, $EventTag, $CommenceDate,$CompletionDate,$PostDetails,$Organizer,$Get_image_name);
+		$stmt = $conn->prepare("insert into addactivity(EventName, EventTag, CommenceDate,CompletionDate,PostDetails,Organizer,ActivityPhoto,session) values(?,?, ?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param("ssssssss", $EventName, $EventTag, $CommenceDate,$CompletionDate,$PostDetails,$Organizer,$Get_image_name,$session);
 		$execval = $stmt->execute();
 		echo $execval;
 		echo " Activity added successfully...";
@@ -34,7 +34,8 @@
 			//mysqli_query($conn, $sql);
 	  
 			if (move_uploaded_file($_FILES['ActivityPic']['tmp_name'], $image_Path)) {
-				echo "Your Image uploaded successfully";
+				//echo "Your Image uploaded successfully";
+				header("Location:activity_admin.php");
 		    }else{
 				echo "Not Insert Image";
 			}

@@ -123,15 +123,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
 
 
+
           <div class="col-md-6">
             <label for="CommenceDate" class="form-label" required>
               <h6>Commence Date <font color="ff0000">*</font>
               </h6>
             </label>
 
-            <div class="input-group input-daterange">
-              <input type="text" id="CommenceDate" placeholder="DD/MM/YYYY" class="form-control text-left mr-2" name="CommenceDate">
-              <span class="fa fa-calendar" id="fa-1"></span>
+            <div class=" ">
+              <input type="date" id="CommenceDate" placeholder="DD/MM/YYYY" class="form-control text-left mr-2" name="CommenceDate">
+
             </div>
 
           </div>
@@ -141,12 +142,33 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <h6>Completion Date <font color="ff0000">*</font>
               </h6>
             </label>
-            <div class="input-group input-daterange">
-              <input type="text" id="CompletionDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2" name="CompletionDate">
-              <span class="fa fa-calendar" id="fa-2"></span>
+            <div class=" ">
+              <input type="date" id="CompletionDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2" name="CompletionDate">
+
             </div>
 
           </div>
+
+          <div class="col-md-6">
+            <label for="AcademicYear" class="form-label">
+              <h6>Academic year <font color="ff0000">*</font>
+              </h6>
+            </label>
+            <br />
+            <select class="form-control selectpicker" required name="session">
+              <option selected disabled>Academic Year</option>
+              <option value="2016-2017">2016-2017</option>
+              <option value="2017-2018">2017-2018</option>
+              <option value="2018-2019">2018-2019</option>
+              <option value="2019-2020">2019-2020</option>
+              <option value="2020-2021">2020-2021</option>
+              <option value="2021-2022">2021-2022</option>
+              <option value="2022-2023">2022-2023</option>
+              <option value="2023-2024">2023-2024</option>
+              <option value="2024-2025">2024-2025</option>
+            </select>
+          </div>
+
           <div class="col-md-12">
             <label for="PostDetails" class="form-label">
               <h6>Post Details <font color="ff0000">*</font>

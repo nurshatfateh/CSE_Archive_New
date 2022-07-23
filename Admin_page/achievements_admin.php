@@ -126,6 +126,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             ?>
           </div>
           <div class="carousel-inner">
+
             <?php
             include_once 'db_conn.php';
             $result = mysqli_query($conn, "SELECT * FROM addachievement order by date desc LIMIT 5");
@@ -189,6 +190,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 
     <!-- Achivements card start  -->
+
     <div class="container px-4 pt-5">
       <div class="row gx-5">
         <!-- LEFT BAR -->
@@ -218,9 +220,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                   <p>
                     Start Date
                   </p>
- 
-                    <input type="date" value=""  id="StartDate" name="start"  class="form-control text-left ml-2">
-                 
+
+                  <input type="date" value="" id="StartDate" name="start" class="form-control text-left ml-2">
+
                 </div>
               </div>
 
@@ -229,8 +231,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                   <p>
                     End Date
                   </p>
-         
-                    <input type="date" value="" id="EndDate" name="end"  class="form-control text-left ml-2">
+
+                  <input type="date" value="" id="EndDate" name="end" class="form-control text-left ml-2">
 
                 </div>
               </div>
@@ -291,45 +293,39 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           if (isset($_POST['end'])) {
             $end = date('Y-m-d', strtotime($_POST['end']));
           };
-          if (isset($_POST['key']) && $_POST['key']!="") {
+          if (isset($_POST['key']) && $_POST['key'] != "") {
             $key = $_POST['key'];
           };
 
-          if(isset($_POST['search']))
-          {
-          if ( isset($_POST['year'])) {
-            $number_of_pages = 1;
-            $sql = 'SELECT * FROM addachievement where Academic_year = "' . $year .
-              '" order by date desc ';
-          } 
-           else if (isset($_POST['start']) && isset($_POST['end']) && ($start!='1970-01-01' || $end!='1970-01-01') ) 
-           {
-            $number_of_pages = 1;
-            //echo $start. "  ";
-           // echo $end;
-            $sql =  $sql = "SELECT * FROM addachievement where date >= '"  .$start.
-            "' AND  date <=' " .$end. " ' order by date desc ";
-          }
-          /*else if ( isset($_POST['key']) || ($start =='1970-01-01' || $end =='1970-01-01')) {
+          if (isset($_POST['search'])) {
+            if (isset($_POST['year'])) {
+              $number_of_pages = 1;
+              $sql = 'SELECT * FROM addachievement where Academic_year = "' . $year .
+                '" order by date desc ';
+            } else if (isset($_POST['start']) && isset($_POST['end']) && ($start != '1970-01-01' || $end != '1970-01-01')) {
+              $number_of_pages = 1;
+              //echo $start. "  ";
+              // echo $end;
+              $sql =  $sql = "SELECT * FROM addachievement where date >= '"  . $start .
+                "' AND  date <=' " . $end . " ' order by date desc ";
+            }
+            /*else if ( isset($_POST['key']) || ($start =='1970-01-01' || $end =='1970-01-01')) {
             $number_of_pages = 1;
             echo $key;
             $sql =  $sql = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  .$key.
             "%' OR  Achievement_detailes LIKE '%" .$key. "%' OR Organizer LIKE '%" .$key. "%' OR TeamName like '%" .$key. "%' order by date desc ";
-          } */ 
-          else if(isset($_POST['key']) || !($start =='1970-01-01' || $end =='1970-01-01'))
-          {
-            $number_of_pages = 1;
-            //echo $key;
-            //echo $start. "  ";
-            //echo $end;
-            $sql =  $sql = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  .$key.
-            "%' OR  Achievement_detailes LIKE '%" .$key. "%' OR Organizer LIKE '%" .$key. "%' OR TeamName like '%" .$key. "%' 
-            AND date >= '" .$start. "' AND  date <=' " .$end. " 'order by date desc ";
-
+          } */ else if (isset($_POST['key']) || !($start == '1970-01-01' || $end == '1970-01-01')) {
+              $number_of_pages = 1;
+              //echo $key;
+              //echo $start. "  ";
+              //echo $end;
+              $sql =  $sql = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  . $key .
+                "%' OR  Achievement_detailes LIKE '%" . $key . "%' OR Organizer LIKE '%" . $key . "%' OR TeamName like '%" . $key . "%' 
+            AND date >= '" . $start . "' AND  date <=' " . $end . " 'order by date desc ";
+            }
           }
-        }
 
-         xx:
+          xx:
 
 
           $result = mysqli_query($conn, $sql);
@@ -351,12 +347,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <div class="col-sm-4 mb-5 mt-5">
                 <div class="card border-2 border-info ms-3">
                   <div class="card-body">
+
                     <a href="achievments_details_admin.php?id=<?php echo $row["id"]; ?>"><img <?php echo "src='images/" . $row['AchievementPhoto'] . "' "; ?> class="d-block my-3 mx-auto" style="width: 100%; height: 200px" alt="..." /></a>
-                    
+
                     <p class="card-text fw-bold"><?php echo $row["AchievementTitle"]; ?></p>
 
-                    <font size="2" class="card-text fw-bold">Date: <?php echo date('d-M-y',strtotime($row["date"])); ?></font>
-                    
+                    <font size="2" class="card-text fw-bold">Date: <?php echo date('d-M-y', strtotime($row["date"])); ?></font>
+
                     <p class="card-text fw-normal text-wrap">
                       <?php echo substr($row["Achievement_detailes"], 0, 150); ?>
                     </p>
@@ -432,13 +429,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
   </body>
- 
+
   <script>
-if ( window.history.replaceState ) {
-  document.getElementById("myform").reset();
-  window.history.replaceState( null, null, window.location.href );
-}
-</script>
+    if (window.history.replaceState) {
+      document.getElementById("myform").reset();
+      window.history.replaceState(null, null, window.location.href);
+    }
+  </script>
+
   </html>
 
 
