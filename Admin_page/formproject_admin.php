@@ -1,96 +1,71 @@
-<?php 
+<?php
 
 session_start();
 
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
- ?>
+?>
 
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    
 
     <!-- Bootstrap CSS -->
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	  
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-     
-	  
-	  <script>
-    $(document).ready(function(){
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
 
-$('.input-daterange').datepicker({
-    format: 'dd/mm/yyyy',
-    autoclose: true,
-    calendarWeeks : false,
-    clearBtn: true,
-    disableTouchKeyboard: true
-});
 
-});
-	  
-	  </script>
+    <script>
+      $(document).ready(function() {
+
+        $('.input-daterange').datepicker({
+          format: 'dd/mm/yyyy',
+          autoclose: true,
+          calendarWeeks: false,
+          clearBtn: true,
+          disableTouchKeyboard: true
+        });
+
+      });
+    </script>
+    
     <title>Project Submission Form_admin</title>
-	  
-	  
+
+
   </head>
+
   <body class="bg-light">
     <!-- navbar starts -->
     <nav class="navbar navbar-expand-xxl navbar-light bg-white border-bottom border-5 border-success">
       <div class="container-fluid">
-        <button
-          class="navbar-toggler mb-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <a href="home_admin.php">
-          <img class="ms-md-5 ms-2" src="../img/navlogo.png" alt="logo"
-        /></a>
+          <img class="ms-md-5 ms-2" src="../img/navlogo.png" alt="logo" /></a>
 
-        <div
-          class="collapse navbar-collapse mx-5 fw-bold"
-          id="navbarSupportedContent"
-        >
+        <div class="collapse navbar-collapse mx-5 fw-bold" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-3">
               <a class="nav-link" href="home_admin.php">Home</a>
@@ -105,25 +80,20 @@ $('.input-daterange').datepicker({
               <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
-              <a
-                class="nav-link "
-                aria-current="page"
-                href="projects_admin.php"
-                >Thesis</a
-              >
+              <a class="nav-link " aria-current="page" href="projects_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="activity_admin.php">Activity</a>
             </li>
           </ul>
-          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a> 
-          <a href="adminprofile_admin.php" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Tanjim Hasan</h6></a> 
+          <a href="adminprofile_admin.php"> <img class="ms-3" src="../img/profile.png" alt="profile" /></a>
+          <a href="adminprofile_admin.php" class="text-decoration-none text-black">
+            <h6 class="mt-2 mx-3  ">Tanjim Hasan</h6>
+          </a>
 
-          <a href="../logout.php"
-            ><button type="button" class="btn btn-danger mx-3">
+          <a href="../logout.php"><button type="button" class="btn btn-danger mx-3">
               Log Out
-            </button></a
-          >
+            </button></a>
         </div>
       </div>
     </nav>
@@ -131,24 +101,25 @@ $('.input-daterange').datepicker({
     <!-- main container  -->
 
     <div class="bg-light">
-		<div class="container mt-5" style="padding:0px 10px 0px 0px">
+      <div class="container mt-5" style="padding:0px 10px 0px 0px">
         <h2 style="text-align: left"><b>Project Submission form :</b></h2>
-		</div>
-		
+      </div>
+
       <div class="container mt-5">
-		  
-        <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" method="post" action="Con_addProject.php">
+
+        <form class="row g-3 bg-white border p-3 border-1" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" action="Con_addProject.php" method="post" enctype="multipart/form-data">
           <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
           <div class="col-md-6">
             <label for="ProjectName" class="form-label">
               <h6>Project Name</h6>
             </label>
-            <input type="text"  class="form-control" id="ProjectName" name="ProjectName" placeholder="Project Name"/>
+            <input type="text" class="form-control" id="ProjectName" name="ProjectName" placeholder="Project Name" />
           </div>
 
           <div class="col-md-6">
             <label for="AcademicYear" class="form-label">
-              <h6>Academic year <font color="ff0000">*</font></h6>
+              <h6>Academic year <font color="ff0000">*</font>
+              </h6>
             </label>
             <br />
 
@@ -168,7 +139,8 @@ $('.input-daterange').datepicker({
 
           <div class="col-md-6">
             <label for="NoOfStudent" class="form-label">
-              <h6>No of Student <font color="ff0000">*</font></h6>
+              <h6>No of Student <font color="ff0000">*</font>
+              </h6>
             </label>
             <br />
 
@@ -301,24 +273,12 @@ $('.input-daterange').datepicker({
             <label for="Supervisor(s)" class="form-label">
               <h6>
                 Supervisor(s)
-                <a
-                  target="_blank"
-                  title="Type the name of Supervisor,then the name of co-supervisor"
-                  ><img
-                    src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png"
-                    height="13px"
-                /></a>
+                <a target="_blank" title="Type the name of Supervisor,then the name of co-supervisor"><img src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png" height="13px" /></a>
                 <font color="ff0000">*</font>
               </h6>
             </label>
             <br />
-            <select
-              class="form-control selectpicker"
-              multiple
-              data-live-search="true"
-              data-placeholder="Supervisor,Co Supervisor"
-              name="Supervisors"
-            >
+            <select class="form-control selectpicker" multiple data-live-search="true" data-placeholder="Supervisor,Co Supervisor" name="Supervisors">
               <option value="Lec Muhaimin Bin Munir">
                 Lec Muhaimin Bin Munir
               </option>
@@ -331,157 +291,119 @@ $('.input-daterange').datepicker({
             </select>
           </div>
 
-        
+
 
           <div class="col-md-12">
             <label for="TeamMember1" class="form-label">
-              <h6>Team Member-1 ID <font color="ff0000">*</font></h6>
+              <h6>Team Member-1 ID <font color="ff0000">*</font>
+              </h6>
             </label>
-            <input
-              type="text"
-              placeholder="Member-1 Name"
-              class="form-control"
-              id="Member1Name"
-              name="Member1Name"
-            />
+            <input type="text" placeholder="Member-1 Name" class="form-control" id="Member1Name" name="Member1Name" />
           </div>
 
-        
+
 
           <div class="col-md-12">
             <label for="TeamMember2" class="form-label">
               <h6>Team Member-2 ID</h6>
             </label>
-           <input
-              type="text"
-              placeholder="Member-2 Name"
-              class="form-control"
-              id="Member2Name"
-              name="Member2Name"
-            />
+            <input type="text" placeholder="Member-2 Name" class="form-control" id="Member2Name" name="Member2Name" />
           </div>
 
-          
+
 
           <div class="col-md-12">
             <label for="TeamMember3" class="form-label">
               <h6>Team Member-3 ID</h6>
             </label>
-            <input
-              type="text"
-              placeholder="Member-3 Name"
-              class="form-control"
-              id="Member3Name"
-              name="Member3Name"
-            />
+            <input type="text" placeholder="Member-3 Name" class="form-control" id="Member3Name" name="Member3Name" />
           </div>
 
-        
+
 
           <div class="col-md-12">
             <label for="TeamMember4" class="form-label">
               <h6>Team Member-4 ID</h6>
             </label>
-          <input
-              type="text"
-              placeholder="Member-4 Name"
-              class="form-control"
-              id="Member4Name"
-              name="Member4Name"
-            />
+            <input type="text" placeholder="Member-4 Name" class="form-control" id="Member4Name" name="Member4Name" />
           </div>
 
-        
+
 
           <div class="col-md-12">
             <label for="TeamMember5" class="form-label">
               <h6>Team Member-5 ID</h6>
             </label>
-            <input
-              type="text"
-              placeholder="Member-5 Name"
-              class="form-control"
-              id="Member5Name"
-              name="Member5Name"
-            />
+            <input type="text" placeholder="Member-5 Name" class="form-control" id="Member5Name" name="Member5Name" />
           </div>
 
-          
-          
-          <div class="col-md-6"  >
+
+
+          <div class="col-md-6">
             <label for="CommenceDate" class="form-label">
-              <h6>Commence Date <font color="ff0000">*</font></h6>
+              <h6>Commence Date <font color="ff0000">*</font>
+              </h6>
             </label>
-			  
-		<div class="input-group input-daterange">
-          <input type="text" id="CommenceDate" name="CommenceDate" placeholder="DD/MM/YYYY" class="form-control text-left mr-2">         
-          <span class="fa fa-calendar" id="fa-1"></span>
-        </div>
-			  
+
+            <div class="input-group input-daterange">
+              <input type="text" id="CommenceDate" name="CommenceDate" placeholder="DD/MM/YYYY" class="form-control text-left mr-2">
+              <span class="fa fa-calendar" id="fa-1"></span>
+            </div>
+
           </div>
 
-          <div class="col-md-6" >
-            <label for="CompletionDate" class="form-label"
-              ><h6>Completion Date <font color="ff0000">*</font></h6>
-			  </label>
-           <div class="input-group input-daterange">
-          <input type="text" id="CompletionDate" name="CompletionDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
-          <span class="fa fa-calendar" id="fa-2"></span>
-        </div>
-				  
+          <div class="col-md-6">
+            <label for="CompletionDate" class="form-label">
+              <h6>Completion Date <font color="ff0000">*</font>
+              </h6>
+            </label>
+            <div class="input-group input-daterange">
+              <input type="text" id="CompletionDate" name="CompletionDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
+              <span class="fa fa-calendar" id="fa-2"></span>
+            </div>
+
           </div>
 
-           <div class="col-md-12">
+          <div class="col-md-12">
             <label for="ProjectType" class="form-label">
-              <h6>Project Type<font color="ff0000">*</font></h6>
+              <h6>Project Type<font color="ff0000">*</font>
+              </h6>
             </label>
             <br />
 
-            <select class="form-control selectpicker"  name="ProjectType">
+            <select class="form-control selectpicker" name="ProjectType">
               <option selected disabled>Project Type</option>
               <option value="StudentProject">Student Project</option>
               <option value="FacultyProject">Faculty Project</option>
               <option value="DeptProject">Dept Project</option>
-             
+
             </select>
           </div>
 
 
           <div class="col-md-12">
-            <label for="Project Title" class="form-label"
-              ><h6>Project Title <font color="ff0000">*</font></h6>
+            <label for="Project Title" class="form-label">
+              <h6>Project Title <font color="ff0000">*</font>
+              </h6>
             </label>
-            <textarea
-              class="form-control"
-              id="ProjectTitle"
-              rows="3"
-             name="ProjectTitle"
-            ></textarea>
+            <textarea class="form-control" id="ProjectTitle" rows="3" name="ProjectTitle"></textarea>
           </div>
           <div class="col-md-12">
             <label for="Project Domain" class="form-label">
-              <h6>Project Domain <font color="ff0000">*</font></h6>
+              <h6>Project Domain <font color="ff0000">*</font>
+              </h6>
             </label>
 
-            <textarea
-              class="form-control"
-              id="ProjectDomain"
-              rows="5"
-              name="ProjectDomain"
-            ></textarea>
+            <textarea class="form-control" id="ProjectDomain" rows="5" name="ProjectDomain"></textarea>
           </div>
 
           <div class="col-md-12">
             <label for="Project Synopsis" class="form-label">
-              <h6>Project Synopsis <font color="ff0000">*</font></h6>
+              <h6>Project Synopsis <font color="ff0000">*</font>
+              </h6>
             </label>
 
-            <textarea
-              class="form-control"
-              id="ProjectSynopsis"
-              rows="5"
-             name="ProjectSynopsis"
-            ></textarea>
+            <textarea class="form-control" id="ProjectSynopsis" rows="5" name="ProjectSynopsis"></textarea>
           </div>
 
           <div class="col-md-6">
@@ -489,7 +411,7 @@ $('.input-daterange').datepicker({
               <h6>Project Photo(jpg/png/jpeg)</h6>
             </label>
             <br />
-            <input type="file" id="ProjectPhoto" name="ProjectPhoto" />
+            <input type="file" id="ProjectPhoto" name="ProjectPhoto"/>
           </div>
 
           <div class="col-md-6">
@@ -497,7 +419,7 @@ $('.input-daterange').datepicker({
               <h6>Proposal(ppt/pdf)</h6>
             </label>
             <br />
-            <input type="File" accept=".ppt, .pptx,.pdf" id="Proposal" name="Proposal"/>
+            <input type="File" accept=".ppt, .pptx,.pdf" id="Proposal" name="Proposal" />
           </div>
 
           <div class="col-md-6">
@@ -505,49 +427,31 @@ $('.input-daterange').datepicker({
               <h6>Prototype(ppt/pdf)</h6>
             </label>
             <br />
-            <input type="File" accept=".ppt, .pptx,.pdf"  id="Prototype" name="Prototype"/>
+            <input type="File" accept=".ppt, .pptx,.pdf" id="Prototype" name="Prototype" />
           </div>
 
           <div class="col-md-6">
-            
+
           </div>
-		  <div class="col-md-12">
+          <div class="col-md-12">
             <label for="BudgetOfProject" class="form-label">
               <h6>Budget</h6>
             </label>
-            <input
-              type="number"   
-              class="form-control"
-              id="Budget"
-              name="Budget"
-              placeholder="Budget Of Project"
-            />
+            <input type="number" class="form-control" id="Budget" name="Budget" placeholder="Budget Of Project" />
           </div>
 
           <div class="col-md-12">
             <label for="URLofFrontend" class="form-label">
               <h6>URL of Front end</h6>
             </label>
-            <input
-              type="text"
-              class="form-control"
-              id="URLofFrontend"
-              name="URLofFrontend"
-              placeholder="URL of Front end"
-            />
+            <input type="text" class="form-control" id="URLofFrontend" name="URLofFrontend" placeholder="URL of Front end" />
           </div>
 
           <div class="col-md-12">
             <label for="GithubLink" class="form-label">
               <h6>Github Link</h6>
             </label>
-            <input
-              type="text"
-              class="form-control"
-              id="GithubLink"
-              name="GithubLink"
-              placeholder="Github Link"
-            />
+            <input type="text" class="form-control" id="GithubLink" name="GithubLink" placeholder="Github Link" />
           </div>
 
           <div class="col-md-6">
@@ -560,19 +464,14 @@ $('.input-daterange').datepicker({
           </div>
 
           <div class="col-md-6">
-            <label for="RelevantProjects" class="form-label"
-              ><h6>Relevant Projects</h6>
+            <label for="RelevantProjects" class="form-label">
+              <h6>Relevant Projects</h6>
             </label>
-            <textarea
-              class="form-control"
-              id="RelevantProjects"
-              name="RelevantProjects"
-              rows="5"
-            ></textarea>
+            <textarea class="form-control" id="RelevantProjects" name="RelevantProjects" rows="5"></textarea>
           </div>
           <div class="col-md-6"><br></div>
           <div class="col-md-12 text-center">
-            <button type="submit"  class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
           </div>
         </form>
       </div>
@@ -601,27 +500,22 @@ $('.input-daterange').datepicker({
       </div>
     </div>
 
-    <!-- footer ends -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+   <!-- footer ends -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 
-</html>
+  </html>
 
 
-<?php 
+<?php
 
-}else{
+} else {
 
-     header("Location: ../logout.php");
+  header("Location: ../logout.php");
 
-     exit();
-
+  exit();
 }
 
- ?>
+?>
