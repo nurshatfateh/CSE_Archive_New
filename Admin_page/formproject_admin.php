@@ -489,7 +489,7 @@ $('.input-daterange').datepicker({
               <h6>Project Photo(jpg/png/jpeg)</h6>
             </label>
             <br />
-            <input type="File" accept="image/*" id="ProjectPhoto" name="ProjectPhoto" />
+            <input type="file" id="ProjectPhoto" name="ProjectPhoto" />
           </div>
 
           <div class="col-md-6">

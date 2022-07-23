@@ -1,3 +1,10 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
 
 
 
@@ -241,7 +248,7 @@
           <div class="col-xxl-9 col-12">
           
 
-            <div class="card mb-2 border border-3  border-info">
+            <div class="card mb-2  border border-3  border-info ">
               <h5 class="card-header text-white bg-info">Thesis Title</h5>
               <?php
                 $servername = "localhost";
@@ -259,7 +266,7 @@
                   echo '
                   <div class="card-body bg-white">
                   <a
-                    href="thesis_details_admin.php"
+                    href="thesis_details_admin.php?id = '.$row["thesisID"].'"
                     class="text-decoration-none text-black"
                     ><div class="p-3 mt-2 mb-2 border border border-2  border-info">
                       <h4 class="mb-3">' .$row['Thesis_title']. '</h4>
@@ -276,37 +283,15 @@
               ?>
               
           </div>
-          <br><br>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <span class="page-link">Previous</span>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item active">
-                <span class="page-link">
-                  2
-                  <span class="sr-only">(current)</span>
-                </span>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
           <!-- Right BAR ends -->
         </div>
       </div>
-
-      
-              </div>
 
       <!-- card section -->
 
       <!-- footer -->
 
-      <div class="container-fluid bg-black py-2 mt-5">
+     <div class="container-fluid bg-black py-2 mt-5">
         <div class="row">
           <div class="col-md-4 col-12 pt-3">
             <p class="text-white-50 text-center">
@@ -347,3 +332,15 @@
     -->
   </body>
 </html>
+
+<?php 
+
+}else{
+
+     header("Location: ../logout.php");
+
+     exit();
+
+}
+
+ ?>
