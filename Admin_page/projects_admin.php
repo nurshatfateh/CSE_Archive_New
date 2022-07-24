@@ -204,7 +204,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 
                   <div class="card-body bg-white">
-                    <a href="project_details_admin.php" class="text-decoration-none text-black">
+                    <a href="project_details_admin.php?id=<?php echo $row["id"];?>" class="text-decoration-none text-black">
                       <div class="p-3 mt-2 mb-2 border-2 border border-info rounded">
                         <h4 class="mb-2 text-center"><?php echo $row["ProjectName"]; ?></h4>
                         <img <?php echo "src='images/" . $row['ProjectPhoto'] . "' "; ?> class="rounded my-3 mx-auto d-block" style="width: 40%" alt="..." />

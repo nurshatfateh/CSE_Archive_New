@@ -6,6 +6,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   include_once 'db_conn.php';
 
 $code=$_GET["id"]; 
+
 $result = mysqli_query($conn,"SELECT * FROM projects where id=$code");
 
 $row = mysqli_fetch_array($result);
