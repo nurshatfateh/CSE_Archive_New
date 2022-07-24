@@ -117,7 +117,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 $db = "test_db";
             
                 // create a connection
-                $code=$_GET["thesisID"]; 
+                $code=$_GET["id_"]; 
                 $conn = mysqli_connect($servername, $username, $password, $db);
 
                 $sql = "select *from thesis_admin  where thesisID=$code";
