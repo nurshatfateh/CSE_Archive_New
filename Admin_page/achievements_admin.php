@@ -202,7 +202,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
               <div class="p-2 mt-3 border bg-white border border-2  border-info">
                 <select class="form-control selectpicker" required name="year">
-                  <option selected disabled>Session</option>
+                  <option selected disabled>Sort by Session</option>
                   <option value="2016-2017">2016-2017</option>
                   <option value="2017-2018">2017-2018</option>
                   <option value="2018-2019">2018-2019</option>

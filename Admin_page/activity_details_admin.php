@@ -33,7 +33,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <!-- favicon link css  -->
     <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
-    <title>Activity_detaails_admin</title>
+    <title>Activity_details_admin</title>
   </head>
 
   <body>

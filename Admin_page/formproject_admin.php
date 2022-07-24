@@ -15,7 +15,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    
+
 
     <!-- Bootstrap CSS -->
 
@@ -36,6 +36,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
 
 
+    <!-- pop up  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script>
       $(document).ready(function() {
 
@@ -49,7 +53,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
       });
     </script>
-    
+
     <title>Project Submission Form_admin</title>
 
 
@@ -123,7 +127,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <br />
 
-            <select class="form-control selectpicker" name="Academicyear">
+            <select class="form-control selectpicker" name="Academicyear" id="Academicyear">
               <option selected disabled>Academic Year</option>
               <option value="2016-2017">2016-2017</option>
               <option value="2017-2018">2017-2018</option>
@@ -144,9 +148,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <br />
 
-            <select class="form-control selectpicker" name="NoofStudent">
+            <select class="form-control selectpicker" name="NoofStudent" id="NoofStudent">
               <option selected disabled>No of Student</option>
-              <option value="1">1</option>
+              <option value=" 1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
@@ -278,7 +282,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               </h6>
             </label>
             <br />
-            <select class="form-control selectpicker" multiple data-live-search="true" data-placeholder="Supervisor,Co Supervisor" name="Supervisors">
+            <select class="form-control selectpicker" multiple data-live-search="true" data-placeholder="Supervisor,Co Supervisor" name="Supervisors" id="Supervisors">
               <option value="Lec Muhaimin Bin Munir">
                 Lec Muhaimin Bin Munir
               </option>
@@ -346,7 +350,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
 
             <div class="input-group input-daterange">
-              <input type="text" id="CommenceDate" name="CommenceDate" placeholder="DD/MM/YYYY" class="form-control text-left mr-2">
+              <input type="date" id="CommenceDate" name="CommenceDate" placeholder="DD/MM/YYYY" class="form-control text-left mr-2">
               <span class="fa fa-calendar" id="fa-1"></span>
             </div>
 
@@ -358,7 +362,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               </h6>
             </label>
             <div class="input-group input-daterange">
-              <input type="text" id="CompletionDate" name="CompletionDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
+              <input type="date" id="CompletionDate" name="CompletionDate" placeholder="DD/MM/YYYY" class="form-control text-left ml-2">
               <span class="fa fa-calendar" id="fa-2"></span>
             </div>
 
@@ -371,7 +375,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <br />
 
-            <select class="form-control selectpicker" name="ProjectType">
+            <select class="form-control selectpicker" name="ProjectType" id="ProjectType">
               <option selected disabled>Project Type</option>
               <option value="StudentProject">Student Project</option>
               <option value="FacultyProject">Faculty Project</option>
@@ -411,7 +415,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <h6>Project Photo(jpg/png/jpeg)</h6>
             </label>
             <br />
-            <input type="file" id="ProjectPhoto" name="ProjectPhoto"/>
+            <input type="file" id="ProjectPhoto" name="ProjectPhoto" />
           </div>
 
           <div class="col-md-6">
@@ -471,7 +475,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
           <div class="col-md-6"><br></div>
           <div class="col-md-12 text-center">
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" name="submit" id="submit">Submit</button>
           </div>
         </form>
       </div>
@@ -500,10 +504,47 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       </div>
     </div>
 
-   <!-- footer ends -->
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- footer ends -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+    <!-- pop up  -->
+    <script>
+      $("submit").click(function() {
+            var ProjectName = $("#ProjectName").val();
+            var Academicyear = $("#Academicyear").val();
+            var NoofStudent = $("#NoofStudent").val();
+            var Member_1Name = $("#Member_1Name").val();
+            var Supervisors = $("#Supervisors").val();
+            var CommenceDate = $("#CommenceDate").val();
+            var CompletionDate = $("#CompletionDate").val();
+            var ProjectType = $("#ProjectType").val();
+            var ProjectTitle = $("#ProjectTitle").val();
+            var ProjectDomain = $("#ProjectDomain").val();
+            var ProjectSynopsis = $("#ProjectSynopsis").val();
+
+            if (ProjectName == '' || ProjectTitle == '' || Academicyear == '' || NoofStudent == '' || Supervisors == '' || ProjectType == '' || ProjectDomain == '' || ProjectSynopsis == '' || Member_1Name == '') {
+              swal({
+                title: "Fields Empty!!",
+                text: "Please check the missing field!",
+                icon: "warning",
+                button: "Ok",
+              });
+            } else {
+              swal({
+                title: "Your project successfully added for admin approval!!",
+                icon: "success",
+                button: "Yes",
+              });
+            }
+
+          }
+    </script>
   </body>
 
   </html>
