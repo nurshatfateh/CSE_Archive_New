@@ -21,7 +21,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
 
     <!-- favicon link css  -->
-    <link rel="shortcut icon" type="image/png" href="/img/MIST.png" />
+    <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
 
     <title>Projects_admin</title>
   </head>
@@ -106,301 +106,357 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           <div class="col-xxl-3 col-12 mb-5">
             <div class="p-3 border bg-white border-3 border border-info rounded">
               <h4 class="ps-2">Search Filter</h4>
-              <div class="p-2 mt-3 border bg-white border-2 border border-info rounded">
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Sort By Session
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">2020-2021</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">2021-2022</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">2022-2023</a>
-                    </li>
-                  </ul>
+              <form method="post" id="myform" class="p-3">
+
+                <div class="p-2 mt-3 border bg-white border border-2  border-info">
+                  <select class="form-control selectpicker" required name="year">
+                    <option selected disabled>Sort by Session</option>
+                    <option value="2016-2017">2016-2017</option>
+                    <option value="2017-2018">2017-2018</option>
+                    <option value="2018-2019">2018-2019</option>
+                    <option value="2019-2020">2019-2020</option>
+                    <option value="2020-2021">2020-2021</option>
+                    <option value="2021-2022">2021-2022</option>
+                    <option value="2022-2023">2022-2023</option>
+                    <option value="2023-2024">2023-2024</option>
+                    <option value="2024-2025">2024-2025</option>
+                  </select>
                 </div>
-              </div>
 
-              <div class="p-2 mt-3 border bg-white border-2 border border-info rounded">
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Sort By Supervisor
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Lec Muhaimin</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Lec Nafiz Imtiaz</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Lec Shadman Adeeb</a>
-                    </li>
-                  </ul>
+
+                <div class="p-2 mt-3 border bg-white border border-2  border-info">
+                  <select class="form-control selectpicker" required name="supe">
+                    <option selected disabled>Sort by Supervisors</option>
+                    <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
+                    <option value="Lec Muhaimin">Lec Muhaimin</option>
+                    <option value="Lec Nafiz Imtiaz Khan">Lec Nafiz Imtiaz</option>
+                    <option value="Lec Shadman Aadeeb">Lec Shadman Adeeb</option>
+                    <option value="Lec Shahriar Nehal">Lec Shahriar Nehal</option>
+                  </select>
                 </div>
-              </div>
+
+
+                <!-- <div class="p-2 mt-3 border bg-white border-2 border border-info rounded">
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Sort By Supervisor
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Lec Muhaimin</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Lec Nafiz Imtiaz</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Lec Shadman Adeeb</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div> -->
 
 
 
 
 
-              <div class="p-2 mt-3 border bg-white border-2 border border-info rounded">
-                <p class="fw-bolder text-center">Enter domain name :</p>
-                <form action="" class="p-3">
+                <div class="p-2 mt-3 border bg-white border-2 border border-info rounded">
+                  <p class="fw-bolder text-center">Enter domain name :</p>
+
                   <input type="text" id="key" name="key" placeholder="Enter any keyword" class="p-2 border bg-white border-2 border border-info" /><br /><br />
 
-                  <button type="button" class="btn btn-primary">Search</button>
-                </form>
-              </div>
+                  <button type="submit" name="search" class="btn btn-primary">Search</button>
+              </form>
             </div>
           </div>
-          <!-- LEFT BAR ends -->
-          <!-- Right BAR -->
+        </div>
+        <!-- LEFT BAR ends -->
+        <!-- Right BAR -->
 
-          <div class="col-xxl-9 col-12">
-
-
-            <div class="card mb-2 border-3 border border-info rounded">
-
-              <!-- PAGINATION  -->
-              <?php
-              include_once 'db_conn.php';
+        <div class="col-xxl-9 col-12">
 
 
+          <div class="card mb-2 border-3 border border-info rounded">
 
-              $results_per_page = 3;
+            <!-- PAGINATION  -->
+            <?php
+            include_once 'db_conn.php';
 
-              $result = mysqli_query($conn, "SELECT * FROM projects");
 
 
-              $number_of_results = mysqli_num_rows($result);
+            $results_per_page = 3;
 
-              $number_of_pages = ceil($number_of_results / $results_per_page);
+            $result = mysqli_query($conn, "SELECT * FROM projects");
 
-              if (!isset($_GET['page'])) {
-                $page = 1;
-              } else {
-                $page = $_GET['page'];
+
+            $number_of_results = mysqli_num_rows($result);
+
+            $number_of_pages = ceil($number_of_results / $results_per_page);
+
+            if (!isset($_GET['page'])) {
+              $page = 1;
+            } else {
+              $page = $_GET['page'];
+            }
+
+            $this_page_first_result = ($page - 1) * $results_per_page;
+
+            $sql = 'SELECT * FROM projects  LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+
+            if (isset($_POST['year'])) {
+              $year = $_POST['year'];
+            };
+
+            if (isset($_POST['supe'])) {
+              $supe = $_POST['supe'];
+            };
+
+
+            if (isset($_POST['key']) && $_POST['key'] != "") {
+              $key = $_POST['key'];
+            };
+
+            if (isset($_POST['search'])) {
+              if (isset($_POST['year'])) {
+                $sql1 = 'SELECT * FROM projects where Academicyear = "' . $year .
+                  '"';
+                $resultyear = mysqli_query($conn,$sql1);
+                $number_of_results = mysqli_num_rows($resultyear);
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+                $sql = $sql1;
+
+              } else if (isset($_POST['supe'])) {
+                $number_of_pages = 1;
+                $sql = 'SELECT * FROM projects where Supervisors = "' . $supe .
+                  '"';
+              } else if (isset($_POST['key'])) {
+                $number_of_pages = 1;
+                //echo $key;
+                //echo $start. "  ";
+                //echo $end;
+                $sql2 =  $sql2 = "SELECT * FROM projects where ProjectName LIKE '%"  . $key .
+                  "%' OR  Supervisors LIKE '%" . $key . "%' OR Member1Name LIKE '%" . $key . "%' OR ProjectTitle like '%" . $key . "%' OR ProjectDomain LIKE '%" . $key . "%' OR ProjectSynopsis LIKE '%" . $key . "%' OR URLofFrontend LIKE '%" . $key . "%' OR RelevantProjects LIKE '%" . $key . "%' OR ProjectType LIKE '%" . $key . "%' ";
+
+                $resultkey = mysqli_query($conn, $sql2);
+                $number_of_results = mysqli_num_rows($resultkey);
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+                $sql = $sql2;
               }
+            }
 
-              $this_page_first_result = ($page - 1) * $results_per_page;
+            xx:
 
-              $sql = 'SELECT * FROM projects  LIMIT ' . $this_page_first_result . ',' .  $results_per_page;
+            $result = mysqli_query($conn, $sql);
 
-              $result = mysqli_query($conn, $sql);
+            ?>
 
-              ?>
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+            ?>
 
               <?php
-              if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_array($result)) {
               ?>
 
+                <h5 class="card-header text-white bg-info fw-bolder">OTHER'S PROJECT</h5>
+
+
+
+                <div class="card-body bg-white">
+                  <a href="project_details_admin.php?id=<?php echo $row["id"]; ?>" class="text-decoration-none text-black">
+                    <div class="p-3 mt-2 mb-2 border-2 border border-info rounded">
+                      <h4 class="mb-2 text-center"><?php echo $row["ProjectName"]; ?></h4>
+                      <img <?php echo "src='images/" . $row['ProjectPhoto'] . "' "; ?> class="rounded my-3 mx-auto d-block" style="width: 40%" alt="..." />
+                      <h6 class="mb-2 text-center"><?php echo $row["ProjectDomain"]; ?> | <?php echo $row["Academicyear"]; ?></h6>
+                      <p>
+                        <?php echo $row["ProjectSynopsis"]; ?>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+
+              <?php
+              }
+              ?>
+
+            <?php
+
+            } else {
+              echo "No result found";
+            }
+            ?>
+
+
+
+
+
+
+
+            <!-- <div class="card-body bg-white">
+                <a
+                  href="project_details_admin.php"
+                  class="text-decoration-none text-black"
+                  ><div
+                    class="p-3 mt-2 mb-2 border-2 border border-info rounded"
+                  >
+                    <h4 class="mb-2 text-center">Others' Project Name</h4>
+                    <img
+                      src="../img/projectsingle.png"
+                      class="rounded my-3 mx-auto d-block"
+                      style="width: 60%"
+                      alt="..."
+                    />
+                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Vero enim possimus iste cumque voluptatem. Odio veritatis
+                      accusantium nihil temporibus amet animi, aliquam
+                      blanditiis adipisci quis ea pariatur minus impedit
+                      architecto incidunt nobis repellendus perspiciatis tempore
+                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
+                      distinctio eligendi, unde nesciunt totam. A, optio
+                      reprehenderit? Totam dolores earum magni hic quisquam
+                      ullam officia modi iusto, culpa, ex velit, commodi
+                      repellat tempora exercitationem nisi.
+                    </p>
+                  </div></a
+                >
+              </div>
+              <div class="card-body bg-white">
+                <a
+                  href="project_details_admin.php"
+                  class="text-decoration-none text-black"
+                  ><div
+                    class="p-3 mt-2 mb-2 border-2 border border-info rounded"
+                  >
+                    <h4 class="mb-2 text-center">Others' Project Name</h4>
+                    <img
+                      src="../img/projectsingle.png"
+                      class="rounded my-3 mx-auto d-block"
+                      style="width: 60%"
+                      alt="..."
+                    />
+                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Vero enim possimus iste cumque voluptatem. Odio veritatis
+                      accusantium nihil temporibus amet animi, aliquam
+                      blanditiis adipisci quis ea pariatur minus impedit
+                      architecto incidunt nobis repellendus perspiciatis tempore
+                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
+                      distinctio eligendi, unde nesciunt totam. A, optio
+                      reprehenderit? Totam dolores earum magni hic quisquam
+                      ullam officia modi iusto, culpa, ex velit, commodi
+                      repellat tempora exercitationem nisi.
+                    </p>
+                  </div></a
+                >
+              </div>
+              <div class="card-body bg-white">
+                <a
+                  href="project_details_admin.php"
+                  class="text-decoration-none text-black"
+                  ><div
+                    class="p-3 mt-2 mb-2 border-2 border border-info rounded"
+                  >
+                    <h4 class="mb-2 text-center">Others' Project Name</h4>
+                    <img
+                      src="../img/projectsingle.png"
+                      class="rounded my-3 mx-auto d-block"
+                      style="width: 60%"
+                      alt="..."
+                    />
+                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Vero enim possimus iste cumque voluptatem. Odio veritatis
+                      accusantium nihil temporibus amet animi, aliquam
+                      blanditiis adipisci quis ea pariatur minus impedit
+                      architecto incidunt nobis repellendus perspiciatis tempore
+                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
+                      distinctio eligendi, unde nesciunt totam. A, optio
+                      reprehenderit? Totam dolores earum magni hic quisquam
+                      ullam officia modi iusto, culpa, ex velit, commodi
+                      repellat tempora exercitationem nisi.
+                    </p>
+                  </div></a
+                >
+              </div> -->
+            <!-- <div class="card-body bg-white">
+                <a
+                  href="project_details_admin.php"
+                  class="text-decoration-none text-black"
+                  ><div
+                    class="p-3 mt-2 mb-2 border-2 border border-info rounded"
+                  >
+                    <h4 class="mb-2 text-center">Others' Project Name</h4>
+                    <img
+                      src="../img/projectsingle.png"
+                      class="rounded my-3 mx-auto d-block"
+                      style="width: 60%"
+                      alt="..."
+                    />
+                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Vero enim possimus iste cumque voluptatem. Odio veritatis
+                      accusantium nihil temporibus amet animi, aliquam
+                      blanditiis adipisci quis ea pariatur minus impedit
+                      architecto incidunt nobis repellendus perspiciatis tempore
+                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
+                      distinctio eligendi, unde nesciunt totam. A, optio
+                      reprehenderit? Totam dolores earum magni hic quisquam
+                      ullam officia modi iusto, culpa, ex velit, commodi
+                      repellat tempora exercitationem nisi.
+                    </p>
+                  </div></a
+                >
+              </div> -->
+            <nav aria-label="Page navigation example" class="p-3">
+              <ul class="pagination justify-content-center">
                 <?php
-                while ($row = mysqli_fetch_array($result)) {
-                ?>
-
-                  <h5 class="card-header text-white bg-info fw-bolder">OTHER'S PROJECT</h5>
-
-
-
-                  <div class="card-body bg-white">
-                    <a href="project_details_admin.php?id=<?php echo $row["id"];?>" class="text-decoration-none text-black">
-                      <div class="p-3 mt-2 mb-2 border-2 border border-info rounded">
-                        <h4 class="mb-2 text-center"><?php echo $row["ProjectName"]; ?></h4>
-                        <img <?php echo "src='images/" . $row['ProjectPhoto'] . "' "; ?> class="rounded my-3 mx-auto d-block" style="width: 40%" alt="..." />
-                        <h6 class="mb-2 text-center"><?php echo $row["ProjectDomain"]; ?> | <?php echo $row["Academicyear"]; ?></h6>
-                        <p>
-                          <?php echo $row["ProjectSynopsis"]; ?>
-                        </p>
-                      </div>
-                    </a>
-                  </div>
-
-                <?php
+                for ($i = 1; $i <= $number_of_pages; $i++) {
+                  if ($i == $page)
+                    echo '<li class="page-item active"> <a class="page-link" href="projects_admin.php?page=' . $i . '">'  . $i . '</a> </li>';
+                  else
+                    echo '<li class="page-item"> <a class="page-link" href="projects_admin.php?page=' . $i . '">'  . $i . '</a> </li>';
                 }
                 ?>
-
-              <?php
-
-              } else {
-                echo "No result found";
-              }
-              ?>
-
-
-
-
-
-
-
-              <!-- <div class="card-body bg-white">
-                <a
-                  href="project_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div
-                    class="p-3 mt-2 mb-2 border-2 border border-info rounded"
-                  >
-                    <h4 class="mb-2 text-center">Others' Project Name</h4>
-                    <img
-                      src="../img/projectsingle.png"
-                      class="rounded my-3 mx-auto d-block"
-                      style="width: 60%"
-                      alt="..."
-                    />
-                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Vero enim possimus iste cumque voluptatem. Odio veritatis
-                      accusantium nihil temporibus amet animi, aliquam
-                      blanditiis adipisci quis ea pariatur minus impedit
-                      architecto incidunt nobis repellendus perspiciatis tempore
-                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
-                      distinctio eligendi, unde nesciunt totam. A, optio
-                      reprehenderit? Totam dolores earum magni hic quisquam
-                      ullam officia modi iusto, culpa, ex velit, commodi
-                      repellat tempora exercitationem nisi.
-                    </p>
-                  </div></a
-                >
-              </div>
-              <div class="card-body bg-white">
-                <a
-                  href="project_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div
-                    class="p-3 mt-2 mb-2 border-2 border border-info rounded"
-                  >
-                    <h4 class="mb-2 text-center">Others' Project Name</h4>
-                    <img
-                      src="../img/projectsingle.png"
-                      class="rounded my-3 mx-auto d-block"
-                      style="width: 60%"
-                      alt="..."
-                    />
-                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Vero enim possimus iste cumque voluptatem. Odio veritatis
-                      accusantium nihil temporibus amet animi, aliquam
-                      blanditiis adipisci quis ea pariatur minus impedit
-                      architecto incidunt nobis repellendus perspiciatis tempore
-                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
-                      distinctio eligendi, unde nesciunt totam. A, optio
-                      reprehenderit? Totam dolores earum magni hic quisquam
-                      ullam officia modi iusto, culpa, ex velit, commodi
-                      repellat tempora exercitationem nisi.
-                    </p>
-                  </div></a
-                >
-              </div>
-              <div class="card-body bg-white">
-                <a
-                  href="project_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div
-                    class="p-3 mt-2 mb-2 border-2 border border-info rounded"
-                  >
-                    <h4 class="mb-2 text-center">Others' Project Name</h4>
-                    <img
-                      src="../img/projectsingle.png"
-                      class="rounded my-3 mx-auto d-block"
-                      style="width: 60%"
-                      alt="..."
-                    />
-                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Vero enim possimus iste cumque voluptatem. Odio veritatis
-                      accusantium nihil temporibus amet animi, aliquam
-                      blanditiis adipisci quis ea pariatur minus impedit
-                      architecto incidunt nobis repellendus perspiciatis tempore
-                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
-                      distinctio eligendi, unde nesciunt totam. A, optio
-                      reprehenderit? Totam dolores earum magni hic quisquam
-                      ullam officia modi iusto, culpa, ex velit, commodi
-                      repellat tempora exercitationem nisi.
-                    </p>
-                  </div></a
-                >
-              </div> -->
-              <!-- <div class="card-body bg-white">
-                <a
-                  href="project_details_admin.php"
-                  class="text-decoration-none text-black"
-                  ><div
-                    class="p-3 mt-2 mb-2 border-2 border border-info rounded"
-                  >
-                    <h4 class="mb-2 text-center">Others' Project Name</h4>
-                    <img
-                      src="../img/projectsingle.png"
-                      class="rounded my-3 mx-auto d-block"
-                      style="width: 60%"
-                      alt="..."
-                    />
-                    <h6 class="mb-2 text-center">Project Domain | 2019-2020</h6>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Vero enim possimus iste cumque voluptatem. Odio veritatis
-                      accusantium nihil temporibus amet animi, aliquam
-                      blanditiis adipisci quis ea pariatur minus impedit
-                      architecto incidunt nobis repellendus perspiciatis tempore
-                      voluptate earum qui, mollitia natus fuga. Ullam sit saepe
-                      distinctio eligendi, unde nesciunt totam. A, optio
-                      reprehenderit? Totam dolores earum magni hic quisquam
-                      ullam officia modi iusto, culpa, ex velit, commodi
-                      repellat tempora exercitationem nisi.
-                    </p>
-                  </div></a
-                >
-              </div> -->
-              <nav aria-label="Page navigation example" class="p-3">
-                <ul class="pagination justify-content-center">
-                  <?php
-                  for ($i = 1; $i <= $number_of_pages; $i++) {
-                    if ($i == $page)
-                      echo '<li class="page-item active"> <a class="page-link" href="projects_admin.php?page=' . $i . '">'  . $i . '</a> </li>';
-                    else
-                      echo '<li class="page-item"> <a class="page-link" href="projects_admin.php?page=' . $i . '">'  . $i . '</a> </li>';
-                  }
-                  ?>
-                  <li class="page-item"> <a href=""></a> </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <!-- Right BAR ends -->
-        </div>
-      </div>
-
-
-
-      <!-- card section -->
-
-      <!-- footer -->
-
-      <div class="container-fluid bg-black py-2 mt-5">
-        <div class="row">
-          <div class="col-md-4 col-12 pt-3">
-            <p class="text-white-50 text-center">
-              © 2022 MIST. All rights reserved
-            </p>
-            <p></p>
-          </div>
-
-          <div class="col-md-4 col-12 pt-3">
-            <p class="text-white-50 text-center">
-              <i class="bi bi-telephone"></i>+880 176 902 3806
-            </p>
-          </div>
-          <div class="col-md-4 col-12 pt-3">
-            <p class="text-white-50 text-center">
-              <i class="bi bi-envelope"></i> info@mist.ac.bd
-            </p>
+                <li class="page-item"> <a href=""></a> </li>
+              </ul>
+            </nav>
           </div>
         </div>
+        <!-- Right BAR ends -->
       </div>
+    </div>
 
-      <!-- footer -->
+
+
+    <!-- card section -->
+
+    <!-- footer -->
+
+    <div class="container-fluid bg-black py-2 mt-5">
+      <div class="row">
+        <div class="col-md-4 col-12 pt-3">
+          <p class="text-white-50 text-center">
+            © 2022 MIST. All rights reserved
+          </p>
+          <p></p>
+        </div>
+
+        <div class="col-md-4 col-12 pt-3">
+          <p class="text-white-50 text-center">
+            <i class="bi bi-telephone"></i>+880 176 902 3806
+          </p>
+        </div>
+        <div class="col-md-4 col-12 pt-3">
+          <p class="text-white-50 text-center">
+            <i class="bi bi-envelope"></i> info@mist.ac.bd
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
