@@ -265,7 +265,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               $key = NULL;
               $year = null;
               goto  ss2;
-            } else if (isset($_GET['search']) && $_GET['search'] == 2) {
+            } else if (isset($_GET['search']) && $_GET['search'] == 3) {
               if (isset($_GET['start'])) {
                 $start = $_GET['start'];
               } else {

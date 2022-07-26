@@ -282,7 +282,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             $key = NULL;
             $year = null;
             goto  ss2;
-          } else if (isset($_GET['search']) && $_GET['search'] == 2) {
+          } else if (isset($_GET['search']) && $_GET['search'] == 3) {
             if (isset($_GET['start'])) {
               $start = $_GET['start'];
             } else {
@@ -304,6 +304,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             $number_of_pages = $_GET['nopage'];
             $page = $_GET['page'];
             goto ss3;
+
           } else {
             $search = 0;
             $page = 1;
