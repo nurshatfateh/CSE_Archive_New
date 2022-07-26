@@ -224,20 +224,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 $sql = $sql1;
 
               } else if (isset($_POST['supe'])) {
-                $number_of_pages = 1;
-                $sql = 'SELECT * FROM projects where Supervisors = "' . $supe .
+                $sql2 = 'SELECT * FROM projects where Supervisors = "' . $supe .
                   '"';
+                $resultsupe = mysqli_query($conn, $sql2);
+                $number_of_results = mysqli_num_rows($resultsupe);
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+                $sql = $sql2;
               } else if (isset($_POST['key'])) {
                 //echo $key;
                 //echo $start. "  ";
                 //echo $end;
-                 $sql2 = "SELECT * FROM projects where ProjectName LIKE '%"  . $key .
+                 $sql3 = "SELECT * FROM projects where ProjectName LIKE '%"  . $key .
                   "%' OR  Supervisors LIKE '%" . $key . "%' OR Member1Name LIKE '%" . $key . "%' OR ProjectTitle like '%" . $key . "%' OR ProjectDomain LIKE '%" . $key . "%' OR ProjectSynopsis LIKE '%" . $key . "%' OR URLofFrontend LIKE '%" . $key . "%' OR RelevantProjects LIKE '%" . $key . "%' OR ProjectType LIKE '%" . $key . "%' ";
 
-                $resultkey = mysqli_query($conn, $sql2);
+                $resultkey = mysqli_query($conn, $sql3);
                 $number_of_results = mysqli_num_rows($resultkey);
                 $number_of_pages = ceil($number_of_results / $results_per_page);
-                $sql = $sql2;
+                $sql = $sql3;
               }
             }
 
