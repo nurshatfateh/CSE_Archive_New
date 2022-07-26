@@ -40,7 +40,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <script>
+    <!-- <script>
       $(document).ready(function() {
 
         $('.input-daterange').datepicker({
@@ -52,7 +52,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         });
 
       });
-    </script>
+    </script> -->
 
     <title>Project Submission Form_admin</title>
 
@@ -344,6 +344,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 
           <div class="col-md-6">
+            <script>
+              $(document).ready(function() {
+
+                var dtToday = new Date();
+                var month = dtToday.getMonth() + 1;
+                var day = dtToday.getDate();
+                var year = dtToday.getFullYear();
+                if (month < 10)
+                  month = '0' + month.toString();
+                if (day < 10)
+                  day = '0' + day.toString();
+
+                var maxDate = year + '-' + month + '-' + day;
+                $('#CommenceDate').attr('max', maxDate);
+
+              })
+            </script>
             <label for="CommenceDate" class="form-label">
               <h6>Commence Date <font color="ff0000">*</font>
               </h6>
@@ -357,6 +374,38 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           </div>
 
           <div class="col-md-6">
+            <script>
+              $(function() {
+                $('#CommenceDate').change(function() {
+                  var fromDateValue = $(this).val();
+                  var toDateValue = new Date(fromDateValue);
+                  toDateValue.setDate(toDateValue.getDate());
+                  var month = toDateValue.getMonth() + 1;
+                  var day = toDateValue.getDate();
+                  var year = toDateValue.getFullYear();
+                  if (month < 10)
+                    month = '0' + month.toString();
+                  if (day < 10)
+                    day = '0' + day.toString();
+
+
+
+                  var sDate = year + '-' + month + '-' + day;
+                  $('#CompletionDate').attr('min', sDate);
+
+                  var dtToday = new Date();
+                  var monthh = dtToday.getMonth() + 1;
+                  var dayy = dtToday.getDate();
+                  var yearr = dtToday.getFullYear();
+                  if (monthh < 10)
+                    monthh = '0' + monthh.toString();
+                  if (dayy < 10)
+                    dayy = '0' + dayy.toString();
+                  var maxDate = yearr + '-' + monthh + '-' + dayy;
+                  $('#CompletionDate').attr('max', maxDate);
+                });
+              })
+            </script>
             <label for="CompletionDate" class="form-label">
               <h6>Completion Date <font color="ff0000">*</font>
               </h6>
