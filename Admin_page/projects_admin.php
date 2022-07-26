@@ -157,12 +157,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 
 
-                <div class="p-2 mt-3 border bg-white border-2 border border-info rounded">
+                <div class="p-1 mt-3 border bg-white border-2 border border-info rounded">
                   <p class="fw-bolder text-center">Enter domain name :</p>
 
                   <input type="text" id="key" name="key" placeholder="Enter any keyword" class="p-2 border bg-white border-2 border border-info" /><br /><br />
 
                   <button type="submit" name="search" class="btn btn-primary">Search</button>
+  
               </form>
             </div>
           </div>
