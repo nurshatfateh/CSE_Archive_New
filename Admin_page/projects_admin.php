@@ -231,7 +231,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 //echo $key;
                 //echo $start. "  ";
                 //echo $end;
-                $sql2 =  $sql2 = "SELECT * FROM projects where ProjectName LIKE '%"  . $key .
+                 $sql2 = "SELECT * FROM projects where ProjectName LIKE '%"  . $key .
                   "%' OR  Supervisors LIKE '%" . $key . "%' OR Member1Name LIKE '%" . $key . "%' OR ProjectTitle like '%" . $key . "%' OR ProjectDomain LIKE '%" . $key . "%' OR ProjectSynopsis LIKE '%" . $key . "%' OR URLofFrontend LIKE '%" . $key . "%' OR RelevantProjects LIKE '%" . $key . "%' OR ProjectType LIKE '%" . $key . "%' ";
 
                 $resultkey = mysqli_query($conn, $sql2);

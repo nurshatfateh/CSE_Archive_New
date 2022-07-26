@@ -299,15 +299,33 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
           if (isset($_POST['search'])) {
             if (isset($_POST['year'])) {
-              $number_of_pages = 1;
-              $sql = 'SELECT * FROM addachievement where Academic_year = "' . $year .
+             
+              $sql1 = 'SELECT * FROM addachievement where Academic_year = "' . $year .
                 '" order by date desc ';
+                
+                $results_per_page = 3;
+                $resultkey = mysqli_query($conn, $sql1);
+                $number_of_results = mysqli_num_rows($resultkey);
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+
+
+                $sql = $sql1;
+
             } else if (isset($_POST['start']) && isset($_POST['end']) && ($start != '1970-01-01' || $end != '1970-01-01')) {
-              $number_of_pages = 1;
+              
               //echo $start. "  ";
               // echo $end;
-              $sql =  $sql = "SELECT * FROM addachievement where date >= '"  . $start .
+               $sql2 = "SELECT * FROM addachievement where date >= '"  . $start .
                 "' AND  date <=' " . $end . " ' order by date desc ";
+                
+                $results_per_page = 3;
+                $resultkey = mysqli_query($conn, $sql2);
+                $number_of_results = mysqli_num_rows($resultkey);
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+                
+
+                $sql = $sql2;
+
             }
             /*else if ( isset($_POST['key']) || ($start =='1970-01-01' || $end =='1970-01-01')) {
             $number_of_pages = 1;
@@ -315,13 +333,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             $sql =  $sql = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  .$key.
             "%' OR  Achievement_detailes LIKE '%" .$key. "%' OR Organizer LIKE '%" .$key. "%' OR TeamName like '%" .$key. "%' order by date desc ";
           } */ else if (isset($_POST['key']) || !($start == '1970-01-01' || $end == '1970-01-01')) {
-              $number_of_pages = 1;
+              
               //echo $key;
               //echo $start. "  ";
               //echo $end;
-              $sql =  $sql = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  . $key .
+               $sql3 = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  . $key .
                 "%' OR  Achievement_detailes LIKE '%" . $key . "%' OR Organizer LIKE '%" . $key . "%' OR TeamName like '%" . $key . "%' 
             AND date >= '" . $start . "' AND  date <=' " . $end . " 'order by date desc ";
+            
+            $results_per_page = 3;
+            $resultkey = mysqli_query($conn, $sql3);
+            $number_of_results = mysqli_num_rows($resultkey);
+            $number_of_pages = ceil($number_of_results / $results_per_page);
+
+            $sql = $sql3;
+
             }
           }
 

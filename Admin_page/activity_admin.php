@@ -292,7 +292,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 $number_of_pages = 1;
                 //echo $start. "  ";
                 // echo $end;
-                $sql =  $sql = "SELECT * FROM addactivity where  CompletionDate  >= '"  . $start .
+                 $sql = "SELECT * FROM addactivity where  CompletionDate  >= '"  . $start .
                   "' AND   CompletionDate  <=' " . $end . " ' order by CompletionDate desc ";
               }
               /*else if ( isset($_POST['key']) || ($start =='1970-01-01' || $end =='1970-01-01')) {
@@ -305,7 +305,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 //echo $key;
                 //echo $start. "  ";
                 //echo $end;
-                $sql =  $sql = "SELECT * FROM addactivity where EventName LIKE '%"  . $key .
+                 $sql = "SELECT * FROM addactivity where EventName LIKE '%"  . $key .
                   "%' OR  EventTag LIKE '%" . $key . "%' OR Organizer LIKE '%" . $key . "%' OR PostDetails like '%" . $key . "%' 
               AND CompletionDate >= '" . $start . "' AND  CompletionDate <=' " . $end . " 'order by CompletionDate desc ";
               }
