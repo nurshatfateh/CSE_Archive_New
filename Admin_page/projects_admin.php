@@ -228,7 +228,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 $sql = 'SELECT * FROM projects where Supervisors = "' . $supe .
                   '"';
               } else if (isset($_POST['key'])) {
-                $number_of_pages = 1;
                 //echo $key;
                 //echo $start. "  ";
                 //echo $end;

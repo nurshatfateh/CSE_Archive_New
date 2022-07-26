@@ -217,21 +217,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 $number_of_pages = 1;
                 $sql = 'SELECT * FROM thesis_admin where Supervisors = "' . $supe .
                   '"';
-              // } else if (isset($_POST['key'])) {
-              //   $number_of_pages = 1;
-              //   //echo $key;
-              //   //echo $start. "  ";
-              //   //echo $end;
-              //   $sql2 =  $sql2 = "SELECT * FROM thesis_admin where ProjectName LIKE '%"  . $key .
-              //     "%' OR  Supervisors LIKE '%" . $key . "%' OR Member1Name LIKE '%" . $key . "%' OR ProjectTitle like '%" . $key . "%' OR ProjectDomain LIKE '%" . $key . "%' OR ProjectSynopsis LIKE '%" . $key . "%' OR URLofFrontend LIKE '%" . $key . "%' OR RelevantProjects LIKE '%" . $key . "%' OR ProjectType LIKE '%" . $key . "%' ";
+              } else if (isset($_POST['key'])) {
+                $number_of_pages = 1;
+                //echo $key;
+                //echo $start. "  ";
+                //echo $end;
+                $sql2 =  $sql2 = "SELECT * FROM thesis_admin where Course_name LIKE '%"  . $key .
+                "%' OR  Team_member_name_1 LIKE '%" . $key . "%' OR Supervisors LIKE '%" . $key . "%' OR Thesis_domain like '%" . $key . "%' OR Proposal LIKE '%" . $key . "%' OR ThesisSynopsis LIKE '%" . $key . "%' OR URLFrontend LIKE '%" . $key . "%' OR RelevantPublications LIKE '%" . $key . "%' OR Thesis_title LIKE '%" . $key . "%' ";
 
-              //   $resultkey = mysqli_query($conn, $sql2);
-              //   $number_of_results = mysqli_num_rows($resultkey);
-              //   $number_of_pages = ceil($number_of_results / $results_per_page);
-              //   $sql = $sql2;
-              // }
+                $resultkey = mysqli_query($conn, $sql2);
+                $number_of_results = mysqli_num_rows($resultkey);
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+                $sql = $sql2;
+
+              }
             }
-          }
             xx:
 
             $result = mysqli_query($conn, $sql);
