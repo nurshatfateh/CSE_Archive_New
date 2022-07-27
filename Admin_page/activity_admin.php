@@ -248,6 +248,56 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             include_once 'db_conn.php';
             $results_per_page = 3;
 
+
+            if (isset($_GET['search']) && $_GET['search'] == 1) {
+              $year = $_GET['year'];
+              $number_of_pages = $_GET['nopage'];
+              $page = $_GET['page'];
+              $start = NULL;
+              $end = NULL;
+              $key = NULL;
+              goto ss1;
+            } else if (isset($_GET['search']) && $_GET['search'] == 2) {
+              $start = $_GET['start'];
+              $end = $_GET['end'];
+              $number_of_pages = $_GET['nopage'];
+              $page = $_GET['page'];
+              $key = NULL;
+              $year = null;
+              goto  ss2;
+            } else if (isset($_GET['search']) && $_GET['search'] == 3) {
+              if (isset($_GET['start'])) {
+                $start = $_GET['start'];
+              } else {
+                $start = NULL;
+              }
+              if (isset($_GET['end'])) {
+                $end = $_GET['end'];
+              } else {
+                $end = NULL;
+              }
+
+              if (isset($_GET['key'])) {
+                $key = $_GET['key'];
+              } else {
+                $key = NULL;
+              }
+              $year = NULL;
+
+              $number_of_pages = $_GET['nopage'];
+              $page = $_GET['page'];
+              goto ss3;
+            } else {
+              $search = 0;
+              $page = 1;
+              $year = NULL;
+              $start = NULL;
+              $end = NULL;
+              $key = NULL;
+            }
+
+
+
             $result = mysqli_query($conn, "SELECT * FROM addactivity");
 
 
@@ -285,15 +335,56 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
             if (isset($_POST['search'])) {
               if (isset($_POST['year'])) {
-                $number_of_pages = 1;
+
                 $sql = 'SELECT * FROM addactivity where session = "' . $year .
                   '" order by CompletionDate desc ';
+
+                $resultkey = mysqli_query($conn, $sql);
+                $number_of_results = mysqli_num_rows($resultkey);
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+
+                ss1:
+
+                if (!isset($_GET['page'])) {
+                  $page = 1;
+                } else {
+                  $page = $_GET['page'];
+                }
+
+                $this_page_first_result = ($page - 1) * $results_per_page;
+
+                $sql = "SELECT * FROM addactivity where session = '" . $year .
+                  "' order by CompletionDate desc LIMIT " . $this_page_first_result . "," .  $results_per_page;
+
+                $search = 1;
               } else if (isset($_POST['start']) && isset($_POST['end']) && ($start != '1970-01-01' || $end != '1970-01-01')) {
-                $number_of_pages = 1;
                 //echo $start. "  ";
                 // echo $end;
-                $sql =  $sql = "SELECT * FROM addactivity where  CompletionDate  >= '"  . $start .
+
+                $sql = "SELECT * FROM addactivity where  CompletionDate  >= '"  . $start .
                   "' AND   CompletionDate  <=' " . $end . " ' order by CompletionDate desc ";
+
+                $resultkey = mysqli_query($conn, $sql);
+                $number_of_results = mysqli_num_rows($resultkey);
+                $number_of_pages = ceil($number_of_results / $results_per_page);
+
+                ss2:
+
+                if (!isset($_GET['page'])) {
+                  $page = 1;
+                } else {
+                  $page = $_GET['page'];
+                }
+
+                $this_page_first_result = ($page - 1) * $results_per_page;
+
+
+                $sql = "SELECT * FROM  addactivity where CompletionDate >= '"  . $start .
+                "' AND  CompletionDate <=' " . $end . " ' order by CompletionDate desc LIMIT " . $this_page_first_result . ',' .  $results_per_page;
+
+
+              $search = 2;
+
               }
               /*else if ( isset($_POST['key']) || ($start =='1970-01-01' || $end =='1970-01-01')) {
               $number_of_pages = 1;
@@ -301,13 +392,32 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               $sql =  $sql = "SELECT * FROM addachievement where AchievementTitle LIKE '%"  .$key.
               "%' OR  Achievement_detailes LIKE '%" .$key. "%' OR Organizer LIKE '%" .$key. "%' OR TeamName like '%" .$key. "%' order by date desc ";
             } */ else if (isset($_POST['key']) || !($start == '1970-01-01' || $end == '1970-01-01')) {
-                $number_of_pages = 1;
                 //echo $key;
                 //echo $start. "  ";
                 //echo $end;
-                $sql =  $sql = "SELECT * FROM addactivity where EventName LIKE '%"  . $key .
+                $sql = "SELECT * FROM addactivity where EventName LIKE '%"  . $key .
                   "%' OR  EventTag LIKE '%" . $key . "%' OR Organizer LIKE '%" . $key . "%' OR PostDetails like '%" . $key . "%' 
               AND CompletionDate >= '" . $start . "' AND  CompletionDate <=' " . $end . " 'order by CompletionDate desc ";
+
+              $resultkey = mysqli_query($conn, $sql);
+              $number_of_results = mysqli_num_rows($resultkey);
+              $number_of_pages = ceil($number_of_results / $results_per_page);
+
+              ss3:
+
+              if (!isset($_GET['page'])) {
+                $page = 1;
+              } else {
+                $page = $_GET['page'];
+              }
+
+              $this_page_first_result = ($page - 1) * $results_per_page;
+
+              $sql = "SELECT * FROM addactivity where EventName LIKE '%"  . $key .
+                "%' OR EventTag LIKE '%" . $key . "%' OR Organizer LIKE '%" . $key . "%' OR PostDetails like '%" . $key . "%' 
+              AND CompletionDate >= '" . $start . "' AND  CompletionDate <=' " . $end . " 'order by CompletionDate desc LIMIT " . $this_page_first_result . ',' .    $results_per_page;
+
+              $search = 3;
               }
             }
 
@@ -337,7 +447,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                       <br><br>
                       <font size="2" class="card-text fw-bold">Completed on: <?php echo date('d-M-y', strtotime($row["CompletionDate"])); ?></font>
                       <p class="card-text fw-normal text-wrap"><?php echo substr($row["PostDetails"], 0, 150); ?>
-                        <a href="activity_details_admin.php?id=<?php echo $row["id"]; ?>">View More</a>
+                      <div class="text-center">
+                        <a class="btn btn-primary btn-md" role="button" aria-disabled="true" href="activity_details_admin.php?id=<?php echo $row["id"]; ?>">View More</a>
+                       </div>
                       </p>
                     </div>
                   </div>
@@ -357,9 +469,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 <?php
                 for ($i = 1; $i <= $number_of_pages; $i++) {
                   if ($i == $page)
-                    echo '<li class="page-item active"> <a class="page-link" href="activity_admin.php?page=' . $i . '">'  . $i . '</a> </li>';
+                    echo '<li class="page-item active"> <a class="page-link" href="activity_admin.php?page=' . $i . '&search=' . $search . '&year=' . $year . '&start=' . $start . '&end=' . $end . '&key=' . $key . '&nopage=' . $number_of_pages . '">'  . $i . '</a> </li>';
                   else
-                    echo '<li class="page-item"> <a class="page-link" href="activity_admin.php?page=' . $i . '">'  . $i . '</a> </li>';
+                    echo '<li class="page-item"> <a class="page-link" href="activity_admin.php?page=' . $i . '&search=' . $search . '&year=' . $year . '&start=' . $start . '&end=' . $end . '&key=' . $key . '&nopage=' . $number_of_pages . '">'  . $i . '</a> </li>';
                 }
                 ?>
                 <li class="page-item"> <a href=""></a> </li>

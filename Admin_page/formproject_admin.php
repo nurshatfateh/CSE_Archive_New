@@ -84,7 +84,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
               <a class="nav-link" href="publication_admin.php">Publications</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link " aria-current="page" href="projects_admin.php">Thesis</a>
+              <a class="nav-link " aria-current="page" href="thesis_admin.php">Thesis</a>
             </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="activity_admin.php">Activity</a>
@@ -441,14 +441,35 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </label>
             <textarea class="form-control" id="ProjectTitle" rows="3" name="ProjectTitle"></textarea>
           </div>
-          <div class="col-md-12">
+
+            <div class="col-md-12">
             <label for="Project Domain" class="form-label">
-              <h6>Project Domain <font color="ff0000">*</font>
+              <h6>Project Domain<font color="ff0000">*</font>
               </h6>
             </label>
+            <br />
+            <select class="form-control selectpicker" multiple data-live-search="true" name="ProjectDomain" id="ProjectDomain" rows="5">
+              <option value="201814001">Artificial Intelligence</option>
+              <option value="201814002">Machine Learning</option>
+              <option value="201814003">Natural Language Processing</option>
+              <option value="201814004">Robotics</option>
+              <option value="201814005">Automation</option>
+              <option value="201814006">Embedded System</option>
+              <option value="201814007">Compiler Optimization</option>
+              <option value="201814008">Computer Architecture</option>
+              <option value="201814009">Bioinformatics and Computational Biology</option>
+              <option value="201814010">Data Mining</option>
+              <option value="201814011">Database</option>
+              <option value="201814012">Geographical Information System</option>
+              <option value="201814013">Graphics and Immersive Computing</option>
+              <option value="201814014">High Performance Computing</option>
+              <option value="201814015">Human Computer Interaction</option>
 
-            <textarea class="form-control" id="ProjectDomain" rows="5" name="ProjectDomain"></textarea>
+
+
+            </select>
           </div>
+
 
           <div class="col-md-12">
             <label for="Project Synopsis" class="form-label">
